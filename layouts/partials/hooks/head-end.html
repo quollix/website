@@ -1,0 +1,19 @@
+<!-- Declares the preferred (canonical) URL for this page. Prevents duplicate-content issues if the same content is reachable via multiple URLs. Helps search engines consolidate ranking signals to a single URL. -->
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+
+<!-- Provides structured metadata (Schema.org) for search engines. Helps machines understand what this page represents (a technical article), enabling richer search results, better indexing, and clearer content attribution without affecting how the page is rendered for users. -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "{{ .Title }}",
+        "description": "{{ .Params.description }}",
+        "url": "{{ .Permalink }}"
+    }
+</script>
+
+<!-- Preconnect to external origins that provide render-critical resources (Google Fonts and jQuery CDN). This reduces DNS/TLS handshake latency on first page load without changing script or stylesheet loading behavior. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://code.jquery.com" crossorigin>
