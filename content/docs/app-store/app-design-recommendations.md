@@ -139,7 +139,7 @@ The custom claim `role` currently contains `admin` or `user`. The custom claim `
 
 OIDC integration should use the confidential client flow. The app should retrieve all required metadata from the discovery endpoint.
 
-OIDC integration should be configurable through environment variables provided by Quollix. Ideally, the app should only require `SERVER_HOST` included in an OIDC discovery URL, `CLIENT_ID`, and `CLIENT_SECRET`, without requiring administrators to configure these settings manually.
+OIDC integration should be configurable through environment variables provided by Quollix. Ideally, the app should only require an issuer URL, `CLIENT_ID`, and `CLIENT_SECRET`, without requiring administrators to configure these settings manually. The app should derive the discovery endpoint from the issuer by using `/.well-known/openid-configuration`, and then read the remaining OIDC endpoints from that metadata document.
 
 For example, the Docker Compose YAML could look like this:
 
@@ -149,7 +149,7 @@ services:
     environment:
       OIDC_CLIENT_ID: ${CLIENT_ID}
       OIDC_CLIENT_SECRET: ${CLIENT_SECRET}
-      OIDC_DISCOVERY_URL: https://quollix.${SERVER_HOST}/.well-known/openid-configuration
+      OIDC_ISSUER: https://quollix.${SERVER_HOST}
     ...
 ```
 

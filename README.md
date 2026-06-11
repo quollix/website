@@ -1,6 +1,6 @@
 # Quollix Website
 
-This is the backend for Quollix’s official website, available at [quollix.org](https://quollix.org).
+This is the source repository for Quollix’s official website, available at [quollix.org](https://quollix.org).
 
 The website is powered by [Hugo](https://gohugo.io/) and the [Docsy](https://www.docsy.dev/) documentation theme.
 
@@ -26,6 +26,6 @@ Please read the [Contributing](https://quollix.org/docs/community/contributing/)
 
 ### License
 
-Unless stated otherwise, this project is licensed under the permissive open source [0BSD License](https://opensource.org/license/0bsd/). See the [LICENSE](LICENSE) file for details.
+Unless stated otherwise, this project is licensed under a permissive open source license, the [0BSD License](https://opensource.org/license/0bsd/). See [LICENSE](LICENSE) for details.
 
 The Quollix name, logo, and other branding assets are excluded from that license and may not be used without permission. The GitHub icon is also excluded and remains subject to GitHub's own terms.

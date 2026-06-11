@@ -26,3 +26,9 @@ The license key is a 36-character code and may look like this:
 ## Subscription Management
 
 Subscriptions are billed monthly and can be cancelled through Lemon Squeezy. After cancellation, premium features remain available until the end of the current billing period.
+
+## Troubleshooting
+
+If Quollix cannot register or validate your license key, please report the issue through the [feedback page]({{< relref "docs/feedback.md" >}}).
+
+License key registration is handled by Quollix infrastructure, so please contact the Quollix maintainers rather than Lemon Squeezy.

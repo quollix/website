@@ -41,4 +41,4 @@ Add another hostname to the hosts file whenever you want to test another install
 
 Now you can install apps from the store, start and open them.
 
-
+Note: Single sign-on to apps is not expected to work in this local setup. It requires a valid server host domain and a trusted certificate that covers the Quollix and app subdomains.

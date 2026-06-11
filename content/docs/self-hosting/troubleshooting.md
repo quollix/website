@@ -15,6 +15,14 @@ This resets the account password to 'password'.
 
 {{< /details >}}
 
+{{< details "What should I do if an app stops working after an update?" >}}
+If an official app maintained by `quollix` stops working after an update, please report the issue through the [feedback page]({{< relref "docs/feedback.md" >}}). Issues with unofficial third-party apps are outside the scope of Quollix.
+
+Before reporting an issue with an official app, note the version that caused the problem. Then restore the most recent backup from before the update and note the previous working version.
+
+Include the app name, the broken version, the previous working version, and any relevant logs in your report.
+{{< /details >}}
+
 {{< details "What do I do if an update fails because I skipped intermediate versions?" >}}
 If you skip important intermediate versions and upgrade directly from an old version to a much newer one, required update migration steps may be missed. This can cause the update to fail and may leave the application unusable.
 

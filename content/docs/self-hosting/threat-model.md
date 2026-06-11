@@ -25,6 +25,7 @@ Every app runs in its own Docker container with no shared volumes, networks, or 
 
 ### Access Control
 * All endpoints enforce authentication and role-based authorization.
+* Quollix uses separate server-side authentication sessions for the Quollix UI and each app, keeping access to different services isolated.
 * Administrators can define access policies for apps, restricting access to specific users.
 
 ### Backups and Updates
