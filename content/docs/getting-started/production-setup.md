@@ -12,8 +12,7 @@ This is a quick guide for installing Quollix for production use on a LAN or publ
 *.example.com  A  <server-ip>
 ```
 
-3. **Install Docker on the server**: for installation instructions, see the [Docker installation guide](https://docs.docker.com/get-docker/).
-4. **Create the Compose file**: add a `docker-compose.yml` file:
+3. **Create the Compose file**: add a `docker-compose.yml` file:
 
 ```yaml
 services:
@@ -39,21 +38,21 @@ services:
       INITIAL_ADMIN_PASSWORD: <replace-me>
 ```
 
-5. **Start Quollix**: run the following command in the same directory as `docker-compose.yml`:
+4. **Start Quollix**: run the following command in the same directory as `docker-compose.yml`:
 
 ```bash
 sudo docker compose up -d
 ```
 
-6. **Open the web interface**: visit `https://quollix.<SERVER_HOST>`. Continue past the browser warning for the initial self-signed certificate.
-7. **Log in**: use the default credentials (`admin` / `password`), or `admin` with the custom password you configured above.
-8. **Change the password**: set a secure password for the administrator account.
-9. **Set the server host**: go to the Settings page, set **Server Host** to `<SERVER_HOST>`, and save.
-10. **Set up a certificate**: use one of these options:
+5. **Open the web interface**: visit `https://quollix.<SERVER_HOST>`. Continue past the browser warning for the initial self-signed certificate.
+6. **Log in**: use the default credentials (`admin` / `password`), or `admin` with the custom password you configured above.
+7. **Change the password**: set a secure password for the administrator account.
+8. **Set the server host**: go to the Settings page, set **Server Host** to `<SERVER_HOST>`, and save.
+9. **Set up a certificate**: use one of these options:
     * uploading your own wildcard certificate for the hostnames above
     * generating a wildcard certificate through a DNS-01 challenge, then restarting the browser
-11. **Set the timezone**: choose the correct IANA timezone.
-12. **Rename the admin account**: consider changing the username of the administrator account on the Users page. When you sign in to an app through OIDC, the app may try to create an account with the same username. Some apps, such as Forgejo, reserve names like `admin` and `user`, so avoid those usernames if the account should be able to sign in to apps. Otherwise, single sign-on may fail for that account.
+10. **Set the timezone**: choose the correct IANA timezone.
+11. **Rename the admin account**: consider changing the username of the administrator account on the Users page. When you sign in to an app through OIDC, the app may try to create an account with the same username. Some apps, such as Forgejo, reserve names like `admin` and `user`, so avoid those usernames if the account should be able to sign in to apps. Otherwise, single sign-on may fail for that account.
 
 ## Next Steps
 
