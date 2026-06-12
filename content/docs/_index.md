@@ -3,11 +3,6 @@ title: "Overview"
 no_list: true
 ---
 
-{{< alert title="Project Status" color="warning" >}}
-Quollix is under active development and not yet publicly available.
-Features and documentation may change as the platform evolves.
-{{< /alert >}}
-
 <div style="display:flex; align-items:center; gap:1rem; margin:1rem 0 1.5rem 0; flex-wrap:wrap;">
   <img src="/images/logo.svg" alt="Quollix logo" width="200">
   <div style="flex:1; min-width:260px;">
