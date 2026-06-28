@@ -1,0 +1,69 @@
+@import 'td/code-dark';
+
+/*
+In hugo.yaml, setting showLightDarkModeMenu to false will disable the necessary JavaScript for the dark theme and keep the website in the light theme. To force the dark theme, we set showLightDarkModeMenu to true, made the dark theme the default, and hid the menu that switches themes.
+
+.td-light-dark-menu {
+  display: none !important;
+}
+*/
+
+.highlight pre {
+  background-color: var(--td-pre-bg) !important;
+}
+
+footer {
+  background-color: #403f4c;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+footer nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+details summary .faq-question {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.feedback-draft-button {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .text-nowrap;
+}
+
+tr:has(.feedback-draft-button) td {
+  vertical-align: middle;
+}
+
+// logo and title
+.td-navbar .navbar-brand {
+  padding: 0 0 0 0.75rem !important;
+}
+
+//.td-navbar .navbar-brand__logo,
+.td-navbar .navbar-brand svg {
+  height: 3rem !important;
+  width: 3rem !important;
+}
+
+.td-navbar .container,
+.td-navbar .container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+// hides the 'last modified' footer, see: https://www.docsy.dev/docs/content/repository-links/#last-modified-page-metadata
+.td-page-meta__lastmod {
+  display: none;
+}

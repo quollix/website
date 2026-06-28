@@ -1,0 +1,4 @@
+Contact: mailto:quollix-feedback@mailbox.org
+Policy: https://quollix.org/docs/legal/security/
+Preferred-Languages: en
+Canonical: https://quollix.org/.well-known/security.txt

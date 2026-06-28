@@ -1,0 +1,59 @@
+baseURL: "https://quollix.org"
+locale: "en-us"
+title: "Quollix"
+
+# Generate a robots.txt file so search engines know how to crawl the site.
+enableRobotsTXT: true
+
+# Enable Git info to access last modified dates and other Git metadata, which are set automatically for each page.
+enableGitInfo: true
+
+# Use clean, directory-style URLs instead of .html suffixes.
+uglyURLs: false
+
+# Enable output minification to reduce payload size and improve load performance.
+minify:
+  disableHTML: false
+  disableCSS: false
+  disableJS: false
+  disableJSON: false
+
+module:
+  proxy: "direct"
+  imports:
+    - path: "github.com/google/docsy"
+
+params:
+  github_repo: "https://github.com/quollix/website"
+  ui:
+    themeVariant: "dark"
+    showLightDarkModeMenu: true
+    sidebar_search_disable: true
+    sidebar_menu_compact: true
+    navbar_logo: true
+  offlineSearch: true
+  # Default image used for Open Graph / social previews (og:image, Twitter cards, etc.).
+  images: ["images/logo.svg"]
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true  # Allows raw HTML in Markdown
+  highlight:
+    noClasses: false
+
+outputs:
+  home: ["HTML", "RSS"]
+  section: ["HTML", "RSS"]
+
+taxonomies:
+  category: "categories"
+
+menu:
+  main:
+    - name: "Docs"
+      url: "/docs/"
+      weight: 10
+    - name: "Blog"
+      url: "/blog/"
+      weight: 20
