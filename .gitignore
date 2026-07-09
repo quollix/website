@@ -1,0 +1,9 @@
+.idea
+.obsidian
+**/public/
+/resources/
+.hugo_build.lock
+node_modules
+**tar.gz
+**.bkp
+**.mp4
