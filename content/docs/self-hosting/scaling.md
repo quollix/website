@@ -10,8 +10,6 @@ The primary scaling strategy is vertical scaling. Run Quollix on a machine with 
 
 ## Federation
 
-{{< planned-feature >}}
-
 Communities or larger organizations may federate multiple Quollix servers. Each server represents an organizational unit. Identity and access are shared through a central OIDC provider.
 
 ## Custom Infrastructure
