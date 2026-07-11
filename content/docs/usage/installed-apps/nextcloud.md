@@ -33,7 +33,7 @@ Allow Nextcloud to connect to OIDC providers and other services on private/inter
 php occ config:system:set allow_local_remote_servers --type=boolean --value=true
 ```
 
-Add Quollix as the OIDC provider. Replace the `<placeholders>` with the OIDC client credentials from the OIDC page in Quollix:
+Add Quollix as the OIDC provider. In Quollix, go to `Apps -> SSO`, copy Nextcloud's client ID and client secret, and replace the `<placeholders>` below:
 
 ```bash
 php occ user_oidc:provider Quollix --clientid '<client-id>' --clientsecret '<client-secret>' --discoveryuri 'https://quollix.<base-domain>/.well-known/openid-configuration'

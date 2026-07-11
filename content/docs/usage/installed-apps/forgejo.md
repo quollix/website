@@ -42,13 +42,13 @@ Save the `app.ini` file and restart the app.
 
 ## Single Sign-On
 
-* In Quollix, go to the OIDC tab and copy the OIDC client credentials
+* In Quollix, go to `Apps -> SSO` and copy Forgejo's client ID and client secret
 * Visit Forgejo
 * Go to Site Administration → Identity & Access → Authentication Sources → Add Authentication Source
 * Authentication type: OAuth2
 * Authentication name: Quollix
 * OAuth2 Provider: OpenID Connect
-* Paste the OIDC client credentials from Quollix
+* Paste the client ID and client secret from Quollix into the matching Forgejo fields
 * OpenID Connect Auto Discovery URL:
 
 ```plain
