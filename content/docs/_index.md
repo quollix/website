@@ -6,7 +6,7 @@ no_list: true
 <div style="display:flex; align-items:center; gap:1rem; margin:1rem 0 1.5rem 0; flex-wrap:wrap;">
   <img src="/images/logo.svg" alt="Quollix logo" width="200">
   <div style="flex:1; min-width:260px;">
-  <p style="max-width: 500px">Quollix is an open source self-hosting platform. It provides a catalog of apps to install and automated maintenance features. Read <a href="{{< relref "introduction/why-use-quollix.md" >}}">Why Use Quollix</a> for the project reasoning.</p>
+  <p style="max-width: 500px">Quollix is an open source platform for self-hosting web services. It provides a curated set of default apps and automates routine maintenance tasks, reducing the time operators spend assembling and maintaining infrastructure. Read <a href="{{< relref "introduction/who-is-quollix-for.md" >}}">Who Is Quollix For</a> and <a href="{{< relref "introduction/why-use-quollix.md" >}}">Why Use Quollix</a> to see whether it fits your use case.</p>
   </div>
 </div>
 
