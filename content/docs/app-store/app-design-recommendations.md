@@ -39,6 +39,8 @@ Relying on these platform features avoids duplication and prevents potential int
 * App Docker containers are frequently started and stopped, which is why these operations should be fast.
 * Installation wizards and web-based configuration on first boot are acceptable.
 * Updates should be non-interactive. When updated, the app should migrate database schemas and configuration automatically.
+* Apps should not perform self-updates from inside the running container. The Quollix App Store is the primary update mechanism and updates apps by changing Docker image tags and restarting services. In-container updates can create state that no longer matches the declared image version.
+* Apps should disable automatic update checks and in-app update notifications where possible. Administrators should not receive newer-version notices through the app UI, because the Quollix App Store is the primary update mechanism.
 
 ### Networking and reverse proxy model
 
@@ -90,7 +92,7 @@ If the main service depends on other services, for example a database, it should
 * Attempt to connect on startup
 * Retry for a reasonable amount of time or number of attempts
 * Exit with an error if the dependency is unavailable
-* Expose a HTTP health endpoint for the main service which should return a successful status code only when the app is ready to serve requests.
+* Expose an HTTP health endpoint for the main service. It should return HTTP 200 only once the server is running, required migrations are complete, and required integrated services are available and compatible.
 
 Apps should not require shared secrets for communication between services inside the private Docker Compose network. Authentication should be enforced on public entry points, usually through the exposed web service port.
 

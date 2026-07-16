@@ -50,8 +50,9 @@ We recommend using a simple, automatically updating system like Ubuntu, along wi
 * App Store content is not moderated, except for official apps. Third-party apps may contain malicious code, so we recommend that administrators only use trusted third-party sources or evaluate third-party apps before installation.
 * App updates depend on each app's maintainer. Outdated apps may introduce vulnerabilities, and compromised maintainer accounts or release repositories may result in malicious updates for third-party apps.
 * Quollix is not responsible for security vulnerabilities within installed apps. Responsibility for application-level security lies entirely with the respective project developers.
+* Some app configurations may use simple default credentials for internal services, such as databases. These services are not exposed publicly and are intended to be reachable only inside the app's private Docker network, usually by the app's main service. This is a known trade-off: it simplifies deployment, but it means the main service must properly protect access to the internal service. Vulnerabilities such as SQL injection, remote code execution, leaked configuration, or an attacker with Docker-level access may still expose or misuse the internal service.
 
 ### Miscellaneous
 
 * The owner of the Quollix installation is responsible for legal and regulatory compliance, such as privacy laws, although Quollix provides tools to help reduce the effort involved.
-* Quollix comes with a default self-signed certificate. Although this might be suitable for trusted LAN environments, it is vulnerable to man-in-the-middle (MITM) attacks. To ensure security, administrators must upload or generate a trusted certificate and keep it up to date.
+* Quollix comes with a default self-signed certificate. This may be suitable for local testing or trusted LAN environments, but it is vulnerable to man-in-the-middle (MITM) attacks, especially during the first login before a trusted certificate is configured. To ensure security, administrators must upload or generate a trusted certificate as soon as possible and keep it up to date.

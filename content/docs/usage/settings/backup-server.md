@@ -10,7 +10,7 @@ We strongly recommend that you enable this feature. If your hard drive becomes i
 Quollix uses the **restic** tool in the backend, which provides end-to-end encryption. This means that even if someone intercepts the traffic or gains access to the backup server, they cannot read your encrypted backup data.
 
 {{< alert title="Note" color="warning" >}}
-Always keep a copy of your settings, especially the Restic encryption password. Without it, your backup data cannot be restored in case of irreversible hard drive damage.
+Always keep a separate copy of your backup server settings, including the host, SSH credentials, SSH known hosts, and Restic encryption password. Without these settings, your backup data cannot be restored if this Quollix server is lost.
 {{< /alert >}}
 
 ## Usage Guide

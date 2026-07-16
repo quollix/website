@@ -47,8 +47,17 @@ Nextcloud provides desktop and mobile client applications that sync files automa
 
 ## Updates
 
-Quollix can update the Nextcloud container. Installed Nextcloud apps/plugins are preserved but are not updated automatically. If OIDC sign-in or another app stops working after the update, run this in the Nextcloud container:
+Quollix can update the Nextcloud container. Installed Nextcloud apps/plugins are preserved but may not be updated automatically. If OIDC sign-in or another app stops working after the update, run this in the Nextcloud container:
 
 ```
 php occ app:update --all
+```
+
+### Disable update notifications
+
+Nextcloud may show administrator notifications when server updates are available. To disable these notifications, run:
+
+```bash
+php occ config:system:set updatechecker --type boolean --value=false
+php occ app:disable updatenotification
 ```

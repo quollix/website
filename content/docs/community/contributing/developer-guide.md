@@ -22,6 +22,9 @@ Contributions should:
 
 * follow the existing structure and naming style
 * avoid unnecessary dependencies
+* avoid app-specific logic
+  * app behavior should be handled by app definitions, app configuration, or the application itself
+  * for app integration expectations, see [App Design Recommendations]({{< relref "docs/app-store/app-design-recommendations" >}})
 * remove or simplify code where possible
 * include meaningful tests for new behavior
 * pass the relevant CI checks before merge

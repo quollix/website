@@ -44,7 +44,7 @@ If you want to configure the initial administrator account, read the [initial ad
 sudo docker compose up -d
 ```
 
-6. **Open the web interface**: visit `https://quollix.<base-domain>`. Continue past the browser warning for the initial self-signed certificate.
+6. **Open the web interface**: visit `https://quollix.<base-domain>`. Quollix initially uses a self-signed certificate, so your browser will show a certificate warning. Continue only if you trust the network path to the server. A trusted certificate is configured later in this guide.
 7. **Find the initial password**: Quollix logs a random initial password on first startup:
 
 ```bash
