@@ -21,6 +21,8 @@ If you are familiar with GitHub, you can provide feedback through GitHub issues 
 GitHub is the right place for contributions and development discussions, but not for user support requests.
 {{< /alert >}}
 
+If you are unsure which repository is relevant, see the [Repository Map]({{< relref "repository-map.md" >}}).
+
 ### Improve the Website
 
 The website repository is [github.com/quollix/website](https://github.com/quollix/website). Contributing website content does not require coding: basic Markdown knowledge and knowing how to contribute through GitHub are sufficient. Read the [Website contributing article]({{< relref "website.md" >}}).
