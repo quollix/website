@@ -12,7 +12,7 @@ On the Installed Apps page, you can manage your apps. You can perform the follow
 * Delete, which removes the app and its artifacts; only its backups are preserved.
 * Download, which provides the app configuration.
 
-## First Start
+## First start
 
 Starting an app for the first time can take a while. Containers may need to be downloaded in the background, and the app may need to prepare its initial configuration or download additional components. Even after the app is marked as running, it can take anywhere from a few seconds to a few minutes before the app webpage becomes available.
 
@@ -44,3 +44,11 @@ You can manually download and upload apps locally without relying on the officia
 Only upload app files from sources you trust. App configurations can run containers, access app data, use system resources, and expose services on your server.
 
 If the uploaded app does not exist yet, a new app will be created from the file. If the app already exists, the existing app will be updated. If enabled, a backup may be created before the update.
+
+## Why some apps need manual setup
+
+The app-specific pages below describe any initial manual setup that may be needed after installing an app.
+
+Quollix tries to automate generic platform integration. Some apps follow this model closely, as described in the [app design recommendations]({{< relref "docs/app-store/app-design-recommendations.md" >}}), and work with little or no extra configuration.
+
+Other apps have their own first-run setup, require manual interaction, or settings that depend on how you want to use the app. In those cases, Quollix documents the required steps.
