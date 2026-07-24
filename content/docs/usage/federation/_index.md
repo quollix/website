@@ -2,9 +2,7 @@
 title: "Federation"
 ---
 
-Federation lets you connect Quollix servers and external services through a shared OIDC provider. The goal is to let users sign in once and access multiple Quollix servers and the apps available to their account.
-
-Federation consists of two features:
+Federation connects Quollix servers and compatible OIDC clients through shared identity providers. It is based on two features:
 
 * Quollix can act as an [OIDC provider]({{<relref "docs/usage/federation/oidc-providers.md">}})
 * Quollix can act as an [OIDC client]({{<relref "docs/usage/federation/oidc-clients.md">}})

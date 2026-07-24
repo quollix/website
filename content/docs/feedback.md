@@ -10,8 +10,6 @@ We appreciate feedback about:
 - Legal and policy texts that are unclear, too broad, or missing important context
 - The topics listed below
 
-> Note: This is not a general support channel. Feedback and contribution suggestions are reviewed when possible, but usually do not receive a response.
-
 | Topic | Use this for | Action |
 |-------|--------------|--------|
 | Security vulnerability | Responsible disclosure or suspected vulnerabilities in Quollix. Please read the [Security Policy]({{< relref "legal/security.md" >}}) first. | <button type="button" class="feedback-draft-button" onclick="window.openSecurityFeedbackMail()">Open draft</button> |

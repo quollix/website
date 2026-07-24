@@ -23,7 +23,6 @@ Legend:
 | Monitoring         | {{<cross>}} |
 | Networking         | {{<checkmark>}} |
 | Report             | {{<cross>}} |
-| Single Sign-On     | {{<checkmark>}} |
 | Terminal           | {{<checkmark>}} |
 | Users              | {{<checkmark>}} |
 
@@ -53,9 +52,15 @@ The email function supports user invitations and password resets by sending temp
 
 ## Federation
 
-Federation lets a Quollix server trust another OIDC provider, including another Quollix server.
+Quollix can act as an OIDC provider. This allows apps deployed with Quollix, other Quollix servers, and other compatible OIDC clients to use Quollix accounts for sign-in.
 
-This allows multiple Quollix servers to share one OIDC provider, so users can sign in once and access several connected servers and the apps available to their account.
+Quollix can also act as an OIDC client, so users can sign in through another OIDC provider. Potential providers include Google, Microsoft Entra ID, authentik, Okta, or another Quollix server.
+
+{{< alert title="Note" color="warning" >}}
+Quollix uses generic OIDC client support, so standards-compliant providers should work. The external providers mentioned above have not been tested by the Quollix project yet. If you use Quollix with one of them, feedback and integration reports are welcome through the <a href='{{< relref "docs/feedback.md" >}}'>feedback page</a>.
+{{< /alert >}}
+
+Together, these provider and client capabilities make up Quollix federation, where multiple Quollix servers can share identity.
 
 ## Groups
 
@@ -78,10 +83,6 @@ When an app is installed, Quollix acts as a network proxy so that users can imme
 ## Report
 
 Administrators receive reports about maintenance events, such as app updates, backups, and critical conditions.
-
-## Single Sign-On
-
-Provides integrated identity and single sign-on (SSO) capabilities based on OpenID Connect (OIDC), so each user only needs a single account to access apps.
 
 ## Terminal
 
