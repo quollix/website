@@ -20,7 +20,7 @@ See Quollix in action:
 * [Basic features demonstration]({{< relref "docs/videos/basic-features-demo.md" >}})
 * [Speedrun: production setup from scratch in 8 minutes]({{< relref "docs/videos/speedrun-production-setup.md" >}})
 
-## Choose how deep you want to go
+## Choose your starting point
 
 Start where it best matches your interests and experience:
 

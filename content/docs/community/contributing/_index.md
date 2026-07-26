@@ -17,11 +17,13 @@ If you are familiar with GitHub, you can provide feedback through GitHub issues 
 
 ## Contribute on GitHub
 
+Quollix code repositories use the permissive [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). Website content uses the permissive [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0). Contributions are made under the license of the repository being contributed to. Quollix does not require a Contributor License Agreement (CLA) or separate legal paperwork.
+
 {{< alert title="Note" color="warning" >}}
 GitHub is the right place for contributions and development discussions, but not for user support requests.
 {{< /alert >}}
 
-If you are unsure which repository is relevant, see the [Repository Map]({{< relref "repository-map.md" >}}).
+To get an overview of the public source code repositories, see the [Repository Map]({{< relref "repository-map.md" >}}).
 
 ### Improve the Website
 

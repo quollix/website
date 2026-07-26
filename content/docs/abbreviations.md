@@ -9,6 +9,7 @@ weight: 100
 | AI           | Artificial Intelligence               |
 | BIOS         | Basic Input/Output System             |
 | CI           | Continuous Integration                |
+| CLA          | Contributor License Agreement         |
 | CLI          | Command-Line Interface                |
 | CRUD         | Create, read, update and delete       |
 | FDE          | Full-Disk Encryption                  |
