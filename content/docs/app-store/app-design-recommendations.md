@@ -65,7 +65,7 @@ Manual configuration via the command line or direct editing of config files is d
 
 #### Environment variables
 
-If needed, apps should use the following environment variables provided by Quollix deployment: `BASE_DOMAIN`, `CLIENT_ID`, `CLIENT_SECRET` and `IANA_TIMEZONE`. On startup, the app should apply these values automatically. Restarting the app must be sufficient to adapt to configuration changes.
+If needed, apps should use the following environment variables provided by Quollix during deployment: `BASE_DOMAIN`, `CLIENT_ID`, `CLIENT_SECRET`, `APP_SECRET` and `IANA_TIMEZONE`. On startup, the app should apply these values automatically. Restarting the app must be sufficient to adapt to configuration changes.
 
 Apps should not persist dynamic values injected through environment variables into long-lived application configuration. For example, when `BASE_DOMAIN` changes, restarting the app with the new value should be sufficient. The administrator should not need to update the same value manually in the web UI or server settings.
 
@@ -137,6 +137,20 @@ At the moment, Quollix provides these claims for integration:
 * Quollix-specific custom claims: `role`, `groups`
 
 The custom claim `role` currently contains `admin` or `user`. The custom claim `groups` contains comma-separated list of [Quollix group names]({{< relref "docs/usage/groups" >}}) the user is member of. Apps can use these claims for authorization, role and group mapping if desired.
+
+#### App secret
+
+Quollix provides an `APP_SECRET` environment variable. It is a randomly generated 64-character hexadecimal value, for apps that require an application-level secret for signing, sessions, CSRF protection, encryption keys, or similar security features. `docker-compose.yml` example:
+
+```yaml
+services:
+  myapp:
+    environment:
+      SESSION_SECRET: ${APP_SECRET}
+    ...
+```
+
+The generated value is persistent for the installed app and remains stable across container restarts and app updates.
 
 #### OIDC integration
 
