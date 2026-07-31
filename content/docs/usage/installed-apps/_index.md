@@ -52,3 +52,5 @@ The app-specific pages below describe any initial manual setup that may be neede
 Quollix tries to automate generic platform integration. Some apps follow this model closely, as described in the [app design recommendations]({{< relref "docs/app-store/app-design-recommendations.md" >}}), and work with little or no extra configuration.
 
 Other apps have their own first-run setup, require manual interaction, or settings that depend on how you want to use the app. In those cases, Quollix documents the required steps.
+
+These setup instructions are recommended defaults, not strict requirements. It is your server, so you can deviate from them when you understand the trade-offs and want a different app configuration.

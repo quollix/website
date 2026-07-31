@@ -10,6 +10,8 @@ no_list: true
   </div>
 </div>
 
+The name Quollix and the logo are inspired by the quoll, a small marsupial native to Australia and New Guinea.
+
 Read [Who Is Quollix For]({{< relref "introduction/who-is-quollix-for.md" >}}) and [Why Use Quollix]({{< relref "introduction/why-use-quollix.md" >}}) to see whether Quollix fits your use case.
 
 ## Videos
