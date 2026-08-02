@@ -9,7 +9,7 @@ Professionally, I work as a software developer. I also value privacy, which is w
 
 I bought a cheap little server for my home, installed Linux, and set up Docker. No problem. I had done all of that countless times before. Then I deployed a few Docker stacks: a wiki, Nextcloud, and a handful of other services.
 
-Next, I needed a reverse proxy, TLS certificates, and because my ISP assigned me a dynamic IP address, I also needed Dynamic DNS. To obtain certificates using the HTTP-01 challenge via Let's Encrypt, I also had to expose parts of my home network to the Internet. I wasn't particularly happy about that, but I didn't really see another option.
+Next, I needed a reverse proxy, TLS certificates, and because my ISP assigned me a dynamic IP address, I also needed Dynamic DNS. To obtain certificates using the HTTP-01 challenge via Let's Encrypt, I also had to expose parts of my home network to the Internet. I wasn't particularly happy about that, but at the time I didn't really see another option.
 
 Backups were next. I wrote backup scripts, recovery scripts, and, of course, tested them. Weeks later, when a hard drive actually failed, the hardware wasn't the problem. I had a replacement. The difficult part was remembering everything around it. Docker Compose files, scheduled jobs, reverse proxy configuration, and all the little details that had accumulated over time.
 
