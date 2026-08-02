@@ -25,4 +25,4 @@ That experience changed how I thought about self-hosting. I also realized I wasn
 
 What I really wanted was a system that minimized the time spent maintaining infrastructure. Simple design reduces the need to read documentation, opinionated defaults simplify installation, and automation replaces repetitive maintenance.
 
-That idea eventually became Quollix, an open-source project that aims to make self-hosting easier.
+That idea eventually became Quollix, an open-source project that aims to make self-hosting easier. I’d appreciate hearing what you think about the idea behind Quollix. Feedback and constructive criticism are always welcome.
