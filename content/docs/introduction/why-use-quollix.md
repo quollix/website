@@ -5,7 +5,7 @@ weight: 5
 
 ## Ownership and Portability
 
-- **Open source**: Quollix is published under an open source license, giving users the right to use, study, modify, and share the software.
+- **Open source**: Quollix is fully open source under the permissive Apache License 2.0, which keeps legal complexity low.
 - **Migration support**: Move Quollix to another server by restoring its app backups on a new server.
 - **Vendor independence**: These properties mean users are not locked into a single vendor.
 
