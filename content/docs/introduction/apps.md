@@ -11,18 +11,18 @@ Digital infrastructure can be installed as apps, much like a smartphone. An app 
 
 ## Official Apps
 
-These are the apps from the official maintainer 'quollix' currently available on the App Store. They are actively maintained with regular updates:
+These are the apps from the official maintainer 'quollix' currently available on the App Store. They are actively maintained with regular updates. The OIDC SSO column shows whether the app can use Quollix accounts for sign-in:
 
-| App | Description | Website |
-|-----|-------------|---------|
-| Forgejo | Git server for code hosting and collaboration. | [forgejo.org](https://forgejo.org) |
-| HedgeDoc | Real-time collaborative markdown notes. | [hedgedoc.org](https://hedgedoc.org) |
-| Jitsi | Video meetings in the browser. | [jitsi.org](https://jitsi.org/jitsi-meet/) |
-| Nextcloud | File sync, sharing, calendars, contacts, and collaboration. | [nextcloud.com](https://nextcloud.com) |
-| Vaultwarden | Password manager compatible with Bitwarden clients. | [vaultwarden.net](https://www.vaultwarden.net) |
-| Wiki.js | Wiki for team and project documentation. | [js.wiki](https://js.wiki) |
-| WordPress | Website and blog publishing system. | [wordpress.org](https://wordpress.org) |
-| Zulip | Team chat with topic-based conversations. | [zulip.com](https://zulip.com) |
+| App | Description | OIDC SSO | Website |
+|-----|-------------|:--------:|---------|
+| Forgejo | Git server for code hosting and collaboration. | {{<checkmark>}} | [forgejo.org](https://forgejo.org) |
+| HedgeDoc | Real-time collaborative markdown notes. | {{<checkmark>}} | [hedgedoc.org](https://hedgedoc.org) |
+| Jitsi | Video meetings in the browser. | {{<cross>}} | [jitsi.org](https://jitsi.org/jitsi-meet/) |
+| Nextcloud | File sync, sharing, calendars, contacts, and collaboration. | {{<checkmark>}} | [nextcloud.com](https://nextcloud.com) |
+| Vaultwarden | Password manager compatible with Bitwarden clients. | {{<checkmark>}} | [vaultwarden.net](https://www.vaultwarden.net) |
+| Wiki.js | Wiki for team and project documentation. | {{<checkmark>}} | [js.wiki](https://js.wiki) |
+| WordPress | Website and blog publishing system. | {{<cross>}} | [wordpress.org](https://wordpress.org) |
+| Zulip | Team chat with topic-based conversations. | {{<checkmark>}} | [zulip.com](https://zulip.com) |
 
 ## Email Servers
 

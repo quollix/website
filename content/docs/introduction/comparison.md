@@ -3,11 +3,11 @@ title: "Self-Hosting Platform Comparison"
 weight: 40
 ---
 
-_Last Updated: 07.08.2026_
-
 Several projects try to make self-hosting easier, but they are not all direct replacements for each other. This comparison should help you find the solution that best fits your use case. We aim to be fair and neutral.
 
-This comparison is based on our current understanding of the projects listed below. Projects change over time, so corrections, updates, and feedback are welcome through the [feedback page]({{< relref "docs/feedback.md" >}}).
+This article is based on our current understanding of the projects listed below. Projects change over time, so corrections, updates, and feedback are welcome through the [feedback page]({{< relref "docs/feedback.md" >}}).
+
+This comparison focuses on open source platforms that make self-hosting easier through an opinionated app deployment model. Related projects that do not fit this scope are listed at the end of this article with the reason why they are not part of the main comparison.
 
 Included projects:
 
@@ -17,17 +17,14 @@ Included projects:
 - [Runtipi](https://runtipi.io)
 - [StartOS](https://start9.com)
 
-All included projects:
+Common traits of the included projects:
 
-- are fully open source
 - can be self-hosted without a vendor account
 - do not impose commercial-use limits on self-hosting
 - provide a web interface for administration
 - focus on apps with web interfaces or standard client apps
 - support ARM64, including Raspberry Pi 4 or newer
 - can run apps on ARM when the app packaging supports it
-
-Note: StartOS platform software is open source. Standard StartOS installer images include proprietary firmware / drivers for broader hardware compatibility. Slim FOSS-only images are also available for supported hardware.
 
 ## Project Positioning
 
@@ -56,6 +53,8 @@ Note: StartOS platform software is open source. Standard StartOS installer image
 | App isolation mechanism | Docker network / volume isolation | Debian / system-level isolation | Unix users / ACLs / systemd | Docker Compose isolation | LXC service isolation |
 | Public third-party publishing | Planned self-service App Store | Through Debian / FreedomBox contribution process | Through YunoHost app catalog contribution process | Through custom Git-based app stores | Through Start9, community, or custom registries |
 | App update model | Automated app updates with pre-update backups | Automatic via Debian packages | Webadmin or CLI app upgrades | One-click app updates | User-approved service updates |
+| App networking integration | App declares target web port; platform maps app subdomain | App package ships Apache / firewall integration | App package ships nginx integration and domain / path settings | App declares port and Traefik metadata; exposure is optional | App package declares service interfaces |
+| Per-app host networking work | Usually none after base domain, wildcard DNS, and certificates are set up | Usually none after app enablement; external reachability depends on server / router setup | Admin chooses domain / path; dedicated domains may need DNS and certificate setup | Admin enables exposure and sets a domain for public access | Admin enables the desired interface address; public access may need port forwarding or relay setup |
 | App URL model | Dedicated subdomains | App-dependent | Subdomains or subpaths | IP / port locally; domains or paths when exposed | Same host with service ports, private domains optional |
 | App catalog size | 8 official apps | 40+ documented apps | 600+ apps | 260+ apps | Registry-dependent |
 
@@ -100,8 +99,8 @@ Note: StartOS platform software is open source. Standard StartOS installer image
 | Platform-managed mail server | No | Yes | Yes | No | No |
 | Platform-managed VPN | No, host responsibility | OpenVPN / WireGuard | No | No, host or app responsibility | StartTunnel WireGuard, router VPN supported |
 | Dynamic DNS | No | Yes | Yes | No, host or app responsibility | No |
-| Private / relay remote access | No | PageKite | No | Manual Cloudflare Tunnel setup | StartTunnel |
-| Platform-managed file sharing | No, host responsibility | Samba | App-dependent | Partial, shared media directory | App-dependent |
+| Private / relay remote access | No, host responsibility | PageKite | No | Manual Cloudflare Tunnel setup | StartTunnel |
+| Platform-managed file sharing | No | Samba | App-dependent | Partial, shared media directory | App-dependent |
 
 ## Quollix Differentiators
 
@@ -110,7 +109,7 @@ The most relevant Quollix differentiators in this comparison are:
 - Backup and restore are automatically integrated for all Compose apps, including custom uploaded apps, with per-app retention policies.
 - OIDC is the central identity layer. Quollix can act as both OIDC provider and OIDC client, which enables cross-instance identity and federation.
 - User onboarding is invite-based, with expiring one-time codes and native email delivery.
-- DNS-01 certificate generation is supported, so apps can get certificates without public inbound HTTP access.
+- DNS-01 certificate generation is supported, so Quollix can get certificates without public inbound HTTP access.
 - The planned App Store is intended to support self-service app publishing, where users can register, upload apps, and make them discoverable for others.
 
 ## Adjacent Projects

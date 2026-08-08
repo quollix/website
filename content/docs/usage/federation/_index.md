@@ -29,12 +29,8 @@ Configuration:
 
 The client server must be able to connect to the provider server, but the provider server does not need to connect back to the client. For example, the provider server can run on a public server with a public IP address, while the client server and its users are in a private LAN.
 
-## FAQ
+## Is Quollix part of the Fediverse?
 
-### Is Quollix federation part of the Fediverse?
+No. Quollix federation is identity federation. It lets users sign in to multiple Quollix servers or compatible OIDC clients through a shared identity provider. The Fediverse usually refers to application-level federation, commonly through protocols such as ActivityPub, where different servers exchange application data.
 
-No. Quollix federation is identity federation. It lets users sign in to multiple Quollix servers or compatible OIDC clients through a shared identity provider.
-
-The Fediverse usually refers to application-level federation, commonly through protocols such as ActivityPub, where different servers exchange social or application data. Quollix federation does not make installed apps automatically communicate with apps on other servers.
-
-You can still use Quollix to deploy apps that participate in the Fediverse, if suitable app definitions are available. In that setup, the app provides the Fediverse protocol support, while Quollix provides hosting, app management, and optionally OIDC-based sign-in when the app supports an external OIDC provider.
+You can still use Quollix to deploy apps that participate in the Fediverse, if suitable app definitions are available. In that setup, the app provides the Fediverse protocol support, while Quollix provides hosting and the option for OIDC-based sign-in.
