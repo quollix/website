@@ -3,13 +3,27 @@ title: "Certificate"
 weight: 20
 ---
 
-There are multiple ways to operate certificates in Quollix.
+## Certificate Operations
 
-## 1) Default Certificate
+You can upload your own certificate or download the currently configured certificate. The uploaded certificate file must contain the private key and certificate chain for the domains you want Quollix to serve. For the usual app setup, this is typically a wildcard certificate such as `*.sample.com`.
 
-By default, Quollix is available on port 443 via HTTPS using a universal self-signed wildcard certificate. This default certificate works for all domains or IP addresses through which you access Quollix and any host configured in the Settings. This option may be sufficient for test deployments or private LAN networks. However, for most real-world use cases, a valid, properly signed wildcard certificate is recommended.
+Uploading a certificate replaces the currently configured certificate. Before replacing a production certificate, download the existing certificate file and store it somewhere safe so that you can restore it if the new certificate does not work.
 
-## 2) Generate Wildcard Certificate
+{{< alert title="Private key handling" color="warning" >}}
+The downloaded certificate file contains the private key. Anyone with this file can impersonate your Quollix server for matching domains. Store it securely and never share it through untrusted channels.
+{{< /alert >}}
+
+By default, Quollix is available on port 443 via HTTPS using a universal self-signed wildcard certificate. This default certificate works for all domains or IP addresses through which you access Quollix and any host configured in the Settings. This option may be sufficient for test deployments or private LAN networks.
+
+Resetting the certificate removes the configured certificate and private key and replaces them with a self-signed certificate. This is useful for local testing or recovery, but browsers and clients may stop trusting the server until you install a valid certificate again. For most real-world use cases, a valid, properly signed certificate is recommended.
+
+## ACME Account Private Key
+
+Quollix uses an ACME account private key to identify the Let's Encrypt account that requests certificates.
+
+If you plan to operate multiple Quollix instances for the same domain, download the ACME account private key from one instance and upload it to the other instances before generating Let's Encrypt certificates. This gives all instances one uniform ACME account key, keeps certificate requests tied to one Let's Encrypt account, and avoids creating unnecessary separate ACME accounts for the same setup.
+
+## Generate Wildcard Certificate
 
 This option generates a certificate via a Let's Encrypt DNS-01 challenge:
 
@@ -25,17 +39,3 @@ You must set the base domain to a domain that you own for the setup to work, for
 In the background, Quollix creates a `certificate.pem` file that contains keys and certificates for the domains `*.sample.com`, such as `forgejo.sample.com`, `vaultwarden.sample.com`, or `quollix.sample.com`. The wildcard certificate is valid for 90 days, so this process must be repeated manually from time to time.
 
 After that, you need to restart the browser so it loads the new certificate.
-
-## 3) Upload Wildcard Certificates
-
-Another option is to upload your own wildcard certificates. The uploaded certificate file must contain the private key and certificate chain for `*.sample.com`.
-
-Uploading a certificate replaces the currently configured certificate. Before replacing a production certificate, download the existing certificate file and store it somewhere safe so that you can restore it if the new certificate does not work.
-
-{{< alert title="Private key handling" color="warning" >}}
-The downloaded certificate file contains the private key. Anyone with this file can impersonate your Quollix server for matching domains. Store it securely and never share it through untrusted channels.
-{{< /alert >}}
-
-## 4) Reset to a Self-Signed Certificate
-
-Resetting the certificate removes the configured certificate and private key and replaces them with a self-signed certificate. This is useful for local testing or recovery, but browsers and clients may stop trusting the server until you install a valid certificate again.

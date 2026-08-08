@@ -39,6 +39,10 @@ All code contributions should pass existing tests and include new tests for adde
 
 Small fixes can be provided directly as PRs. Before creating a feature PR, open a feature suggestion issue and get maintainer approval first, because features must fit the design of Quollix.
 
+## Build Integrations
+
+Quollix includes a Go API client in the  [common](https://github.com/quollix/common) repository at `quollix/api_client`. It is used by Quollix tooling and can also be useful for experiments, automation, or external tools built around Quollix.
+
 ## Expand the App Store
 
 {{< planned-feature >}}
