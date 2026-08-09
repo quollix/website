@@ -50,7 +50,7 @@ We recommend using a simple, automatically updating system like Ubuntu, along wi
 * App Store content is not moderated, except for official apps. Third-party apps may contain malicious code, so we recommend that administrators only use trusted third-party sources or evaluate third-party apps before installation.
 * App updates depend on each app's maintainer. Outdated apps may introduce vulnerabilities, and compromised maintainer accounts or release repositories may result in malicious updates for third-party apps.
 * Quollix is not responsible for security vulnerabilities within installed apps. Responsibility for application-level security lies entirely with the respective project developers.
-* Some app configurations may use simple default credentials for internal services, such as databases. These services are not exposed publicly and are intended to be reachable only inside the app's private Docker network, usually by the app's main service. This is a known trade-off: it simplifies deployment, but it means the main service must properly protect access to the internal service. Vulnerabilities such as SQL injection, remote code execution, leaked configuration, or an attacker with Docker-level access may still expose or misuse the internal service.
+* Apps can use generated secrets for internal credentials such as database passwords, service passwords, admin tokens, and signing keys. These services are still intended to be reachable only inside the app's private Docker network, usually by the app's main service. Vulnerabilities such as SQL injection, remote code execution, leaked configuration, or an attacker with Docker-level access may still expose or misuse the internal service.
 
 ### Miscellaneous
 

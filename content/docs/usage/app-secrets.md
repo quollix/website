@@ -12,5 +12,5 @@ Regenerating a secret is useful when the current value was exposed and is no lon
 After regenerating a secret, restart the app to apply the new value. How an app handles the new value depends on the app. Some secrets, such as session keys, need no further action beyond a restart. Others, such as database passwords or configuration secrets, may require manual changes in the app containers.
 
 {{< alert title="Warning" color="warning" >}}
-Regenerating a secret can break deployments. We recommend creating a backup before regenerating a secret.
+Regenerating a secret can break deployments. Create a backup before regenerating a secret, then restart the app and test that it still works. Some apps may require a manual migration.
 {{< /alert >}}

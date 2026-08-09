@@ -65,7 +65,7 @@ Manual configuration via the command line or direct editing of config files is d
 
 #### Environment variables
 
-If needed, apps should use the following environment variables provided by Quollix during deployment: `BASE_DOMAIN`, `CLIENT_ID`, `CLIENT_SECRET`, `APP_SECRET` and `IANA_TIMEZONE`. On startup, the app should apply these values automatically. Restarting the app must be sufficient to adapt to configuration changes.
+If needed, apps should use the following environment variables provided by Quollix during deployment: `BASE_DOMAIN`, `CLIENT_ID`, `CLIENT_SECRET`, `IANA_TIMEZONE`, and generated `SECRET_*` values. On startup, the app should apply these values automatically. Restarting the app must be sufficient to adapt to configuration changes.
 
 Apps should not persist dynamic values injected through environment variables into long-lived application configuration. For example, when `BASE_DOMAIN` changes, restarting the app with the new value should be sufficient. The administrator should not need to update the same value manually in the web UI or server settings.
 
@@ -94,7 +94,7 @@ If the main service depends on other services, for example a database, it should
 * Exit with an error if the dependency is unavailable
 * Expose an HTTP health endpoint for the main service. It should return HTTP 200 only once the server is running, required migrations are complete, and required integrated services are available and compatible.
 
-Apps should not require shared secrets for communication between services inside the private Docker Compose network. Authentication should be enforced on public entry points, usually through the exposed web service port.
+If internal services require credentials, apps should use generated `SECRET_*` values instead of hard-coded defaults. Authentication should still be enforced on public entry points, usually through the exposed web service port.
 
 #### Flexibility
 
@@ -138,19 +138,19 @@ At the moment, Quollix provides these claims for integration:
 
 The custom claim `role` currently contains `admin` or `user`. The custom claim `groups` contains comma-separated list of [Quollix group names]({{< relref "docs/usage/groups" >}}) the user is member of. Apps can use these claims for authorization, role and group mapping if desired.
 
-#### App secret
+#### App secrets
 
-Quollix provides an `APP_SECRET` environment variable. It is a randomly generated 64-character hexadecimal value, for apps that require an application-level secret for signing, sessions, CSRF protection, encryption keys, or similar security features. `docker-compose.yml` example:
+Quollix automatically generates persistent values for environment placeholders whose name starts with `SECRET_`. Apps should use purpose-specific names, such as `SECRET_POSTGRES_PASSWORD`, `SECRET_SESSION_SECRET`, or `SECRET_ADMIN_TOKEN`. These values are stored with the installed app and remain stable across container restarts, app updates, and backups.
+
+`docker-compose.yml` example:
 
 ```yaml
 services:
   myapp:
     environment:
-      SESSION_SECRET: ${APP_SECRET}
+      POSTGRES_PASSWORD: ${SECRET_POSTGRES_PASSWORD}
     ...
 ```
-
-The generated value is persistent for the installed app and remains stable across container restarts and app updates.
 
 #### OIDC integration
 
