@@ -7,7 +7,7 @@ Legend:
 
 * {{<checkmark>}} fully implemented
 * {{<tilde>}} partially implemented
-* {{<cross>}} not implemented
+* {{<cross>}} not yet implemented
 
 | Feature            | Implementation Status |
 |--------------------|:------:|
