@@ -13,7 +13,7 @@ You can also support Quollix by helping more people learn about the project:
 
 ## Provide Feedback
 
-If you are familiar with GitHub, you can provide feedback through GitHub issues or discussions. If not, use the [feedback page]({{< relref "docs/feedback" >}}).
+If you are familiar with GitHub, you can provide feedback through GitHub issues or discussions. If not, use the [feedback page]({{< relref "docs/resources/feedback.md" >}}).
 
 ## Contribute on GitHub
 
@@ -58,7 +58,7 @@ High-value improvements include:
 * OIDC authorization code flow support for confidential clients
 * automatic OIDC client configuration through Docker environment variables
 
-See [App Design Recommendations]({{< relref "docs/app-store/app-design-recommendations" >}}) for details.
+See [App Design Recommendations]({{< relref "docs/project/app-development/app-design-recommendations.md" >}}) for details.
 
 ## Improve Security
 

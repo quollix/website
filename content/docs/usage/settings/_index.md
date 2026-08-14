@@ -1,6 +1,7 @@
 ---
 title: "Settings"
-weight: 50
 ---
+
+{{< ui-location "System" "Settings" >}}
 
 This section explains the Settings page in the Quollix GUI.

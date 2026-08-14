@@ -1,10 +1,9 @@
 ---
 title: "Abbreviations"
-weight: 100
 ---
 
 | Abbreviation | Meaning                               |
-|--------------|---------------------------------------|
+| ------------ | ------------------------------------- |
 | AGPL         | GNU Affero General Public License     |
 | AI           | Artificial Intelligence               |
 | BIOS         | Basic Input/Output System             |

@@ -1,9 +1,8 @@
 ---
 title: "OIDC clients"
-weight: 50
-aliases:
-  - /docs/usage/oidc-clients/
 ---
+
+{{< ui-location "Federation" "Clients" >}}
 
 Also see the [federation article]({{<relref "docs/usage/federation">}}).
 

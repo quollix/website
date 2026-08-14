@@ -5,26 +5,27 @@ weight: 10
 
 Legend:
 
-* {{<checkmark>}} fully implemented
-* {{<tilde>}} partially implemented
-* {{<cross>}} not yet implemented
+- {{<checkmark>}} fully implemented
+- {{<tilde>}} partially implemented
+- {{<cross>}} not yet implemented
 
-| Feature            | Implementation Status |
-|--------------------|:------:|
-| Access Policy      | {{<checkmark>}} |
-| App Store          | {{<tilde>}} |
-| Backups            | {{<checkmark>}} |
-| Certificate        | {{<checkmark>}} |
-| Compliance         | {{<cross>}} |
-| Email              | {{<tilde>}} |
-| Federation         | {{<checkmark>}} |
-| Groups             | {{<checkmark>}} |
-| Maintenance        | {{<checkmark>}} |
-| Monitoring         | {{<cross>}} |
-| Networking         | {{<checkmark>}} |
-| Report             | {{<cross>}} |
-| Terminal           | {{<checkmark>}} |
-| Users              | {{<checkmark>}} |
+| Feature                                                            | Implementation Status |
+| ------------------------------------------------------------------ | :-------------------: |
+| [Access Policy]({{< relref "docs/usage/installed-apps" >}})        |    {{<checkmark>}}    |
+| [App Store]({{< relref "docs/usage/app-store.md" >}})              |      {{<tilde>}}      |
+| [App Secrets]({{< relref "docs/usage/app-secrets.md" >}})          |    {{<checkmark>}}    |
+| [Backups]({{< relref "docs/usage/backups.md" >}})                  |    {{<checkmark>}}    |
+| [Certificate]({{< relref "docs/usage/settings/certificate.md" >}}) |    {{<checkmark>}}    |
+| Compliance                                                         |      {{<cross>}}      |
+| [Email]({{< relref "docs/usage/email.md" >}})                      |      {{<tilde>}}      |
+| [Federation]({{< relref "docs/usage/federation" >}})               |    {{<checkmark>}}    |
+| [Groups]({{< relref "docs/usage/groups.md" >}})                    |    {{<checkmark>}}    |
+| [Maintenance]({{< relref "docs/usage/maintenance.md" >}})          |    {{<checkmark>}}    |
+| Monitoring                                                         |      {{<cross>}}      |
+| Networking                                                         |    {{<checkmark>}}    |
+| Report                                                             |      {{<cross>}}      |
+| [Terminal]({{< relref "docs/usage/terminal.md" >}})                |    {{<checkmark>}}    |
+| [Users]({{< relref "docs/usage/users.md" >}})                      |    {{<checkmark>}}    |
 
 ## Access Policy
 
@@ -32,7 +33,11 @@ Admins can set an access policy for each app individually, for example restricti
 
 ## App Store
 
-The [App Store]({{< relref "docs/app-store" >}}) is the central location for downloading and installing apps and updates. Public app publishing is planned, so third-party maintainers will be able to upload their own apps in the future.
+The App Store is the central location for downloading and installing apps and updates. Public app publishing is planned, so third-party maintainers will be able to upload their own apps in the future.
+
+## App Secrets
+
+Quollix generates and injects app-specific random secrets for installed apps. These secrets provide cryptographic randomness that some apps need for secure operation.
 
 ## Backups
 
@@ -57,7 +62,7 @@ Quollix can act as an OIDC provider. This allows apps deployed with Quollix, oth
 Quollix can also act as an OIDC client, so users can sign in through another OIDC provider. Potential providers include Google, Microsoft Entra ID, authentik, Okta, or another Quollix server.
 
 {{< alert title="Note" color="warning" >}}
-Quollix uses generic OIDC client support, so standards-compliant providers should work. The external providers mentioned above have not been tested by the Quollix project yet. If you use Quollix with one of them, feedback and integration reports are welcome through the <a href='{{< relref "docs/feedback.md" >}}'>feedback page</a>.
+Quollix uses generic OIDC client support, so standards-compliant providers should work. The external providers mentioned above have not been tested by the Quollix project yet. If you use Quollix with one of them, feedback and integration reports are welcome through the <a href='{{< relref "docs/resources/feedback.md" >}}'>feedback page</a>.
 {{< /alert >}}
 
 Together, these provider and client capabilities make up Quollix federation, where multiple Quollix servers can share identity.

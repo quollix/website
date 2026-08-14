@@ -8,20 +8,22 @@ This document is intended for developers who develop software and want to distri
 
 Any software that provides a web interface can be published as an app in the Quollix App Store. At a high level, the development and distribution flow looks like this:
 
-* You package your software as a Docker image and publish it to a public registry.
-* You provide a `docker-compose.yml` that follows Quollix conventions and upload the app to the Quollix App Store.
-* Users can download the app from the App Store and install it on their Quollix servers.
+- You package your software as a Docker image and publish it to a public registry.
+- You provide a `docker-compose.yml` that follows Quollix conventions and upload the app to the Quollix App Store.
+- Users can download the app from the App Store and install it on their Quollix servers.
+
+It may be useful to download a few official app definitions from the Quollix UI and inspect their `docker-compose.yml` files. Some recommendations below are easier to understand when compared with working examples.
 
 ## What Quollix handles for you
 
 Quollix provides a standardized operational environment. App developers should assume that the following concerns are handled externally and do not need to be implemented by the app itself:
 
-* Reverse proxying and TLS certificate management
-* Traffic control
-* Update orchestration and restarts
-* Backups and restores
-* Log rotation, monitoring and alerting
-* User management (when your app supports OIDC)
+- Reverse proxying and TLS certificate management
+- Traffic control
+- Update orchestration and restarts
+- Backups and restores
+- Log rotation, monitoring and alerting
+- User management (when your app supports OIDC)
 
 Relying on these platform features avoids duplication and prevents potential interference between app-level and platform-level behavior.
 
@@ -29,29 +31,29 @@ Relying on these platform features avoids duplication and prevents potential int
 
 ### Platform compatibility
 
-* Apps should support both AMD64 and ARM64 architectures by publishing multi-platform Docker images.
+- Apps should support both AMD64 and ARM64 architectures by publishing multi-platform Docker images.
 
 ### Installation and updates
 
-* The app must be deployable using a simple `docker compose up` without manual pre- or post-installation steps.
-* All services defined in `docker-compose.yml` must use clear, descriptive names that explicitly indicate the software they run. For example, use 'postgres' instead of 'db', 'database' or 'service1'.
-* Docker image tags should use release versions in the format `X.Y.Z`, for example `1.2.3`.
-* App Docker containers are frequently started and stopped, which is why these operations should be fast.
-* Installation wizards and web-based configuration on first boot are acceptable.
-* Updates should be non-interactive. When updated, the app should migrate database schemas and configuration automatically.
-* Apps should not perform self-updates from inside the running container. The Quollix App Store is the primary update mechanism and updates apps by changing Docker image tags and restarting services. In-container updates can create state that no longer matches the declared image version.
-* Apps should disable automatic update checks and in-app update notifications where possible. Administrators should not receive newer-version notices through the app UI, because the Quollix App Store is the primary update mechanism.
+- The app must be deployable using a simple `docker compose up` without manual pre- or post-installation steps.
+- All services defined in `docker-compose.yml` must use clear, descriptive names that explicitly indicate the software they run. For example, use 'postgres' instead of 'db', 'database' or 'service1'.
+- Docker image tags should use release versions in the format `X.Y.Z`, for example `1.2.3`.
+- App Docker containers are frequently started and stopped, which is why these operations should be fast.
+- Installation wizards and web-based configuration on first boot are acceptable.
+- Updates should be non-interactive. When updated, the app should migrate database schemas and configuration automatically.
+- Apps should not perform self-updates from inside the running container. The Quollix App Store is the primary update mechanism and updates apps by changing Docker image tags and restarting services. In-container updates can create state that no longer matches the declared image version.
+- Apps should disable automatic update checks and in-app update notifications where possible. Administrators should not receive newer-version notices through the app UI, because the Quollix App Store is the primary update mechanism.
 
 ### Networking and reverse proxy model
 
-* To simplify Quollix network integration, apps should not:
-  * Terminate TLS
-  * Manage certificates
-  * Enforce hard-coded domain checks
-  * Require IP allowlists
-  * Require WebSockets to work
-* If domain or URL awareness is required, it must be configurable via environment variables. Quollix can dynamically inject the base domain on startup to address this issue.
-* The main service must serve its web interface at the root path `/`.
+- To simplify Quollix network integration, apps should not:
+  - Terminate TLS
+  - Manage certificates
+  - Enforce hard-coded domain checks
+  - Require IP allowlists
+  - Require WebSockets to work
+- If domain or URL awareness is required, it must be configurable via environment variables. Quollix can dynamically inject the base domain on startup to address this issue.
+- The main service must serve its web interface at the root path `/`.
 
 ### Configuration model
 
@@ -73,26 +75,26 @@ Apps should not persist dynamic values injected through environment variables in
 
 #### Efficiency and simplicity
 
-* Apps should be efficient in terms of CPU, memory, and disk usage. Apps should be able to run on low-end hardware.
-* The app and its services should scale well vertically. For example, if a database is needed, prefer PostgreSQL over SQLite to support larger production workloads.
-* Docker images should be small. Minimal base images such as Alpine are preferred.
-  * For example, the Quollix Docker image based on Alpine, and we use `postgres-alpine` instead of `postgres` for the database container image.
-* Prefer compiled languages that produce small, static binaries, such as Go or Rust.
-* Keep the number of services in `docker-compose.yml` small to simplify operation and updating.
-  * Apps are deployed on a single node, so designing the software as a horizontally scalable, multi-container architecture is unnecessary.
-  * Ideally one main service with HTTP server, and optionally a database container if required
-  * Additional services (search engines, LLMs, etc.) only if necessary
-* Prefer a single, opinionated deployment approach. If multiple equivalent services or databases are possible, standardize on one instead of maintaining multiple app variants.
-  * We prefer PostgreSQL over MySQL/MariaDB as app database.
+- Apps should be efficient in terms of CPU, memory, and disk usage. Apps should be able to run on low-end hardware.
+- The app and its services should scale well vertically. For example, if a database is needed, prefer PostgreSQL over SQLite to support larger production workloads.
+- Docker images should be small. Minimal base images such as Alpine are preferred.
+  - For example, the Quollix Docker image based on Alpine, and we use `postgres-alpine` instead of `postgres` for the database container image.
+- Prefer compiled languages that produce small, static binaries, such as Go or Rust.
+- Keep the number of services in `docker-compose.yml` small to simplify operation and updating.
+  - Apps are deployed on a single node, so designing the software as a horizontally scalable, multi-container architecture is unnecessary.
+  - Ideally one main service with HTTP server, and optionally a database container if required
+  - Additional services (search engines, LLMs, etc.) only if necessary
+- Prefer a single, opinionated deployment approach. If multiple equivalent services or databases are possible, standardize on one instead of maintaining multiple app variants.
+  - We prefer PostgreSQL over MySQL/MariaDB as app database.
 
 #### Dependency handling
 
 If the main service depends on other services, for example a database, it should:
 
-* Attempt to connect on startup
-* Retry for a reasonable amount of time or number of attempts
-* Exit with an error if the dependency is unavailable
-* Expose an HTTP health endpoint for the main service. It should return HTTP 200 only once the server is running, required migrations are complete, and required integrated services are available and compatible.
+- Attempt to connect on startup
+- Retry for a reasonable amount of time or number of attempts
+- Exit with an error if the dependency is unavailable
+- Expose an HTTP health endpoint for the main service. It should return HTTP 200 only once the server is running, required migrations are complete, and required integrated services are available and compatible.
 
 If internal services require credentials, apps should use generated `SECRET_*` values instead of hard-coded defaults. Authentication should still be enforced on public entry points, usually through the exposed web service port.
 
@@ -100,9 +102,9 @@ If internal services require credentials, apps should use generated `SECRET_*` v
 
 Apps should tolerate frequent restarts and operational changes, including:
 
-* Domain changes
-* User creation, deletion, or renaming
-* Configuration changes
+- Domain changes
+- User creation, deletion, or renaming
+- Configuration changes
 
 Avoid hard-coded assumptions or irreversible dependencies.
 
@@ -124,17 +126,17 @@ Quollix collects logs centrally, so writing logs to the filesystem is unnecessar
 
 Apps should support integration with an OIDC provider. This enables integration with Quollix features such as:
 
-* Single sign-on
-* User management
-* Role- and group-based access control
+- Single sign-on
+- User management
+- Role- and group-based access control
 
 By relying on an OIDC provider, apps can delegate authentication and core user management to a central system. However, the app remains fully responsible for enforcing its own authorization logic.
 
 At the moment, Quollix provides these claims for integration:
 
-* Standard-style identity claims: `sub`, `name`, `preferred_username`, `email`
-* Standard token metadata claims in ID tokens: `iss`, `aud`, `exp`, `iat`, `nonce`
-* Quollix-specific custom claims: `role`, `groups`
+- Standard-style identity claims: `sub`, `name`, `preferred_username`, `email`
+- Standard token metadata claims in ID tokens: `iss`, `aud`, `exp`, `iat`, `nonce`
+- Quollix-specific custom claims: `role`, `groups`
 
 The custom claim `role` currently contains `admin` or `user`. The custom claim `groups` contains comma-separated list of [Quollix group names]({{< relref "docs/usage/groups" >}}) the user is member of. Apps can use these claims for authorization, role and group mapping if desired.
 
@@ -172,6 +174,6 @@ services:
 
 #### Identity model
 
-If an app supports OIDC, Quollix should be the primary source of truth for user identities. Self-registration and regular local account creation inside the app should therefore be disabled by default. A local admin account is acceptable for bootstrap or recovery, but should remain the exception.
+If an app supports OIDC, Quollix should be the primary source of truth for user identities. Self-registration features of the app should therefore be disabled by default or by environment variables.
 
-Apps should support account creation through OIDC sign-in. One good bootstrap model is that the first user who signs in through OIDC becomes an admin, while subsequent users become regular users. Another good option is to create a local admin account, while all other users sign in through OIDC.
+Some apps distinguish sign-in and account creation, where the latter sometimes requires extra configuration to be enabled. Instead, the preferred bootstrap model is that OIDC integration is configured through environment variables, as described in [OIDC integration](#oidc-integration), and accounts are created automatically through OIDC sign-in. The first user who signs in through OIDC should become an admin, while subsequent users become regular users. The second-best option is to create a local admin account on first visit, while all other users sign in through OIDC.

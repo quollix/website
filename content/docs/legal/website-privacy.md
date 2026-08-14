@@ -43,4 +43,4 @@ Under applicable data protection law, you may have rights of access, rectificati
 
 Because only limited technical data is processed and persistent access logs are configured not to store full visitor IP addresses, requests can only be handled where relevant data can be identified. The Maintainer is not required to collect or retain additional data only to identify visitors later.
 
-Requests may be submitted through the [feedback page]({{< relref "../feedback.md" >}}).
+Requests may be submitted through the [feedback page]({{< relref "docs/resources/feedback.md" >}}).

@@ -19,7 +19,7 @@ Every app runs in its own Docker container with no shared volumes, networks, or 
 
 ### Secure Supply Chain
 * Static code analysis tools run frequently.
-* Automated update tools ensure releases use the latest libraries and Docker images.
+* Automated update tools support regular updates of Quollix infrastructure, libraries, and Docker images.
 * Official apps are cryptographically signed, and Quollix verifies the signature when downloading them. This means that even if the App Store or an app release repository is compromised, attackers cannot silently modify official app content unless they also compromise the signing credentials.
 * This does not remove upstream supply-chain risk in the Docker images used by an app. Administrators who require additional assurance can inspect apps and upload them manually instead of relying on the public App Store.
 

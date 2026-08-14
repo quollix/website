@@ -6,17 +6,7 @@ This guide shows how to install Quollix for production use on a LAN or an intern
 
 1. **Choose a server**: for example, a virtual private server (VPS) from a hosting provider or a physical server at home. For provider-specific VPS notes, see the [Hetzner Cloud server setup]({{< relref "docs/self-hosting/hetzner-cloud.md" >}}) guide.
 2. **Install Docker**: install Docker on the server, see [Getting started]({{< relref "docs/getting-started/_index.md" >}}).
-3. **Configure DNS**: Decide which base domain Quollix should use. For example, if you want apps to be available at `nextcloud.example.com` and `vaultwarden.example.com`, the base domain is `example.com`. Quollix itself will be available at `quollix.example.com`. See [Base Domain]({{< relref "docs/usage/settings/base-domain.md" >}}) for details.
-
-  Create a single wildcard DNS record that points to the IP address of the Quollix server:
-
-  ```text
-  *.example.com  A  <server-ip>
-  ```
-
-  If you use IPv6, also configure the corresponding wildcard `AAAA` record.
-
-  For LAN setups, you can host your own DNS server or use your router's DNS server if supported. For public IP addresses, you usually need a public DNS server.
+3. **Configure DNS and network access**: Decide whether Quollix should be reachable from the public internet, only inside your LAN, or through a VPN. Quollix needs DNS names for itself and installed apps. See [DNS and Networking]({{< relref "docs/self-hosting/dns-and-networking.md" >}}) and [Base Domain]({{< relref "docs/usage/settings/base-domain.md" >}}) for details.
 
 4. **Create the Docker Compose file**: add a `docker-compose.yml` file:
 

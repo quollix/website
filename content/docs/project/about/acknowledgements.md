@@ -1,6 +1,5 @@
 ---
 title: "Acknowledgements"
-weight: 90
 ---
 
 Quollix is made possible by people and organizations committed to free and open source software.

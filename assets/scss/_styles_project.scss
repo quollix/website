@@ -19,13 +19,13 @@ footer {
   text-align: center;
 }
 
-footer nav {
+.footer-link-row {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
-footer nav a {
+.footer-link-row a {
   display: inline-flex;
   align-items: center;
   gap: 5px;

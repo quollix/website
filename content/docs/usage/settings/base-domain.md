@@ -1,17 +1,18 @@
 ---
 title: "Base Domain"
-weight: 10
 ---
+
+{{< ui-location "System" "Settings" "Base Domain" >}}
 
 The base domain is the domain suffix Quollix uses for itself and installed apps.
 
-For example, if the base domain is **example.com**:
+For example, if the base domain is `example.com`:
 
-* Quollix is available at **quollix.example.com**.
-* Installed apps are available at **<app-name>.example.com**, such as **nextcloud.example.com** or **vaultwarden.example.com**.
-* No Quollix service is served from the bare domain **example.com**.
+- Quollix is available at `quollix.example.com`.
+- Installed apps are available at `<app-name>.example.com`, such as `nextcloud.example.com` or `vaultwarden.example.com`.
+- No Quollix service is served from the base domain `example.com`.
 
-For local testing, you can simply use **localhost** as the base domain.
+For local testing, you can simply use `localhost` as the base domain.
 
 Note: This proxying requires that the domain (e.g. forgejo.company.com) resolves to the server where Quollix is installed, either via a DNS record or an entry in your system's hosts file.
 

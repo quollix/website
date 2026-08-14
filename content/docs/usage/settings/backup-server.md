@@ -1,7 +1,8 @@
 ---
 title: "Backup server"
-weight: 40
 ---
+
+{{< ui-location "System" "Settings" "Backup server" >}}
 
 {{< alert title="Note" color="warning" >}}
 We strongly recommend that you enable this feature. If your hard drive becomes irreversibly damaged, external backups may be the only way to recover your data.

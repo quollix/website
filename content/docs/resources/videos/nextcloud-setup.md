@@ -1,6 +1,5 @@
 ---
 title: "Set up Nextcloud in a minute"
-weight: 10
 ---
 
 {{< video name="nextcloud-setup" >}}

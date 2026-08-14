@@ -1,7 +1,8 @@
 ---
 title: "Maintenance"
-weight: 30
 ---
+
+{{< ui-location "System" "Settings" "Maintenance" >}}
 
 The features **Automatic Updates** and **Automatic Backups** are enabled by default and are handled by the Maintenance Agent in the background. The Maintenance Agent runs once a day.
 

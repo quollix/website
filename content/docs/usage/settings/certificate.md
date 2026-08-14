@@ -1,7 +1,8 @@
 ---
 title: "Certificate"
-weight: 20
 ---
+
+{{< ui-location "System" "Settings" "Certificate" >}}
 
 ## Certificate Operations
 

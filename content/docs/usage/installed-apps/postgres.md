@@ -4,12 +4,12 @@ title: "Postgres"
 
 ## Resources
 
-| Resource | Description |
-|----------|-------------|
-| Website | [postgresql.org](https://www.postgresql.org) |
-| Source code | [github.com/postgres/postgres](https://github.com/postgres/postgres) |
-| License | [PostgreSQL License](https://www.postgresql.org/about/licence/) |
-| ARM64 support | Supported |
+| Resource       | Description                                                                                                                                                       |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Website        | [postgresql.org](https://www.postgresql.org)                                                                                                                      |
+| Source code    | [github.com/postgres/postgres](https://github.com/postgres/postgres)                                                                                              |
+| License        | [PostgreSQL License](https://www.postgresql.org/about/licence/)                                                                                                   |
+| ARM64 support  | Supported                                                                                                                                                         |
 | Business model | Open source database maintained by the PostgreSQL Global Development Group, with commercial support and services available separately from third-party providers. |
 
 ## Introduction
@@ -24,8 +24,12 @@ Operations on **quollix / postgres** are intentionally limited. You can only cre
 
 ## Restoring Backups
 
-Restoring a backup of **quollix / postgres** restores Quollix system data, not the data of an ordinary app. This can affect users, settings, installed app metadata, and other Quollix state.
+Restoring a backup of **quollix / postgres** restores Quollix system data, not the data of an ordinary app.
 
 {{< alert title="Warning" color="warning" >}}
-Restoring the Postgres backup affects the Quollix installation as a whole. Create a current backup before restoring an older one.
+Restoring the Postgres backup affects the Quollix installation as a whole. Create a current backup of Postgres before restoring an older one.
+{{< /alert >}}
+
+{{< alert title="Warning" color="warning" >}}
+Restoring an older Postgres backup can make Quollix metadata inconsistent with installed apps, for example when app secrets no longer match. If this happens after restoring Postgres, restore the backups of the affected apps to fix the inconsistency.
 {{< /alert >}}

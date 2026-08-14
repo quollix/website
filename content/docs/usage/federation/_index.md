@@ -2,6 +2,8 @@
 title: "Federation"
 ---
 
+{{< ui-location "Federation" >}}
+
 Federation connects Quollix servers and compatible OIDC clients through shared identity providers. It is based on two features:
 
 * Quollix can act as an [OIDC provider]({{<relref "docs/usage/federation/oidc-providers.md">}})

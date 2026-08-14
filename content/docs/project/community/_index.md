@@ -1,6 +1,5 @@
 ---
 title: "Community"
-weight: 37
 ---
 
 Quollix is developed in the open, and we welcome everyone interested in the project.

@@ -10,6 +10,6 @@ Please test responsibly. Do not target other users' deployments, third-party sys
 
 Do not perform denial-of-service attacks, degrade service availability, misuse the service, retain unauthorized access, publish secrets, or continue exercising a vulnerability after you have confirmed it.
 
-If you find a vulnerability, please report it privately through the [feedback page]({{< relref "../feedback.md" >}}) before public disclosure. Include the affected component, reproduction steps, impact, and any relevant logs or screenshots.
+If you find a vulnerability, please report it privately through the [feedback page]({{< relref "docs/resources/feedback.md" >}}) before public disclosure. Include the affected component, reproduction steps, impact, and any relevant logs or screenshots.
 
 We will review reports as quickly as practical. Please give us reasonable time to investigate and fix confirmed issues before publishing details.

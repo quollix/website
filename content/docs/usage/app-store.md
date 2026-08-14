@@ -1,8 +1,9 @@
 ---
 title: "App store"
-weight: 20
 no_list: true
 ---
+
+{{< ui-location "Apps" "Store" >}}
 
 This article explains the **App Store page** in the Quollix GUI. The actual [App Store](https://store.quollix.org/) is a separate online service.
 
