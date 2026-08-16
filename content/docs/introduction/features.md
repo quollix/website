@@ -12,7 +12,7 @@ Legend:
 | Feature                                                            | Implementation Status |
 | ------------------------------------------------------------------ | :-------------------: |
 | [Access Policy]({{< relref "docs/usage/installed-apps" >}})        |    {{<checkmark>}}    |
-| [App Store]({{< relref "docs/usage/app-store.md" >}})              |      {{<tilde>}}      |
+| [App Store]({{< relref "docs/project/app-store" >}})               |      {{<tilde>}}      |
 | [App Secrets]({{< relref "docs/usage/app-secrets.md" >}})          |    {{<checkmark>}}    |
 | [Backups]({{< relref "docs/usage/backups.md" >}})                  |    {{<checkmark>}}    |
 | [Certificate]({{< relref "docs/usage/settings/certificate.md" >}}) |    {{<checkmark>}}    |

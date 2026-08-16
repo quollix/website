@@ -27,3 +27,5 @@ Please read the [Contributing](https://quollix.org/docs/community/contributing/)
 ### License
 
 This website content is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/deed.en). See [LICENSE](LICENSE) for details.
+
+Third-party assets are distributed under their own licenses. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

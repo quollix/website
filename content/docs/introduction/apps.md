@@ -16,10 +16,12 @@ These are the apps from the official maintainer 'quollix' currently available on
 | App | Description | OIDC SSO | Website |
 |-----|-------------|:--------:|---------|
 | Forgejo | Git server for code hosting and collaboration. | {{<checkmark>}} | [forgejo.org](https://forgejo.org) |
+| Grist | Relational spreadsheet for structured data and lightweight apps. | {{<checkmark>}} | [getgrist.com](https://www.getgrist.com) |
 | HedgeDoc | Real-time collaborative markdown notes. | {{<checkmark>}} | [hedgedoc.org](https://hedgedoc.org) |
 | Jitsi | Video meetings in the browser. | {{<cross>}} | [jitsi.org](https://jitsi.org/jitsi-meet/) |
 | Nextcloud | File sync, sharing, calendars, contacts, and collaboration. | {{<checkmark>}} | [nextcloud.com](https://nextcloud.com) |
 | Vaultwarden | Password manager compatible with Bitwarden clients. | {{<checkmark>}} | [vaultwarden.net](https://www.vaultwarden.net) |
+| Vikunja | Task and project management with lists, boards, and calendars. | {{<checkmark>}} | [vikunja.io](https://vikunja.io) |
 | Wiki.js | Wiki for team and project documentation. | {{<checkmark>}} | [js.wiki](https://js.wiki) |
 | WordPress | Website and blog publishing system. | {{<cross>}} | [wordpress.org](https://wordpress.org) |
 | Zulip | Team chat with topic-based conversations. | {{<checkmark>}} | [zulip.com](https://zulip.com) |

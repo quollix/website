@@ -11,7 +11,7 @@ title: "WordPress"
 | License | [GPLv2 or later](https://wordpress.org/about/license/) |
 | ARM64 support | Supported |
 | OIDC client | Community plugin |
-| Business model | Open source software project with a commercial ecosystem of hosting, services, themes, and plugins. |
+| Business model | Fully open source software with commercial hosting, services, and official ecosystem add-ons from Automattic/Woo, plus paid third-party plugins and themes. |
 
 ## Setup
 

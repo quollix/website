@@ -50,7 +50,7 @@ If the uploaded app does not exist yet, a new app will be created from the file.
 
 The app-specific pages below describe any initial manual setup that may be needed after installing an app.
 
-Quollix tries to automate generic platform integration. Some apps follow this model closely, as described in the [app design recommendations]({{< relref "docs/project/app-development/app-design-recommendations.md" >}}), and work with little or no extra configuration.
+Quollix tries to automate generic platform integration. Some apps follow this model closely, as described in the [app design recommendations]({{< relref "docs/project/app-store/app-design-recommendations.md" >}}), and work with little or no extra configuration.
 
 Other apps have their own first-run setup, require manual interaction, or settings that depend on how you want to use the app. In those cases, Quollix documents the required steps.
 

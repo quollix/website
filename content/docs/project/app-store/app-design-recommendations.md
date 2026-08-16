@@ -4,6 +4,8 @@ title: "App Design Recommendations"
 
 This document is intended for developers who develop software and want to distribute it through the Quollix App Store. You are free to design your app in any way you like. However, following the recommendations ensures smooth integration with Quollix and improves the experience for administrators and end users.
 
+Tip: Downloading a few official app definitions from the Quollix UI and inspecting their `docker-compose.yml` files can be useful. Some recommendations below are easier to understand when compared with working examples.
+
 ## Introduction and development model
 
 Any software that provides a web interface can be published as an app in the Quollix App Store. At a high level, the development and distribution flow looks like this:
@@ -11,8 +13,6 @@ Any software that provides a web interface can be published as an app in the Quo
 - You package your software as a Docker image and publish it to a public registry.
 - You provide a `docker-compose.yml` that follows Quollix conventions and upload the app to the Quollix App Store.
 - Users can download the app from the App Store and install it on their Quollix servers.
-
-It may be useful to download a few official app definitions from the Quollix UI and inspect their `docker-compose.yml` files. Some recommendations below are easier to understand when compared with working examples.
 
 ## What Quollix handles for you
 
@@ -29,6 +29,10 @@ Relying on these platform features avoids duplication and prevents potential int
 
 ## Design recommendations
 
+### The ideal integration
+
+Ideally, an administrator installs an app, opens it, signs in directly through Quollix via OIDC, and can use the app without any manual setup. [Vikunja]({{< relref "docs/usage/installed-apps/vikunja.md" >}}) and [HedgeDoc]({{< relref "docs/usage/installed-apps/hedgedoc.md" >}}) are good examples of this model.
+
 ### Platform compatibility
 
 - Apps should support both AMD64 and ARM64 architectures by publishing multi-platform Docker images.
@@ -39,7 +43,7 @@ Relying on these platform features avoids duplication and prevents potential int
 - All services defined in `docker-compose.yml` must use clear, descriptive names that explicitly indicate the software they run. For example, use 'postgres' instead of 'db', 'database' or 'service1'.
 - Docker image tags should use release versions in the format `X.Y.Z`, for example `1.2.3`.
 - App Docker containers are frequently started and stopped, which is why these operations should be fast.
-- Installation wizards and web-based configuration on first boot are acceptable.
+- Apps should be usable immediately on first visit and take users directly to the app's landing page. Avoid installation wizards and web-based configuration on first boot by using environment variables instead. Also avoid welcome popups, guided onboarding, tutorial modals, and informational overlays.
 - Updates should be non-interactive. When updated, the app should migrate database schemas and configuration automatically.
 - Apps should not perform self-updates from inside the running container. The Quollix App Store is the primary update mechanism and updates apps by changing Docker image tags and restarting services. In-container updates can create state that no longer matches the declared image version.
 - Apps should disable automatic update checks and in-app update notifications where possible. Administrators should not receive newer-version notices through the app UI, because the Quollix App Store is the primary update mechanism.
@@ -57,13 +61,13 @@ Relying on these platform features avoids duplication and prevents potential int
 
 ### Configuration model
 
-Configuration should be handled by the app itself and should not complicate deployment. The `docker-compose.yml` should be lean. Preferred configuration order:
+Configuration should be handled by the app itself and should not complicate deployment. The `docker-compose.yml` should stay lean. If configuration is necessary, use the following preference order:
 
 1. Opinionated defaults built into the app. These should cover the common use cases and remain hidden from compose yamls where possible.
 2. Environment variables in `docker-compose.yml`.
-3. Web-based configuration via the app’s UI. Used for settings that may change over time.
+3. Web-based or CLI-based configuration. Usually used for settings that may change over time.
 
-Manual configuration via the command line or direct editing of config files is discouraged, as it increases operational complexity. Internally managed config files are acceptable if they are fully controlled by the app.
+Direct editing of config files is discouraged. Internally managed config files are acceptable if they are fully controlled by the app.
 
 #### Environment variables
 
@@ -81,9 +85,9 @@ Apps should not persist dynamic values injected through environment variables in
   - For example, the Quollix Docker image based on Alpine, and we use `postgres-alpine` instead of `postgres` for the database container image.
 - Prefer compiled languages that produce small, static binaries, such as Go or Rust.
 - Keep the number of services in `docker-compose.yml` small to simplify operation and updating.
-  - Apps are deployed on a single node, so designing the software as a horizontally scalable, multi-container architecture is unnecessary.
-  - Ideally one main service with HTTP server, and optionally a database container if required
-  - Additional services (search engines, LLMs, etc.) only if necessary
+  - Apps are deployed on a single node, so a horizontally scalable microservice architecture usually adds operational overhead without benefit.
+  - Ideally one monolithic main service with an HTTP server, and optionally a database container if required.
+  - Add separate services, such as search engines or LLMs, only when they are necessary.
 - Prefer a single, opinionated deployment approach. If multiple equivalent services or databases are possible, standardize on one instead of maintaining multiple app variants.
   - We prefer PostgreSQL over MySQL/MariaDB as app database.
 

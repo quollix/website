@@ -11,7 +11,7 @@ title: "Forgejo"
 | License | [GPLv3 or later](https://forgejo.org/faq/#is-forgejo-licensed-under-the-gpl) |
 | ARM64 support | Supported |
 | OIDC client | Native |
-| Business model | Community-governed open source project under Codeberg e.V. stewardship. |
+| Business model | Fully open source project under Codeberg e.V. stewardship. |
 
 ## Introduction
 

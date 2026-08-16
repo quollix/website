@@ -11,7 +11,7 @@ title: "Wiki.js"
 | License | [AGPL-3.0](https://github.com/requarks/wiki/blob/main/LICENSE) |
 | ARM64 support | Supported |
 | OIDC client | Native |
-| Business model | Open source project with funding and sponsorship options. |
+| Business model | Fully open source project with funding and sponsorship options. |
 
 ## Setup
 

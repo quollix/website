@@ -11,7 +11,7 @@ title: "Jitsi"
 | License | [Apache-2.0](https://github.com/jitsi/jitsi-meet/blob/master/LICENSE) |
 | ARM64 support | Supported |
 | OIDC client | Not supported |
-| Business model | Open source project built by 8x8 and the community; hosted and commercial services are available separately. |
+| Business model | Fully open source project built by 8x8 and the community; hosted and commercial services are available separately. |
 
 ## Introduction
 

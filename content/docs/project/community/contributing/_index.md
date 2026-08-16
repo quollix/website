@@ -58,7 +58,7 @@ High-value improvements include:
 * OIDC authorization code flow support for confidential clients
 * automatic OIDC client configuration through Docker environment variables
 
-See [App Design Recommendations]({{< relref "docs/project/app-development/app-design-recommendations.md" >}}) for details.
+See [App Design Recommendations]({{< relref "docs/project/app-store/app-design-recommendations.md" >}}) for details.
 
 ## Improve Security
 

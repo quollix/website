@@ -10,7 +10,7 @@ title: "Postgres"
 | Source code    | [github.com/postgres/postgres](https://github.com/postgres/postgres)                                                                                              |
 | License        | [PostgreSQL License](https://www.postgresql.org/about/licence/)                                                                                                   |
 | ARM64 support  | Supported                                                                                                                                                         |
-| Business model | Open source database maintained by the PostgreSQL Global Development Group, with commercial support and services available separately from third-party providers. |
+| Business model | Fully open source database maintained by the PostgreSQL Global Development Group, with commercial support and services available separately from third-party providers. |
 
 ## Introduction
 

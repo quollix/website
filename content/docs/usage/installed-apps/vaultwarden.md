@@ -11,7 +11,7 @@ title: "Vaultwarden"
 | License | [AGPL-3.0](https://github.com/dani-garcia/vaultwarden/blob/main/LICENSE.txt) |
 | ARM64 support | Supported |
 | OIDC client | Native |
-| Business model | Community-maintained, donation-supported project; unofficial Bitwarden-compatible server. |
+| Business model | Fully open source, community-maintained, donation-supported project; unofficial Bitwarden-compatible server. |
 
 ## Setup
 

@@ -11,7 +11,7 @@ title: "Zulip"
 | License | [Apache-2.0](https://github.com/zulip/zulip/blob/main/LICENSE) |
 | ARM64 support | Supported |
 | OIDC client | Native |
-| Business model | Open source server with Zulip Cloud, paid plans, and commercial support available separately. |
+| Business model | Fully open source server with Zulip Cloud and paid self-hosted plans for commercial support and hosted push-notification relay. |
 
 ## Setup
 

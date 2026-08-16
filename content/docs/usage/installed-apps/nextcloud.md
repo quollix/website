@@ -11,7 +11,7 @@ title: Nextcloud
 | License | [AGPL-3.0](https://github.com/nextcloud/server/blob/master/COPYING) |
 | ARM64 support | Supported |
 | OIDC client | Official plugin |
-| Business model | Open source server with enterprise subscriptions, support, and hosted/provider options available separately. |
+| Business model | Fully open source server with paid enterprise subscriptions for support, long-term maintenance, certified builds, and enterprise delivery. |
 
 ## Initial setup
 
