@@ -6,18 +6,18 @@ title: "Contributing"
 
 You can also support Quollix by helping more people learn about the project:
 
-* talk with potentially interested friends, colleagues, or organizations
-* share it on social media
-* write blogs or reviews where they are useful
-* suggest other practical ways to reach people who may benefit from Quollix
+- talk with potentially interested friends, colleagues, or organizations
+- share it on social media
+- write blogs or reviews where they are useful
+- suggest other practical ways to reach people who may benefit from Quollix
 
 ## Provide Feedback
 
-If you are familiar with GitHub, you can provide feedback through GitHub issues or discussions. If not, use the [feedback page]({{< relref "docs/resources/feedback.md" >}}).
+If you are familiar with GitHub, you can provide feedback through GitHub issues or discussions. If not, use the [feedback page]({{< relref "docs/contact/feedback.md" >}}).
 
 ## Contribute on GitHub
 
-Quollix code repositories use the permissive [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). Website content uses the permissive [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0). Contributions are made under the license of the repository being contributed to. Quollix does not require a Contributor License Agreement (CLA) or separate legal paperwork.
+Quollix code repositories use the permissive [MIT License](https://opensource.org/license/mit). Website content uses the permissive [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0). Contributions are made under the license of the repository being contributed to. Quollix does not require a Contributor License Agreement (CLA) or separate legal paperwork.
 
 {{< alert title="Note" color="warning" >}}
 GitHub is the right place for contributions and development discussions, but not for user support requests.
@@ -41,7 +41,7 @@ Small fixes can be provided directly as PRs. Before creating a feature PR, open 
 
 ## Build Integrations
 
-Quollix includes a Go API client in the  [common](https://github.com/quollix/common) repository at `quollix/api_client`. It is used by Quollix tooling and can also be useful for experiments, automation, or external tools built around Quollix.
+Quollix includes a Go API client in the [common](https://github.com/quollix/common) repository at `quollix/api_client`. It is used by Quollix tooling and can also be useful for experiments, automation, or external tools built around Quollix.
 
 ## Expand the App Store
 
@@ -55,11 +55,11 @@ You can also help by improving the upstream software used by apps in the Quollix
 
 High-value improvements include:
 
-* OIDC authorization code flow support for confidential clients
-* automatic OIDC client configuration through Docker environment variables
+- OIDC authorization code flow support for confidential clients
+- automatic OIDC client configuration through Docker environment variables
 
 See [App Design Recommendations]({{< relref "docs/project/app-store/app-design-recommendations.md" >}}) for details.
 
 ## Improve Security
 
-Security-related contributions are useful. Please follow the [Security Policy]({{< relref "docs/legal/security.md" >}}) when researching and reporting vulnerabilities.
+Security-related contributions are useful. Please follow the [Security Policy]({{< relref "docs/contact/security.md" >}}) when researching and reporting vulnerabilities.

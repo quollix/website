@@ -5,7 +5,7 @@ weight: 40
 
 Several projects try to make self-hosting easier, but they are not all direct replacements for each other. This comparison should help you find the solution that best fits your use case. We aim to be fair and neutral.
 
-This article is based on our current understanding of the projects listed below. Projects change over time, so corrections, updates, and feedback are welcome through the [feedback page]({{< relref "docs/resources/feedback.md" >}}).
+This article is based on our current understanding of the projects listed below. Projects change over time, so corrections, updates, and feedback are welcome through the [feedback page]({{< relref "docs/contact/feedback.md" >}}).
 
 This comparison focuses on open source platforms that make self-hosting easier through an opinionated app deployment model. Related projects that do not fit this scope are listed at the end of this article with the reason why they are not part of the main comparison.
 
@@ -30,7 +30,7 @@ Common traits of the included projects:
 
 | Aspect                | Quollix                                       | FreedomBox                      | YunoHost                                 | Runtipi                          | StartOS                      |
 | --------------------- | --------------------------------------------- | ------------------------------- | ---------------------------------------- | -------------------------------- | ---------------------------- |
-| License               | Apache 2.0                                    | AGPL-3.0                        | AGPL-3.0                                 | GPL-3.0                          | MIT                          |
+| License               | MIT                                           | AGPL-3.0                        | AGPL-3.0                                 | GPL-3.0                          | MIT                          |
 | License complexity    | Low, permissive                               | Higher, copyleft                | Higher, copyleft                         | Higher, copyleft                 | Low, permissive              |
 | Primary product focus | Low-complexity extensible Docker self-hosting | Privacy-focused personal server | Debian-based self-hosting administration | One-click Docker homeserver apps | Sovereign personal server OS |
 

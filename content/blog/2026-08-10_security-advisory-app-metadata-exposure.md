@@ -7,7 +7,7 @@ Quollix `v1.2.13` fixes an issue where non-admin callers could receive admin-lev
 
 ## Recommended action
 
-Update Quollix to `v1.2.13` or newer. For apps that may have been visible to untrusted users, regenerate their OIDC credentials in `Apps -> SSO` and update the affected app configuration if needed. Update HedgeDoc and Zulip to the latest version to renew the legacy signing or session secret value.
+Update Quollix to `v1.2.13` or newer. For apps that may have been visible to untrusted users, regenerate their OIDC credentials in `Apps → SSO` and update the affected app definition if needed. Update HedgeDoc and Zulip to the latest version to renew the legacy signing or session secret value.
 
 ## Affected versions
 

@@ -2,6 +2,8 @@
 title: "Production setup"
 ---
 
+For an example walkthrough, see the [speedrun production setup video]({{< relref "docs/getting-started/videos/speedrun-production-setup.md" >}}).
+
 This guide shows how to install Quollix for production use on a LAN or an internet-facing server. The examples assume a base domain such as `example.com`, referred to below as `<base-domain>`.
 
 1. **Choose a server**: for example, a virtual private server (VPS) from a hosting provider or a physical server at home. For provider-specific VPS notes, see the [Hetzner Cloud server setup]({{< relref "docs/self-hosting/hetzner-cloud.md" >}}) guide.
@@ -34,6 +36,8 @@ If you want to configure the initial administrator account, read the [initial ad
 sudo docker compose up -d
 ```
 
+For production deployments, we recommend updating Quollix once a day so you quickly receive the latest fixes and features. The [automatic updates]({{< relref "docs/self-hosting/automatic-updates.md" >}}) guide shows how to handle this with a cronjob.
+
 6. **Open the web interface**: visit `https://quollix.<base-domain>`. Quollix initially uses a self-signed certificate, so your browser will show a certificate warning. Continue only if you trust the network path to the server. A trusted certificate is configured later in this guide.
 7. **Find the initial password**: Quollix logs a random initial password on first startup:
 
@@ -41,9 +45,7 @@ sudo docker compose up -d
 sudo docker logs quollix_quollix_quollix | grep "initial admin password"
 ```
 
-8. **Sign in**: use the username `administrator` with the generated password from the logs.
-
-After signing in, open the Settings page in Quollix.
+8. **Sign in**: use the username `administrator` with the generated password from the logs. After signing in, open the Settings page in Quollix.
 
 9. **Set the base domain**: set **Base Domain** to `<base-domain>`, and save.
 10. **Set up a certificate**: in the Certificates section, start the challenge to generate a wildcard certificate, then follow the instructions until you see a success message. Restart the browser because browsers usually cache the old self-signed certificate.

@@ -2,6 +2,7 @@
 title: "Feedback"
 aliases:
   - /docs/feedback/
+  - /docs/resources/feedback/
 ---
 
 We appreciate feedback about:
@@ -13,7 +14,7 @@ We appreciate feedback about:
 
 | Topic                  | Use this for                                                                                                                                                                      | Action                                                                                                                 |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Security vulnerability | Responsible disclosure or suspected vulnerabilities in Quollix. Please read the [Security Policy]({{< relref "docs/legal/security.md" >}}) first.                                 | <button type="button" class="feedback-draft-button" onclick="window.openSecurityFeedbackMail()">Open draft</button>    |
+| Security vulnerability | Responsible disclosure or suspected vulnerabilities in Quollix. Please read the [Security Policy]({{< relref "docs/contact/security.md" >}}) first.                              | <button type="button" class="feedback-draft-button" onclick="window.openSecurityFeedbackMail()">Open draft</button>    |
 | Bug report             | Reproducible behavior that seems incorrect.                                                                                                                                       | <button type="button" class="feedback-draft-button" onclick="window.openBugFeedbackMail()">Open draft</button>         |
 | Suggest an improvement | Feature ideas, additional official apps, [website text improvements]({{< relref "docs/project/community/contributing/website.md" >}}), and workflows that feel confusing or slow. | <button type="button" class="feedback-draft-button" onclick="window.openImprovementFeedbackMail()">Open draft</button> |
 

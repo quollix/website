@@ -1,5 +1,7 @@
 ---
 title: "Set up Nextcloud in a minute"
+aliases:
+  - /docs/resources/videos/nextcloud-setup/
 ---
 
 {{< video name="nextcloud-setup" >}}

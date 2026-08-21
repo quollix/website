@@ -13,6 +13,10 @@ title: "Forgejo"
 | OIDC client | Native |
 | Business model | Fully open source project under Codeberg e.V. stewardship. |
 
+{{< alert title="Network prerequisite" color="warning" >}}
+If you want to use Forgejo over SSH, TCP port `2223` must be reachable by Git clients. Make sure nothing in front of Quollix blocks this port.
+{{< /alert >}}
+
 ## Introduction
 
 A general rule in Forgejo is that some settings cannot be changed via the web GUI once the installation wizard is completed. However, you can still modify them by directly editing the `app.ini` file inside the container as described below. Therefore, we recommend that you familiarize yourself with the potential configuration options before deploying a production instance.
@@ -42,7 +46,7 @@ Save the `app.ini` file and restart the app.
 
 ## Single Sign-On
 
-* In Quollix, go to `Apps -> SSO` and copy Forgejo's client ID and client secret
+* In Quollix, go to `Apps → SSO` and copy Forgejo's client ID and client secret
 * Visit Forgejo
 * Go to Site Administration → Identity & Access → Authentication Sources → Add Authentication Source
 * Authentication type: OAuth2

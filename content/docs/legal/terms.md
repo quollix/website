@@ -14,7 +14,7 @@ These Terms do not govern use, copying, modification, or distribution of the Quo
 
 The public services are operated by the Quollix maintainers (“Maintainer”).
 
-Legal and policy requests may be submitted through the [feedback page]({{< relref "docs/resources/feedback.md" >}}).
+Legal and policy requests may be submitted through the [feedback page]({{< relref "docs/contact/feedback.md" >}}).
 
 ## 2. Acceptable Use
 

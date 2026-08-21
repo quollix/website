@@ -62,7 +62,7 @@ Quollix can act as an OIDC provider. This allows apps deployed with Quollix, oth
 Quollix can also act as an OIDC client, so users can sign in through another OIDC provider. Potential providers include Google, Microsoft Entra ID, authentik, Okta, or another Quollix server.
 
 {{< alert title="Note" color="warning" >}}
-Quollix uses generic OIDC client support, so standards-compliant providers should work. The external providers mentioned above have not been tested by the Quollix project yet. If you use Quollix with one of them, feedback and integration reports are welcome through the <a href='{{< relref "docs/resources/feedback.md" >}}'>feedback page</a>.
+Quollix uses generic OIDC client support, so standards-compliant providers should work. The external providers mentioned above have not been tested by the Quollix project yet. If you use Quollix with one of them, feedback and integration reports are welcome through the <a href='{{< relref "docs/contact/feedback.md" >}}'>feedback page</a>.
 {{< /alert >}}
 
 Together, these provider and client capabilities make up Quollix federation, where multiple Quollix servers can share identity.

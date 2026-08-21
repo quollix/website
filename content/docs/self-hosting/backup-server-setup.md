@@ -39,7 +39,7 @@ networks:
 docker compose up -d
 ```
 
-Use these values on the Quollix **Settings -> Backup server** page:
+Use these values on the Quollix **Settings → Backup server** page:
 
 | Field | Value |
 | --- | --- |
@@ -57,7 +57,7 @@ This example uses [Hetzner Storage Box](https://www.hetzner.com/storage/storage-
 1. Create a Hetzner account.
 1. Open the [Hetzner Cloud Console](https://console.hetzner.com/projects).
 1. Create a project.
-1. Open **Storage -> Storage Boxes**.
+1. Open **Storage → Storage Boxes**.
 1. Create a Storage Box.
 1. In **Access**, add your public SSH key and define a password.
 1. Click **Create & Buy now**.
@@ -67,7 +67,7 @@ This example uses [Hetzner Storage Box](https://www.hetzner.com/storage/storage-
 1. Save the settings.
 1. Open the new Storage Box and copy its host and user values.
 
-Use these values on the Quollix **Settings -> Backup server** page:
+Use these values on the Quollix **Settings → Backup server** page:
 
 | Field | Value |
 | --- | --- |

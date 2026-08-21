@@ -24,6 +24,7 @@ Quollix provides a standardized operational environment. App developers should a
 - Backups and restores
 - Log rotation, monitoring and alerting
 - User management (when your app supports OIDC)
+- Selected [service migrations]({{< relref "docs/project/app-store/service-migration.md" >}}) during app updates
 
 Relying on these platform features avoids duplication and prevents potential interference between app-level and platform-level behavior.
 

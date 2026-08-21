@@ -14,4 +14,4 @@ I care about privacy, open source, and digital sovereignty, which led me to self
 
 Quollix is my attempt to make decentralization more practical. By making self-hosting simpler, I hope to give people and organizations the freedom to choose solutions that put openness, control, and long-term independence first.
 
-I build Quollix in the open and welcome [feedback]({{< relref "docs/resources/feedback.md">}}) and [contributions]({{< relref "docs/project/community/contributing/_index.md">}}) from anyone interested in making self-hosting more accessible.
+I build Quollix in the open and welcome [feedback]({{< relref "docs/contact/feedback.md">}}) and [contributions]({{< relref "docs/project/community/contributing/_index.md">}}) from anyone interested in making self-hosting more accessible.

@@ -11,6 +11,12 @@ The App Store lets you search and install apps on your Quollix server with just 
 
 Quollix does not depend on the App Store. You can manually upload apps to, or download apps from, your Quollix server on the Installed Apps page. The App Store is just the most convenient way to install and update apps.
 
+## Why Do Some Versions Have the Same Number?
+
+The visible version usually follows the main service in the app definition. For example, a Nextcloud app version normally reflects the Nextcloud container version. An app definition can still change even when the main service version stays the same. Maintainers may update supporting services such as databases or adjust the Docker Compose configuration. In those cases, the App Store can contain entries with the same version.
+
+Quollix uses the newest version timestamp to decide which entry is the latest. If two entries have the same version string, the newer timestamp identifies the newer app definition.
+
 ## Official Apps
 
 {{< alert title="Note" color="warning" >}}
@@ -23,14 +29,14 @@ Official apps are maintained for reliable installation and Quollix integration. 
 
 ## Unofficial Apps
 
-Unofficial apps are created by third parties. Only install them when you trust the maintainer and understand that the app configuration may run containers, access app data, use system resources, or expose services on your server.
+Unofficial apps are created by third parties. Only install them when you trust the maintainer and understand that the app definition may run containers, access app data, use system resources, or expose services on your server.
 
-Manual app uploads follow the same trust model. Upload an app file only if you trust its source. If the uploaded app already exists, Quollix updates the existing app configuration.
+Manual app uploads follow the same trust model. Upload an app definition only if you trust its source. If the uploaded app already exists, Quollix updates the existing app definition.
 
 Automatic updates for third-party apps should be enabled only when you trust the maintainer to publish future versions without reviewing every change yourself.
 
 ## Licensing
 
-The App Store contains app configurations, specifically a `docker-compose.yml` file, rather than the application software itself. App configurations distributed through the App Store are open source software, so you may download, modify, and redistribute them.
+The App Store contains app definitions, specifically a `docker-compose.yml` file, rather than the app container images themselves. App definitions distributed through the App Store are open source software, so you may download, modify, and redistribute them.
 
-The container images referenced by an app configuration contain the application software. They are separate works and are governed by their own licenses.
+The container images referenced by an app definition are separate works and are governed by their own licenses.

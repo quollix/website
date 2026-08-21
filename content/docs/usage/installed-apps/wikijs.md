@@ -52,7 +52,7 @@ Administration > Users > Groups:
 
 Administration > Modules > Authentication > Add Strategy > Generic OpenID Connect / OAuth2
 
-In Quollix, go to `Apps -> SSO` and copy the Wiki.js client ID and client secret. Paste them into the matching Wiki.js fields.
+In Quollix, go to `Apps → SSO` and copy the Wiki.js client ID and client secret. Paste them into the matching Wiki.js fields.
 
 Fill in these endpoint URLs, replacing `<base-domain>` with your Quollix base domain:
 

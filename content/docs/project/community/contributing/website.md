@@ -30,13 +30,4 @@ When writing website content:
 
 ## Terminology
 
-Use the preferred terms below so the same concept is described with the same wording throughout the site.
-
-| Term                    | Description                                                                                                     | Avoid                                                   |
-|-------------------------|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
-| Authorization code flow | Browser-based OIDC sign-in flow where an app uses OIDC client credentials to authenticate with an OIDC provider. |                                                         |
-| OIDC client             | Application or service that lets users sign in through an OIDC provider.                                         | Client, app, service when the OIDC role should be clear |
-| OIDC provider           | Service that authenticates users for OIDC sign-in.                                                               | Identity provider, authentication provider, auth provider |
-| Quollix server          | Server that runs Quollix.                                                                                        | Quollix instance, node                                  |
-| Server                  | Physical or virtual machine that runs software or accepts network connections.                                   | Node                                                    |
-| Sign-in                 | User authentication action.                                                                                      | Login, log in                                           |
+When writing content for the website, follow the [Terminology]({{< relref "docs/project/terminology.md" >}}) article.

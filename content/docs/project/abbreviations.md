@@ -1,5 +1,7 @@
 ---
 title: "Abbreviations"
+aliases:
+  - /docs/resources/abbreviations/
 ---
 
 | Abbreviation | Meaning                               |

@@ -16,9 +16,9 @@ Read [Who Is Quollix For]({{< relref "introduction/who-is-quollix-for.md" >}}) a
 
 See Quollix in action:
 
-- [Set up Nextcloud in a minute]({{< relref "docs/resources/videos/nextcloud-setup.md" >}})
-- [Basic features demonstration]({{< relref "docs/resources/videos/basic-features-demo.md" >}})
-- [Speedrun: production setup from scratch in 8 minutes]({{< relref "docs/resources/videos/speedrun-production-setup.md" >}})
+- [Set up Nextcloud in a minute]({{< relref "docs/getting-started/videos/nextcloud-setup.md" >}})
+- [Basic features demonstration]({{< relref "docs/getting-started/videos/basic-features-demo.md" >}})
+- [Speedrun: production setup from scratch in 8 minutes]({{< relref "docs/getting-started/videos/speedrun-production-setup.md" >}})
 
 ## Choose your starting point
 

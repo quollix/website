@@ -1,5 +1,7 @@
 ---
 title: "Federation setup"
+aliases:
+  - /docs/resources/videos/federation-setup/
 ---
 
 {{< video name="federation-setup" >}}

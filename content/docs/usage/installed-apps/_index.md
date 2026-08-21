@@ -11,7 +11,7 @@ On the Installed Apps page, you can manage your apps. You can perform the follow
 * Backup
 * Update, which will create a backup and then install the latest version of the app.
 * Delete, which removes the app and its artifacts; only its backups are preserved.
-* Download, which provides the app configuration.
+* Download, which provides the app definition.
 
 ## First start
 
@@ -25,7 +25,7 @@ Apps use the `Admin only` access policy by default. This is the safest option be
 
 Available access policies are:
 
-* `Admin only`: Only Quollix administrators can access the app.
+* `Admin only`: Only administrators can access the app.
 * `Authenticated`: Any signed-in Quollix user can access the app.
 * `Group restricted`: Only signed-in users who belong to an authorized group can access the app. See [Groups]({{< relref "docs/usage/groups" >}}).
 * `Public`: Anyone can access the app without signing in to Quollix.
@@ -42,7 +42,7 @@ Typical use cases for public apps include:
 
 You can manually download and upload apps locally without relying on the official App Store. Backups will still be handled automatically. However, this approach increases your maintenance responsibility because updates must be performed manually. Enabling automatic updates via the app store later for an uploaded app may lead to incompatibilities if the configurations differ.
 
-Only upload app files from sources you trust. App configurations can run containers, access app data, use system resources, and expose services on your server.
+Only upload app definitions from sources you trust. App definitions can run containers, access app data, use system resources, and expose services on your server.
 
 If the uploaded app does not exist yet, a new app will be created from the file. If the app already exists, the existing app will be updated. If enabled, a backup may be created before the update.
 
