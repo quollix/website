@@ -21,7 +21,7 @@ minify:
 module:
   proxy: "direct"
   imports:
-    - path: "github.com/google/docsy"
+    - path: "github.com/google/docsy/theme"
 
 params:
   github_repo: "https://github.com/quollix/website"
