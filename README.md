@@ -22,7 +22,7 @@ Open [http://localhost:1313](http://localhost:1313) in your browser. Hugo watche
 
 ### Contributing
 
-Please read the [Contributing](https://quollix.org/docs/project/community/contributing/) article for information on how to contribute to the project.
+Please read the [Community](https://quollix.org/docs/project/community/) articles for more information on how to contribute to the project and interact with others.
 
 ### License
 
