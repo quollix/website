@@ -4,9 +4,7 @@ title: "Base Domain"
 
 {{< ui-location "System" "Settings" "Base Domain" >}}
 
-The base domain is the domain suffix Quollix uses for itself and installed apps.
-
-For example, if the base domain is `example.com`:
+The base domain is the domain suffix Quollix uses for itself and installed apps. For example, if the base domain is `example.com`:
 
 - Quollix is available at `quollix.example.com`.
 - Installed apps are available at `<app-name>.example.com`, such as `nextcloud.example.com` or `vaultwarden.example.com`.

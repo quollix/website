@@ -2,9 +2,7 @@
 title: "Production setup"
 ---
 
-For an example walkthrough, see the [speedrun production setup video]({{< relref "docs/getting-started/videos/speedrun-production-setup.md" >}}).
-
-This guide shows how to install Quollix for production use on a LAN or an internet-facing server. The examples assume a base domain such as `example.com`, referred to below as `<base-domain>`.
+For an example walkthrough, see the [speedrun production setup video]({{< relref "docs/getting-started/videos/speedrun-production-setup.md" >}}). This guide shows how to install Quollix for production use on a LAN or an internet-facing server. The examples assume a base domain such as `example.com`, referred to below as `<base-domain>`.
 
 1. **Choose a server**: for example, a virtual private server (VPS) from a hosting provider or a physical server at home. For provider-specific VPS notes, see the [Hetzner Cloud server setup]({{< relref "docs/self-hosting/hetzner-cloud.md" >}}) guide.
 2. **Install Docker**: install Docker on the server, see [Getting started]({{< relref "docs/getting-started/_index.md" >}}).
@@ -26,9 +24,7 @@ services:
     restart: unless-stopped
 ```
 
-If you want to run Quollix behind a reverse proxy, read the [reverse proxy setup]({{< relref "docs/self-hosting/reverse-proxy.md" >}}) guide before starting the container.
-
-If you want to configure the initial administrator account, read the [initial admin account]({{< relref "docs/self-hosting/initial-admin-account.md" >}}) guide before starting the container.
+If you want to run Quollix behind a reverse proxy, read the [reverse proxy setup]({{< relref "docs/self-hosting/reverse-proxy.md" >}}) guide before starting the container. If you want to configure the initial administrator account, read the [initial admin account]({{< relref "docs/self-hosting/initial-admin-account.md" >}}) guide before starting the container.
 
 5. **Start Quollix**: run the following command in the same directory as `docker-compose.yml`:
 

@@ -25,9 +25,7 @@ This means that backups are kept for up to a year, and older and intermediate ba
 
 Backups are incremental and use disk space efficiently. Subsequent backups store only the differences from the previous backup.
 
-Changing the retention policy can delete backups during the next maintenance run if they no longer match the new policy. Review the configured limits before saving stricter retention settings.
-
-When maintenance is started manually, updates, backups, and cleanup tasks run immediately. This can temporarily increase CPU and disk usage, and apps may be unavailable while they are being updated.
+Changing the retention policy can delete backups during the next maintenance run if they no longer match the new policy. Review the configured limits before saving stricter retention settings. When maintenance is started manually, updates, backups, and cleanup tasks run immediately. This can temporarily increase CPU and disk usage, and apps may be unavailable while they are being updated.
 
 ## Artifacts Cleanup
 

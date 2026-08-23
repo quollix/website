@@ -42,9 +42,7 @@ Typical use cases for public apps include:
 
 You can manually download and upload apps locally without relying on the official App Store. Backups will still be handled automatically. However, this approach increases your maintenance responsibility because updates must be performed manually. Enabling automatic updates via the app store later for an uploaded app may lead to incompatibilities if the configurations differ.
 
-Only upload app definitions from sources you trust. App definitions can run containers, access app data, use system resources, and expose services on your server.
-
-If the uploaded app does not exist yet, a new app will be created from the file. If the app already exists, the existing app will be updated. If enabled, a backup may be created before the update.
+Only upload app definitions from sources you trust. App definitions can run containers, access app data, use system resources, and expose services on your server. If the uploaded app does not exist yet, a new app will be created from the file. If the app already exists, the existing app will be updated. If enabled, a backup may be created before the update.
 
 ## Why some apps need manual setup
 
@@ -52,6 +50,4 @@ The app-specific pages below describe any initial manual setup that may be neede
 
 Quollix tries to automate generic platform integration. Some apps follow this model closely, as described in the [app design recommendations]({{< relref "docs/project/app-store/app-design-recommendations.md" >}}), and work with little or no extra configuration.
 
-Other apps have their own first-run setup, require manual interaction, or settings that depend on how you want to use the app. In those cases, Quollix documents the required steps.
-
-These setup instructions are recommended defaults, not strict requirements. It is your server, so you can deviate from them when you understand the trade-offs and want a different app configuration.
+Other apps have their own first-run setup, require manual interaction, or settings that depend on how you want to use the app. In those cases, Quollix documents the required steps. These setup instructions are recommended defaults, not strict requirements. It is your server, so you can deviate from them when you understand the trade-offs and want a different app configuration.

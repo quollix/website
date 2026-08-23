@@ -76,9 +76,7 @@ Use these values on the Quollix **Settings → Backup server** page:
 | SSH User | `uXXXXXX` |
 | SSH Password | (the password you set above) |
 
-The SSH port we need on the Hetzner Storage Box is explicitly `23`, not `22`.
-
-Then follow the remaining steps on the [Remote Backup settings page]({{< ref "docs/usage/settings/backup-server.md" >}}).
+The SSH port we need on the Hetzner Storage Box is explicitly `23`, not `22`. Then follow the remaining steps on the [Remote Backup settings page]({{< ref "docs/usage/settings/backup-server.md" >}}).
 
 ### Automatic Snapshots
 

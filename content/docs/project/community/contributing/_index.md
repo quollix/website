@@ -13,7 +13,7 @@ You can also support Quollix by helping more people learn about the project:
 
 ## Provide Feedback
 
-If you are familiar with GitHub, you can provide feedback through GitHub issues or discussions. If not, use the [feedback page]({{< relref "docs/contact/feedback.md" >}}).
+You can provide feedback through the [feedback page]({{< relref "docs/contact/feedback.md" >}}), or through GitHub issues or discussions.
 
 ## Contribute on GitHub
 
@@ -33,9 +33,7 @@ The website repository is [github.com/quollix/website](https://github.com/quolli
 
 To contribute code, fork the repository, create a new branch, make your changes, and submit a pull request (PR). Branches should use the form `<issueNumber>-<title>`. If no issue exists yet for the problem, please create one first.
 
-If you are fixing a bug, include the steps to reproduce it, the expected result, and the actual result. Include screenshots or logs if useful.
-
-All code contributions should pass existing tests and include new tests for added features. See the [Developer Guide]({{< relref "developer-guide.md" >}}).
+If you are fixing a bug, include the steps to reproduce it, the expected result, and the actual result. Include screenshots or logs if useful. All code contributions should pass existing tests and include new tests for added features. See the [Developer Guide]({{< relref "developer-guide.md" >}}).
 
 Small fixes can be provided directly as PRs. Before creating a feature PR, open a feature suggestion issue and get maintainer approval first, because features must fit the design of Quollix.
 
@@ -62,4 +60,4 @@ See [App Design Recommendations]({{< relref "docs/project/app-store/app-design-r
 
 ## Improve Security
 
-Security-related contributions are useful. Please follow the [Security Policy]({{< relref "docs/contact/security.md" >}}) when researching and reporting vulnerabilities.
+Security-related contributions are useful. Please follow [Responsible Disclosure]({{< relref "docs/contact/responsible-disclosure.md" >}}) when researching and reporting vulnerabilities.

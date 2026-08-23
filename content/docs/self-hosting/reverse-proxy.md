@@ -19,9 +19,7 @@ services:
       APP_FORWARDED_PROTO: https
 ```
 
-`REDIRECT_HTTP_TO_HTTPS=false` tells Quollix not to redirect traffic received on port `80`. This is useful when the reverse proxy is responsible for HTTPS redirects.
-
-`APP_FORWARDED_PROTO=https` tells apps behind Quollix that the public request scheme is HTTPS. This should remain the default for normal production deployments, even if the private proxy-to-Quollix connection uses HTTP.
+`REDIRECT_HTTP_TO_HTTPS=false` tells Quollix not to redirect traffic received on port `80`. This is useful when the reverse proxy is responsible for HTTPS redirects. `APP_FORWARDED_PROTO=https` tells apps behind Quollix that the public request scheme is HTTPS. This should remain the default for normal production deployments, even if the private proxy-to-Quollix connection uses HTTP.
 
 ## HTTP App Forwarding
 
@@ -40,6 +38,4 @@ services:
 Using "APP_FORWARDED_PROTO=http" is discouraged for production internet-facing setups because apps will see requests as plain HTTP. Some official apps may require an HTTPS forwarded protocol for security-sensitive behavior and may stop working with this setting.
 {{< /alert >}}
 
-When `REDIRECT_HTTP_TO_HTTPS` is missing, Quollix defaults to `true`.
-
-When `APP_FORWARDED_PROTO` is missing, Quollix defaults to `https`.
+When `REDIRECT_HTTP_TO_HTTPS` is missing, Quollix defaults to `true`. When `APP_FORWARDED_PROTO` is missing, Quollix defaults to `https`.

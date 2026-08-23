@@ -8,11 +8,7 @@ This Privacy Policy applies to Quollix-operated public services, including the w
 
 ## 1. Scope
 
-This Privacy Policy applies when you visit the website, browse documentation, or access public service endpoints.
-
-This Privacy Policy does not apply to independently operated Quollix installations, third-party apps, or services operated by other providers.
-
-The public services are operated by the Quollix maintainers.
+This Privacy Policy applies when you visit the website, browse documentation, or access public service endpoints. This Privacy Policy does not apply to independently operated Quollix installations, third-party apps, or services operated by other providers. The public services are operated by the Quollix maintainers.
 
 ## 2. Technical Processing
 

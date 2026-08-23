@@ -5,9 +5,7 @@ no_list: true
 
 {{< ui-location "Apps" "Store" >}}
 
-This article explains the **App Store page** in the Quollix GUI. The actual [App Store](https://store.quollix.org/) is a separate online service.
-
-The App Store lets you search and install apps on your Quollix server with just a few clicks. By default, the latest version is suggested for installation, but you have the option to install an older version.
+This article explains the **App Store page** in the Quollix GUI. The actual [App Store](https://store.quollix.org/) is a separate online service. The App Store lets you search and install apps on your Quollix server with just a few clicks. By default, the latest version is suggested for installation, but you have the option to install an older version.
 
 Quollix does not depend on the App Store. You can manually upload apps to, or download apps from, your Quollix server on the Installed Apps page. The App Store is just the most convenient way to install and update apps.
 
@@ -23,7 +21,7 @@ Quollix uses the newest version timestamp to decide which entry is the latest. I
 When installing an official app, you should always read the related articles below, as they contain setup guidelines, security instructions and information about self-registration.
 {{< /alert >}}
 
-Official apps are maintained for reliable installation and Quollix integration. Security vulnerabilities inside the app software itself remain the responsibility of the respective upstream project developers.
+Official apps are maintained for reliable installation and Quollix integration.
 
 {{< children >}}
 
@@ -31,9 +29,7 @@ Official apps are maintained for reliable installation and Quollix integration. 
 
 Unofficial apps are created by third parties. Only install them when you trust the maintainer and understand that the app definition may run containers, access app data, use system resources, or expose services on your server.
 
-Manual app uploads follow the same trust model. Upload an app definition only if you trust its source. If the uploaded app already exists, Quollix updates the existing app definition.
-
-Automatic updates for third-party apps should be enabled only when you trust the maintainer to publish future versions without reviewing every change yourself.
+Manual app uploads follow the same trust model. Upload an app definition only if you trust its source. If the uploaded app already exists, Quollix updates the existing app definition. Automatic updates for third-party apps should be enabled only when you trust the maintainer to publish future versions without reviewing every change yourself.
 
 ## Licensing
 

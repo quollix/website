@@ -24,14 +24,18 @@ See Quollix in action:
 
 Start where it best matches your interests and experience:
 
-- **New here?**  
-  → [Introduction]({{< relref "introduction" >}})  
+- **New here?**<br>
+  → [Introduction]({{< relref "introduction" >}})<br>
   Learn what Quollix is, why it exists, and what it can do.
 
-- **Ready to try it out?**  
-  → [Getting Started]({{< relref "docs/getting-started/_index.md" >}})  
+- **Ready to try it out?**<br>
+  → [Getting Started]({{< relref "docs/getting-started/_index.md" >}})<br>
   Deploy Quollix and get your first apps running.
 
-- **Interested in self-hosting?**  
-  → [Self-Hosting]({{< relref "docs/self-hosting/_index.md" >}})  
+- **Interested in self-hosting?**<br>
+  → [Self-Hosting]({{< relref "docs/self-hosting/_index.md" >}})<br>
   Background information and guidance for operating the platform in a self-hosted environment.
+
+- **Want to get involved?**<br>
+  → [Community]({{< relref "docs/project/community/_index.md" >}})<br>
+  Join the discussion, share feedback, and help shape Quollix as an open source project.

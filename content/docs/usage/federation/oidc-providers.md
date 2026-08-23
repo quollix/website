@@ -12,6 +12,4 @@ Quollix supports sign-in through external identity providers using standards-bas
 
 When a user signs in through an external OIDC provider, Quollix stores a linked sign-in method for that user. If the provider is deleted, those linked sign-in methods are removed and affected users can no longer use that provider to sign in until it is configured again.
 
-Deleting an external OIDC provider does not delete local Quollix user accounts. Administrators can still manage the user locally and enable password sign-in.
-
-If the deleted provider was the only sign-in method for a user, that user can no longer sign in until an administrator enables password sign-in.
+Deleting an external OIDC provider does not delete local Quollix user accounts. Administrators can still manage the user locally and enable password sign-in. If the deleted provider was the only sign-in method for a user, that user can no longer sign in until an administrator enables password sign-in.

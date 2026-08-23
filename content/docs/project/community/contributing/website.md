@@ -6,9 +6,7 @@ The Quollix website is the canonical documentation hub for the Quollix ecosystem
 
 ## Contribution Scope
 
-Please contribute text changes only. Avoid custom HTML, CSS, and JavaScript. Use Markdown for simplicity.
-
-Structural changes, layout changes, animations, and media changes such as adding or editing images must be discussed first and, if accepted, are handled by a maintainer.
+Please contribute text changes only. Avoid custom HTML, CSS, and JavaScript. Use Markdown for simplicity. Structural changes, layout changes, animations, and media changes such as adding or editing images must be discussed first and, if accepted, are handled by a maintainer.
 
 Useful text contributions include:
 
@@ -30,4 +28,4 @@ When writing website content:
 
 ## Terminology
 
-When writing content for the website, follow the [Terminology]({{< relref "docs/project/terminology.md" >}}) article.
+When writing content for the website, follow the [Terminology]({{< relref "docs/project/terminology.md" >}}) conventions.

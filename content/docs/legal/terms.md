@@ -4,17 +4,11 @@ title: "Public Services Terms"
 
 _Last Updated: 19.06.2026_
 
-These Public Services Terms (“Terms”) govern access to the publicly available Quollix website and Quollix-operated public services, including the public app store.
-
-By using these public services, you agree to these Terms.
-
-These Terms do not govern use, copying, modification, or distribution of the Quollix open source software itself. Use of the software is governed by its open source license.
+These Public Services Terms (“Terms”) govern access to the publicly available Quollix website and Quollix-operated public services, including the public app store. By using these public services, you agree to these Terms. These Terms do not govern use, copying, modification, or distribution of the Quollix open source software itself. Use of the software is governed by its open source license.
 
 ## 1. Provider and Contact
 
-The public services are operated by the Quollix maintainers (“Maintainer”).
-
-Legal and policy requests may be submitted through the [feedback page]({{< relref "docs/contact/feedback.md" >}}).
+The public services are operated by the Quollix maintainers (“Maintainer”). Legal and policy requests may be submitted through the [feedback page]({{< relref "docs/contact/feedback.md" >}}).
 
 ## 2. Acceptable Use
 
@@ -36,15 +30,11 @@ The Maintainer strives to ensure availability of the public services but does no
 
 ## 5. Limitation of Liability
 
-To the fullest extent permitted by law, the Maintainer shall not be liable for indirect or consequential damages arising from use of the public services.
-
-This limitation does not apply where liability cannot be excluded by law, including intentional misconduct, gross negligence, or injury to life, body, or health.
+To the fullest extent permitted by law, the Maintainer shall not be liable for indirect or consequential damages arising from use of the public services. This limitation does not apply where liability cannot be excluded by law, including intentional misconduct, gross negligence, or injury to life, body, or health.
 
 ## 6. Governing Law
 
-These Terms are governed by the laws of the Federal Republic of Germany.
-
-Mandatory consumer protection laws of your country of residence remain unaffected.
+These Terms are governed by the laws of the Federal Republic of Germany. Mandatory consumer protection laws of your country of residence remain unaffected.
 
 ## 7. Changes
 

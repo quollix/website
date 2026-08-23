@@ -1,10 +1,11 @@
 ---
-title: "Security Policy"
+title: "Responsible Disclosure"
 aliases:
+  - /docs/contact/security/
   - /docs/legal/security/
 ---
 
-_Last Updated: 24.05.2026_
+_Last Updated: 23.08.2026_
 
 We welcome good-faith security research on Quollix and appreciate responsible vulnerability reports. You may investigate Quollix software, especially by reviewing the source code or testing your own self-hosted Quollix server.
 

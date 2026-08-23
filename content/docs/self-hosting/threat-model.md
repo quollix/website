@@ -21,6 +21,7 @@ Every app runs in its own Docker container with no shared volumes, networks, or 
 * Static code analysis tools run frequently.
 * Automated update tools support regular updates of Quollix infrastructure, libraries, and Docker images.
 * Official apps are cryptographically signed, and Quollix verifies the signature when downloading them. This means that even if the App Store or an app release repository is compromised, attackers cannot silently modify official app content unless they also compromise the signing credentials.
+* Official app definitions pin container images by digest. This prevents mutable tags from silently resolving to different container content and improves reproducibility.
 * This does not remove upstream supply-chain risk in the Docker images used by an app. Administrators who require additional assurance can inspect apps and upload them manually instead of relying on the public App Store.
 
 ### Access Control
@@ -49,7 +50,7 @@ We recommend using a simple, automatically updating system like Ubuntu, along wi
 
 * App Store content is not moderated, except for official apps. Third-party apps may contain malicious code, so we recommend that administrators only use trusted third-party sources or evaluate third-party apps before installation.
 * App updates depend on each app's maintainer. Outdated apps may introduce vulnerabilities, and compromised maintainer accounts or release repositories may result in malicious updates for third-party apps.
-* Quollix is not responsible for security vulnerabilities within installed apps. Responsibility for application-level security lies entirely with the respective project developers.
+* Official app definitions are maintained by Quollix. Custom and third-party app definitions are controlled by their authors or the server administrator.
 * Apps can use generated secrets for internal credentials such as database passwords, service passwords, admin tokens, and signing keys. These services are still intended to be reachable only inside the app's private Docker network, usually by the app's main service. Vulnerabilities such as SQL injection, remote code execution, leaked configuration, or an attacker with Docker-level access may still expose or misuse the internal service.
 
 ### Miscellaneous
