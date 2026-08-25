@@ -1,10 +1,10 @@
 ---
-title: "DNS and Networking"
+title: "DNS and networking"
 ---
 
 Quollix can run on a public internet-facing server or inside a LAN, optionally with VPN access. Choose the network exposure model before configuring DNS and certificates.
 
-## Public Internet Access
+## Public internet access
 
 Use public DNS when users should reach Quollix directly from the internet. Create DNS records that point to the public IP address of the Quollix server:
 
@@ -16,7 +16,7 @@ vaultwarden.example.com A  <public-server-ip>
 
 If you use IPv6, also create the corresponding `AAAA` records.
 
-## LAN or VPN Access
+## LAN or VPN access
 
 For private deployments, Quollix can run behind a VPN instead of being exposed directly to the public internet. This is common for home labs and company networks: users first connect to the private network through a VPN, then access Quollix and its apps through internal domain names. Many routers and firewalls provide built-in VPN support, or you can run a separate VPN service. This adds an extra access layer in front of Quollix and can reduce public attack surface. It does not replace Quollix access control, HTTPS, updates, backups, or normal server hardening.
 

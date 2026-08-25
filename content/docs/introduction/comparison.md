@@ -1,5 +1,5 @@
 ---
-title: "Self-Hosting Platform Comparison"
+title: "Self-hosting platform comparison"
 weight: 40
 ---
 
@@ -26,7 +26,7 @@ Common traits of the included projects:
 - support ARM64, including Raspberry Pi 4 or newer
 - can run apps on ARM when the app packaging supports it
 
-## Project Positioning
+## Project positioning
 
 | Aspect                | Quollix                                       | FreedomBox                      | YunoHost                                 | Runtipi                          | StartOS                      |
 | --------------------- | --------------------------------------------- | ------------------------------- | ---------------------------------------- | -------------------------------- | ---------------------------- |
@@ -34,7 +34,7 @@ Common traits of the included projects:
 | License complexity    | Low, permissive                               | Higher, copyleft                | Higher, copyleft                         | Higher, copyleft                 | Low, permissive              |
 | Primary product focus | Low-complexity extensible Docker self-hosting | Privacy-focused personal server | Debian-based self-hosting administration | One-click Docker homeserver apps | Sovereign personal server OS |
 
-## Architecture and Installation
+## Architecture and installation
 
 | Aspect             | Quollix              | FreedomBox                                  | YunoHost                                    | Runtipi        | StartOS                            |
 | ------------------ | -------------------- | ------------------------------------------- | ------------------------------------------- | -------------- | ---------------------------------- |
@@ -42,7 +42,7 @@ Common traits of the included projects:
 | Host model         | Docker host          | Debian system                               | Dedicated Debian server                     | Docker host    | Dedicated server OS                |
 | Host managed by    | Admin                | Platform                                    | Platform                                    | Admin          | Platform                           |
 
-## Apps and Extensibility
+## Apps and extensibility
 
 | Aspect                        | Quollix                                                                   | FreedomBox                                                                                | YunoHost                                                                          | Runtipi                                                       | StartOS                                                                                            |
 | ----------------------------- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -69,7 +69,7 @@ Common traits of the included projects:
 | Backup retention policy      | Per app                                                          | Not documented | No                           | Global or per-app maximum              | No                                       |
 | Full-server restore          | Backup recovery                                                  | Partial        | Complete archive restore     | Manual archive restore                 | Backup recovery                          |
 
-## Identity and Access
+## Identity and access
 
 | Aspect                               | Quollix                                                     | FreedomBox                  | YunoHost                                   | Runtipi                              | StartOS                                  |
 | ------------------------------------ | ----------------------------------------------------------- | --------------------------- | ------------------------------------------ | ------------------------------------ | ---------------------------------------- |
@@ -81,7 +81,7 @@ Common traits of the included projects:
 | Fine-grained access policies         | Yes, per-app access policies and groups                     | Yes, group-based app access | Yes, group and permission based app access | Limited, expose / unexpose apps only | Limited, service exposure controls only  |
 | User onboarding flow                 | Invite token; expiring one-time code; native email delivery | Manual account creation     | Manual account creation                    | No platform users                    | Single-user platform; app-specific users |
 
-## Administration and Operations
+## Administration and operations
 
 | Aspect                                   | Quollix          | FreedomBox       | YunoHost                        | Runtipi                                   | StartOS                   |
 | ---------------------------------------- | ---------------- | ---------------- | ------------------------------- | ----------------------------------------- | ------------------------- |
@@ -92,7 +92,7 @@ Common traits of the included projects:
 | App health monitoring                    | Planned          | Partial          | Partial                         | Partial                                   | Yes                       |
 | Operational alert notifications          | Planned          | No               | Partial, diagnosis email alerts | No                                        | SMTP notifications        |
 
-## Platform-Managed Services
+## Platform-managed services
 
 | Aspect                        | Quollix                 | FreedomBox          | YunoHost      | Runtipi                         | StartOS                                     |
 | ----------------------------- | ----------------------- | ------------------- | ------------- | ------------------------------- | ------------------------------------------- |
@@ -102,7 +102,7 @@ Common traits of the included projects:
 | Private / relay remote access | No, host responsibility | PageKite            | No            | Manual Cloudflare Tunnel setup  | StartTunnel                                 |
 | Platform-managed file sharing | No                      | Samba               | App-dependent | Partial, shared media directory | App-dependent                               |
 
-## Quollix Differentiators
+## Quollix differentiators
 
 The most relevant Quollix differentiators in this comparison are:
 
@@ -112,7 +112,7 @@ The most relevant Quollix differentiators in this comparison are:
 - DNS-01 certificate generation is supported, so Quollix can get certificates without public inbound HTTP access.
 - The planned App Store is intended to support self-service app publishing, where users can register, upload apps, and make them discoverable for others.
 
-## Adjacent Projects
+## Adjacent projects
 
 The following projects are related to self-hosting, but are not included because they optimize for different use cases:
 
@@ -123,7 +123,7 @@ The following projects are related to self-hosting, but are not included because
 - [TrueNAS](https://www.truenas.com) and [OpenMediaVault](https://www.openmediavault.org) are primarily NAS or server operating systems. They can run self-hosted applications, but storage and home-server infrastructure are their main focus.
 - [CasaOS](https://casaos.zimaspace.com) is not included because the latest stable platform release was in 2024 and current development appears to have shifted toward ZimaOS.
 
-## Excluded Projects
+## Excluded projects
 
 The following projects are not included because they are proprietary, source-available, or do not have a clearly open source project model.
 

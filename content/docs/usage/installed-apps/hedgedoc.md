@@ -13,7 +13,7 @@ title: "HedgeDoc"
 | OIDC client | Native |
 | Business model | Fully open source project maintained by HedgeDoc contributors. |
 
-## Single Sign-On
+## Single sign-on
 
 In the HedgeDoc GUI:
 

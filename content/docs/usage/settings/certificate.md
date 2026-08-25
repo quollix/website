@@ -4,7 +4,7 @@ title: "Certificate"
 
 {{< ui-location "System" "Settings" "Certificate" >}}
 
-## Certificate Operations
+## Certificate operations
 
 You can upload your own certificate or download the currently configured certificate. The uploaded certificate file must contain the private key and certificate chain for the domains you want Quollix to serve. For the usual app setup, this is typically a wildcard certificate such as `*.sample.com`.
 
@@ -18,13 +18,13 @@ By default, Quollix is available on port 443 via HTTPS using a universal self-si
 
 Resetting the certificate removes the configured certificate and private key and replaces them with a self-signed certificate. This is useful for local testing or recovery, but browsers and clients may stop trusting the server until you install a valid certificate again. For most real-world use cases, a valid, properly signed certificate is recommended.
 
-## ACME Account Private Key
+## ACME account private key
 
 Quollix uses an ACME account private key to identify the Let's Encrypt account that requests certificates.
 
 If you plan to operate multiple Quollix instances for the same domain, download the ACME account private key from one instance and upload it to the other instances before generating Let's Encrypt certificates. This gives all instances one uniform ACME account key, keeps certificate requests tied to one Let's Encrypt account, and avoids creating unnecessary separate ACME accounts for the same setup.
 
-## Generate Wildcard Certificate
+## Generate wildcard certificate
 
 This option generates a certificate via a Let's Encrypt DNS-01 challenge:
 

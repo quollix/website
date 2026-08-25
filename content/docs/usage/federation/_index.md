@@ -11,7 +11,7 @@ Federation connects Quollix servers and compatible OIDC clients through shared i
 
 You can combine these features to create a federation. For example, one Quollix server can act as the provider, and multiple Quollix servers can be configured as clients that trust that provider.
 
-## Setup Example
+## Setup example
 
 Assume you have two Quollix servers available under these domains:
 

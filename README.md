@@ -1,10 +1,10 @@
-# Quollix Website
+# Quollix website
 
 This is the source repository for Quollix’s official website, available at [quollix.org](https://quollix.org).
 
 The website is powered by [Hugo](https://gohugo.io/) and the [Docsy](https://www.docsy.dev/) documentation theme.
 
-### Local Development
+### Local development
 
 On Debian or Ubuntu, install the tools and project dependencies needed to run the website locally:
 

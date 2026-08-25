@@ -1,17 +1,17 @@
 ---
-title: "Code of Conduct"
+title: "Code of conduct"
 ---
 
 We are committed to a professional, productive, and welcoming environment for everyone involved in this project - contributors, maintainers, and users alike.
 
-## Expected Behavior
+## Expected behavior
 
 * Act with courtesy, respect, and empathy. 
 * Foster an inclusive atmosphere that values diverse perspectives. 
 * Offer constructive, actionable feedback oriented toward improving the project. 
 * Collaborate in good faith.
 
-## Unacceptable Behavior
+## Unacceptable behavior
 
 * Harassment, discrimination, or personal attacks. 
 * Derogatory, inflammatory, or otherwise abusive language. 
@@ -21,7 +21,7 @@ We are committed to a professional, productive, and welcoming environment for ev
 
 Violations will result in consequences proportionate to the severity and frequency of the behavior, ranging from a warning to temporary or permanent removal from project spaces.
 
-## Interaction with the Maintainers
+## Interaction with the maintainers
 
 Our maintainers give generously of their time and expertise to keep this project moving forward. Because their availability is limited, we ask that all interactions respect their time. Before contacting the maintainers, for example, by opening issues, please make sure you've first done your part:
 

@@ -8,7 +8,7 @@ The Email page lets you configure the SMTP server that Quollix uses to send emai
 
 You can customize the invitation email template at the bottom of this page according to your user onboarding preferences.
 
-## OIDC Email Exposure
+## OIDC email exposure
 
 Some apps that use App SSO need an email address in the ID token or userinfo response. By default, Quollix can avoid exposing users' stored personal email addresses. If you enable real email exposure, connected apps may receive the actual email address stored for each user.
 

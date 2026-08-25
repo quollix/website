@@ -17,7 +17,7 @@ The [3-2-1 backup rule](https://en.wikipedia.org/wiki/Backup#3-2-1_Backup_Rule) 
 - 2 independent trust domains
 - 1 off-site copy
 
-## Proposed Architecture
+## Proposed architecture
 
 <img src="/images/backup-architecture.svg" alt="Backup Architecture" width="1000">
 
@@ -40,7 +40,7 @@ This domain is controlled by the infrastructure provider and is independent from
 
 These backups provide an independent recovery mechanism if both the production system and the backup system are lost or deleted. Restores from this domain are triggered out-of-band, using separate credentials and access paths.
 
-## Mapping to the 3-2-1 Rule
+## Mapping to the 3-2-1 rule
 
 This architecture fulfills the intent of the 3-2-1 rule as follows:
 
@@ -54,6 +54,6 @@ A convenient but less private setup is to run Quollix on a VPS and use external 
 
 In this setup, the provider is the single infrastructure trust domain so far. Therefore, keep an additional offline copy outside the provider account, for example with `rsync` to a local machine.
 
-## Notes on Providers
+## Notes on providers
 
 This setup is provider-agnostic. Any provider offering SSH-accessible storage and provider-managed backups or snapshots can be used. Alternatively, a self-managed SSH backup server may be used, provided it is located off-site and managed independently from the production system.

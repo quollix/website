@@ -4,11 +4,11 @@ title: "Server preparations"
 
 This sample guide walks you through setting up a hardened Ubuntu Server host for Quollix. Adapt it to your own environment as needed.
 
-## Restrict Physical Access
+## Restrict physical access
 
 Place the device in a locked rack or drawer.
 
-## OS Installation
+## OS installation
 
 * Download Ubuntu Server: Grab the latest ISO from [Canonical’s download page](https://ubuntu.com/download/server).
 * Flash it to a USB drive (Rufus, balenaEtcher, etc.). You will need to connect a screen and a keyboard in order to complete the initial setup.
@@ -17,7 +17,7 @@ Place the device in a locked rack or drawer.
   * Enable SSH server.
   * Optional: Choose LVM with full-disk encryption (FDE) if you want encrypted storage (see below).
 
-## Internet Connection
+## Internet connection
 
 Connect the server to a wired LAN to avoid having to configure a Wi-Fi connection on boot. With FDE, Wi-Fi setup would even be required twice: once in the encrypted-mode initramfs and again in the decrypted-mode main operating system. Please note that the LAN IP address of the server may differ between initramfs mode and the main operating system, since the router may recognise them as two distinct devices.
 
@@ -39,11 +39,11 @@ sudo ufw allow 443/tcp
 sudo ufw enable
 ```
 
-### Additional Open Ports
+### Additional open ports
 
 Some apps need to expose extra ports to work properly. When you start such an app, Docker handles the port exposure in the background by inserting its own firewall rules.
 
-### SSH Hardening
+### SSH hardening
 
 Add your public key to the file `~/.ssh/authorized_keys`, then try logging in via SSH. If it works, disable password authentication.
 
@@ -52,7 +52,7 @@ sudo sed -Ei 's/^#?PasswordAuthentication .*/PasswordAuthentication no/' /etc/ss
 sudo systemctl reload sshd
 ```
 
-## Update Automation
+## Update automation
 
 To automate system updates, create a script and schedule it with cron.
 
@@ -105,7 +105,7 @@ Add the following line to run the script daily at 4:00 AM and log output:
 ```
 
 
-## Full Disk Encryption
+## Full disk encryption
 
 FDE keeps your data unreadable for third parties even if the server is physically stolen.
 
@@ -125,14 +125,14 @@ read -rsp "LUKS passphrase: " p; echo
 printf %s "$p" | ssh -i ~/.ssh/id_ed25519 root@SERVER-IP cryptroot-unlock
 ```
 
-### Reboot Workflow
+### Reboot workflow
 
 * reboot the server
 * on user PC: 
   * Run the remote‑unlock script.
   * SSH in normally once the host comes back.
 
-## Server Reboots
+## Server reboots
 
 To ensure that the latest kernel and security updates are applied, you should reboot the server periodically, for example once a month. Reboots can be automated using a cron job. However, if you have FDE, you need to unlock the disk during boot, which requires you to unlock the encryption manually. You should be aware of this additional effort when choosing FDE.
 

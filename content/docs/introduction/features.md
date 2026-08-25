@@ -27,15 +27,15 @@ Legend:
 | [Terminal]({{< relref "docs/usage/terminal.md" >}})                |    {{<checkmark>}}    |
 | [Users]({{< relref "docs/usage/users.md" >}})                      |    {{<checkmark>}}    |
 
-## Access Policy
+## Access policy
 
 Admins can set an access policy for each app individually, for example restricting access to registered users or making an app public so anyone can use it without an account. Public access can be used for blogs, forums, and websites.
 
-## App Store
+## App store
 
 The App Store is the central location for downloading and installing apps and updates. Public app publishing is planned, so third-party maintainers will be able to upload their own apps in the future.
 
-## App Secrets
+## App secrets
 
 Quollix generates and injects app-specific random secrets for installed apps. These secrets provide cryptographic randomness that some apps need for secure operation.
 

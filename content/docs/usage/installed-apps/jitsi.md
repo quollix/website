@@ -14,7 +14,7 @@ title: "Jitsi"
 | Business model | Fully open source project built by 8x8 and the community; hosted and commercial services are available separately. |
 
 {{< alert title="Network prerequisite" color="warning" >}}
-Jitsi needs UDP port `10000` to be reachable by meeting participants. Make sure nothing in front of Quollix blocks this port. Without it, meetings may connect initially but media connections can fail or break regularly.
+Jitsi needs UDP port 10000 to be reachable by meeting participants. Make sure nothing in front of Quollix blocks this port. Without it, meetings may connect initially but media connections can fail or break regularly.
 {{< /alert >}}
 
 ## Introduction

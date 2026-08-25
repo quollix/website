@@ -4,7 +4,7 @@ title: "Imprint"
 
 _Last Updated: 02.08.2026_
 
-## Provider Information
+## Provider information
 
 Information pursuant to Section 5 of the German Digital Services Act (DDG).
 
@@ -19,6 +19,6 @@ Germany
 
 Email: [quollix-feedback@mailbox.org](mailto:quollix-feedback@mailbox.org)
 
-## Person Responsible for Editorial Content
+## Person responsible for editorial content
 
 Christoph Baier

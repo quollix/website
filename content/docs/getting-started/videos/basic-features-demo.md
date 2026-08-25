@@ -1,5 +1,5 @@
 ---
-title: "Basic Features Demo"
+title: "Basic features demo"
 aliases:
   - /docs/resources/videos/basic-features-demo/
 ---

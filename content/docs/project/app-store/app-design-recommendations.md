@@ -1,5 +1,5 @@
 ---
-title: "App Design Recommendations"
+title: "App design recommendations"
 ---
 
 This document is intended for developers who develop software and want to distribute it through the Quollix App Store. You are free to design your app in any way you like. However, following the recommendations ensures smooth integration with Quollix and improves the experience for administrators and end users.

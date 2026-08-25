@@ -19,7 +19,7 @@ title: "Wiki.js"
 * For the site URL, enter the current base domain: `https://wikijs.<base-domain>`.
 * Install
 
-## Database Setup
+## Database setup
 
 Administration > Modules > Search Engine
 
@@ -29,7 +29,7 @@ Administration > Modules > Search Engine
 
 Now full text search is enabled.
 
-## Single Sign-On
+## Single sign-on
 
 When Wiki.js creates a user through OIDC, it must assign that user to a group with the required permissions. Therefore, the first step is to create a group and define its permissions.
 

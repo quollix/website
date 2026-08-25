@@ -1,10 +1,10 @@
 ---
-title: "Service Migration"
+title: "Service migration"
 ---
 
 Quollix automatically runs selected service migrations during app updates from the App Store. For example, updating Postgres to a new major version no longer requires administrators to run the migration commands by hand. The same service migration mechanism is also used when an administrator directly uploads an app version to Quollix.
 
-## Current Support
+## Current support
 
 Quollix currently handles these service migrations:
 

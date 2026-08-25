@@ -4,7 +4,7 @@ title: "Groups"
 
 {{< ui-location "Identity" "Groups" >}}
 
-The Groups feature takes effect when an app is configured with a `group-restricted` access policy on the Installed Apps page. Access is granted to any user who is a member of at least one group authorized for the app.
+The Groups feature takes effect when an app is configured with a `group-restricted` access policy on the [Installed apps]({{< relref "docs/usage/installed-apps/_index.md" >}}) page. Access is granted to any user who is a member of at least one group authorized for the app.
 
 To grant a user access:
 - Create a group

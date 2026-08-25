@@ -1,15 +1,15 @@
 ---
-title: "Why Use Quollix"
+title: "Why use Quollix"
 weight: 5
 ---
 
-## Ownership and Portability
+## Ownership and portability
 
 - **Open source**: Quollix is fully open source under the permissive MIT License, which keeps legal complexity low.
 - **Migration support**: Move Quollix to another server by restoring its app backups on a new server.
 - **Vendor independence**: These properties mean users are not locked into a single vendor.
 
-## Installation and Administration
+## Installation and administration
 
 - **Setup**: Quollix provides a [guided installation]({{< relref "docs/getting-started/_index.md" >}}) flow with limited prerequisites.
 - **Automated maintenance**: Quollix can update installed apps, create backups, and run selected [service migrations]({{< relref "docs/project/app-store/service-migration.md" >}}) automatically. For example, updating Postgres to a new major version no longer requires administrators to run the migration commands by hand.
@@ -18,7 +18,7 @@ weight: 5
 - **Unified user management**: Users can access multiple apps with one Quollix account through built-in OIDC integration.
 - **Private network support**: Quollix can issue Let's Encrypt certificates for home lab and private-network deployments without requiring a public-facing server.
 
-## Privacy and Business Model
+## Privacy and business model
 
 - **Independently owned**: Quollix has no investors, venture capital funding, or private equity ownership, reducing pressure to prioritize growth, lock-in, or data monetization.
 - **Data minimization**: Quollix avoids collecting personal data wherever possible and only processes personal information where it is technically necessary.
@@ -26,21 +26,21 @@ weight: 5
 - **Privacy-respecting telemetry**: Telemetry is strictly opt-in and anonymous.
 - **No mandatory cloud account**: Self-hosting Quollix does not require an account with Quollix.
 
-## App Definitions and Extensibility
+## App definitions and extensibility
 
 - **App Store**: Install and manage apps through the Quollix App Store. Third-party app publishing is planned.
 - **Single-file app definitions**: Quollix defines each app through a single Docker Compose file. From that file, Quollix derives platform features automatically, including updates, backups, networking, and app secret generation.
 - **Portable app definitions**: App definitions are human-readable YAML files released as open source software, so they can be inspected, modified, shared, and used outside the App Store.
 - **Custom apps**: Create your own app definitions when the existing App Store entries do not cover a service.
 
-## Data Location and Infrastructure
+## Data location and infrastructure
 
 - **Data location**: Run Quollix on infrastructure you choose, so you decide where app data is stored and processed.
 - **Hardware flexibility**: Quollix supports AMD64 and ARM64 servers, including compatible Raspberry Pi systems. Installed apps may have their own architecture requirements.
 - **Resource usage**: Most resource consumption comes from installed apps and user activity. Small deployments can run on low-power hardware.
 - **Backup location**: Store end-to-end encrypted app backups on a backup server you choose.
 
-## Security Model
+## Security model
 
 - **Threat model**: Quollix documents its security assumptions, risks, and mitigations in the [threat model]({{< relref "/docs/self-hosting/threat-model.md" >}}).
 - **Container isolation**: Each app runs with isolated networking and storage, limiting direct interaction between apps.

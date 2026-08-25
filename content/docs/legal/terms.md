@@ -1,5 +1,5 @@
 ---
-title: "Public Services Terms"
+title: "Public services terms"
 ---
 
 _Last Updated: 19.06.2026_

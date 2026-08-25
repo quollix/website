@@ -41,16 +41,16 @@ For production deployments, we recommend updating Quollix once a day so you quic
 sudo docker logs quollix_quollix_quollix | grep "initial admin password"
 ```
 
-8. **Sign in**: use the username `administrator` with the generated password from the logs. After signing in, open the Settings page in Quollix.
+8. **Sign in**: use the username `administrator` with the generated password from the logs. After signing in, open the [Settings]({{< relref "docs/usage/settings/_index.md" >}}) page in Quollix.
 
-9. **Set the base domain**: set **Base Domain** to `<base-domain>`, and save.
-10. **Set up a certificate**: in the Certificates section, start the challenge to generate a wildcard certificate, then follow the instructions until you see a success message. Restart the browser because browsers usually cache the old self-signed certificate.
+9. **Set the base domain**: set [Base domain]({{< relref "docs/usage/settings/base-domain.md" >}}) to `<base-domain>`, and save.
+10. **Set up a certificate**: in the [Certificate]({{< relref "docs/usage/settings/certificate.md" >}}) section, start the challenge to generate a wildcard certificate, then follow the instructions until you see a success message. Restart the browser because browsers usually cache the old self-signed certificate.
 
 Visiting `https://quollix.<base-domain>` should now use a certificate signed by Let's Encrypt.
 
 ## Troubleshooting
 
-### Missing Initial Password
+### Missing initial password
 
 If you accidentally recreate the container before copying the initial password, the existing database volume may keep the old administrator account while the password is no longer visible in the logs. In that case, reset the initial installation state. This deletes the Quollix database and starts from a clean installation:
 
@@ -65,6 +65,6 @@ Then start Quollix again:
 sudo docker compose up -d
 ```
 
-## Next Steps
+## Next steps
 
 The [Self-Hosting]({{< relref "docs/self-hosting/_index.md" >}}) section provides additional guidance for running Quollix in a self-hosted environment.

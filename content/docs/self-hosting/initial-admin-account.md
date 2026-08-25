@@ -1,5 +1,5 @@
 ---
-title: "Initial Admin Account"
+title: "Initial admin account"
 ---
 
 Quollix creates an initial administrator account on first startup. For the default production setup with a generated initial password, see the [production setup guide]({{< relref "docs/getting-started/production-setup.md" >}}).

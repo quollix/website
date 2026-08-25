@@ -1,5 +1,7 @@
 ---
-title: "App Store"
+title: "App store"
+aliases:
+  - /docs/app-store/
 ---
 
 {{< planned-feature >}}

@@ -1,5 +1,5 @@
 ---
-title: "Security Advisory: App Metadata Exposure"
+title: "Security advisory: app metadata exposure"
 date: 2026-08-10
 ---
 

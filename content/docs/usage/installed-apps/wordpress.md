@@ -21,11 +21,11 @@ On the first visit, create an administrator account. To access the WordPress adm
 https://wordpress.<base-domain>/wp-admin
 ```
 
-## Public Access
+## Public access
 
 WordPress is typically used for a public website. In Quollix, set the access policy to `Public` so visitors can view the site without signing in.
 
-## Single Sign-On
+## Single sign-on
 
 For WordPress, the standard Quollix setup does not use SSO because available integrations rely on community plugins. Manage editing through local
 WordPress accounts, such as the administrator account or trusted editor accounts.

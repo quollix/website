@@ -4,7 +4,7 @@ title: Scaling
 
 Quollix is designed to run as a single-node system. There is no built-in horizontal clustering. Scaling is achieved using one of the following approaches.
 
-## Vertical Scaling
+## Vertical scaling
 
 The primary scaling strategy is vertical scaling. Run Quollix on a machine with more CPU, memory, and disk space. This can be done by migrating Quollix to a larger server. The [server migration guide]({{< relref "server-migration.md" >}}) might be helpful for that.
 
@@ -12,6 +12,6 @@ The primary scaling strategy is vertical scaling. Run Quollix on a machine with 
 
 Communities or larger organizations may [federate]({{< relref "docs/usage/federation" >}}) multiple Quollix servers. Each server represents an organizational unit. Identity and access are shared through a central OIDC provider.
 
-## Custom Infrastructure
+## Custom infrastructure
 
-For very large or specialized environments, a custom IT infrastructure may be required. The scope of Quollix is small to mid-sized organizations and standard use cases.
+For very large or specialized environments, a custom IT infrastructure may be required. The scope of Quollix is small to mid-sized organizations.

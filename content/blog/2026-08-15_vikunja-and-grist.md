@@ -1,5 +1,5 @@
 ---
-title: "Vikunja and Grist Are Now Official Apps"
+title: "Vikunja and Grist are now official apps"
 date: 2026-08-15
 ---
 

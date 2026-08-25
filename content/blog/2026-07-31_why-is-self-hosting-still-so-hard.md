@@ -1,11 +1,11 @@
 ---
-title: "Why Is Self-Hosting Still So Hard"
+title: "Why is self-hosting still so hard"
 date: 2026-07-31
 ---
 
 Professionally, I work as a software developer. I also value privacy, which is why I decided to host my own open-source services at home. While I had some system administration experience, this was my first serious self-hosting project at this scale. I assumed getting a few services running would be straightforward. But I underestimated what I was actually signing up for.
 
-## What I Experienced
+## What I experienced
 
 I bought a cheap little server for my home, installed Linux, and set up Docker. No problem. I had done all of that countless times before. Then I deployed a few Docker stacks: a wiki, Nextcloud, and a handful of other services.
 
@@ -19,7 +19,7 @@ Eventually, after all that work, I had the system I originally wanted. I could s
 
 At some point I noticed that I wasn't spending my time using my services anymore. I was maintaining the infrastructure around them. My scripts kept growing, my notes became longer, and every so often, I had to reload all this knowledge into my head because some component required attention again. What had started as an exciting weekend project had slowly become a responsibility.
 
-## What I Actually Wanted
+## What I actually wanted
 
 That experience changed how I thought about self-hosting. I also realized I wasn't the only one facing this problem. The technologies weren't the problem. I already knew them. What I had underestimated was how much operational work accumulates around a self-hosted system over time.
 

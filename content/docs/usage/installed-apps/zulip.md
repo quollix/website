@@ -50,7 +50,7 @@ su zulip -c '/home/zulip/deployments/current/manage.py change_user_role -r <real
 su zulip -c '/home/zulip/deployments/current/manage.py deactivate_user -f local-admin@example.invalid'
 ```
 
-## Further Settings
+## Further settings
 
 Because accounts are managed through Quollix, restrict profile changes in Zulip:
 

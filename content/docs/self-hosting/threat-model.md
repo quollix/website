@@ -4,37 +4,37 @@ title: "Threat model"
 
 This document describes how Quollix mitigates threats to protect its digital infrastructure.
 
-## Security Measures
+## Security measures
 
 ### Cryptography
 We only use modern, well-tested cryptographic algorithms. Administrators can generate Let’s Encrypt–signed certificates or provide their own certificates to secure HTTPS endpoints. HTTP requests are redirected to HTTPS so users reach the encrypted endpoint by default.
 
-### Container Isolation
+### Container isolation
 Every app runs in its own Docker container with no shared volumes, networks, or Docker socket access, and with restricted Linux capabilities.
 
-### Defensive Coding
+### Defensive coding
 * Strict input validation blocks SQL injection, XSS, RCE, and similar attacks.
 * Protection against CSRF attacks is built into the security framework.
 * Cookies are hashed, and user passwords are salted and hashed. This means that even if a hacker gains access to the database, they won't be able to read this data in plain text. Therefore, cookies and strong passwords are effectively impossible to crack.
 
-### Secure Supply Chain
+### Secure supply chain
 * Static code analysis tools run frequently.
 * Automated update tools support regular updates of Quollix infrastructure, libraries, and Docker images.
 * Official apps are cryptographically signed, and Quollix verifies the signature when downloading them. This means that even if the App Store or an app release repository is compromised, attackers cannot silently modify official app content unless they also compromise the signing credentials.
 * Official app definitions pin container images by digest. This prevents mutable tags from silently resolving to different container content and improves reproducibility.
 * This does not remove upstream supply-chain risk in the Docker images used by an app. Administrators who require additional assurance can inspect apps and upload them manually instead of relying on the public App Store.
 
-### Access Control
+### Access control
 * All endpoints enforce authentication and role-based authorization.
 * Quollix uses separate server-side authentication sessions for the Quollix UI and each app, keeping access to different services isolated.
 * Administrators can define access policies for apps, restricting access to specific users.
 * Quollix currently uses the OIDC authorization code flow for confidential clients with a client ID and client secret. PKCE is not required for this client type and is currently not enforced, which keeps integration simpler and improves compatibility with existing OIDC clients, such as apps.
 
-### Backups and Updates
+### Backups and updates
 * Quollix automatically updates apps and creates backups.
 * Quollix allows backups to be stored on remote servers using end-to-end encryption. This enables disaster recovery in case of hardware failure or data loss, but must be set up by the administrator.
 
-## Limitations and Assumptions
+## Limitations and assumptions
 
 The following areas remain under the administrator’s control and are out of scope for Quollix’s built-in safeguards.
 
@@ -46,7 +46,7 @@ We recommend using a simple, automatically updating system like Ubuntu, along wi
 * OS-level network security such as firewall configuration must be enforced by the administrator to protect the deployment.
 * Quollix does not yet provide built-in IP banning or rate limiting. Resource-exhaustion attacks, including attempts to overload CPU, memory, disk, or network capacity, therefore remain a relevant threat and should currently be mitigated at the infrastructure layer, for example with a firewall or reverse proxy.
 
-### Apps and Data
+### Apps and data
 
 * App Store content is not moderated, except for official apps. Third-party apps may contain malicious code, so we recommend that administrators only use trusted third-party sources or evaluate third-party apps before installation.
 * App updates depend on each app's maintainer. Outdated apps may introduce vulnerabilities, and compromised maintainer accounts or release repositories may result in malicious updates for third-party apps.

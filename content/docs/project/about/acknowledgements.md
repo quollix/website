@@ -4,7 +4,7 @@ title: "Acknowledgements"
 
 Quollix is made possible by people and organizations committed to free and open source software.
 
-## Core Platform
+## Core platform
 
 | Name | Role |
 |------|------|
@@ -19,14 +19,14 @@ Quollix is made possible by people and organizations committed to free and open 
 | [Let's Encrypt](https://letsencrypt.org/) | automated certificate issuance |
 | [Pico CSS](https://picocss.com/) | frontend styling |
 
-## Licensing and Standards
+## Licensing and standards
 
 | Name | Role |
 |------|------|
 | [Free Software Foundation](https://www.fsf.org/) | free software movement and GNU license stewardship |
 | [Open Source Initiative](https://opensource.org/) | open source definition and license approval |
 
-## Development Tools
+## Development tools
 
 | Name | Role |
 |------|------|
@@ -37,7 +37,7 @@ Quollix is made possible by people and organizations committed to free and open 
 | [Helix](https://helix-editor.com/) | editor used for day-to-day development |
 | [tmux](https://github.com/tmux/tmux) | terminal workflow and session management |
 
-## Website and App Store
+## Website and app store
 
 | Name | Role |
 |------|------|

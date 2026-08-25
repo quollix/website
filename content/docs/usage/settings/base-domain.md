@@ -1,5 +1,5 @@
 ---
-title: "Base Domain"
+title: "Base domain"
 ---
 
 {{< ui-location "System" "Settings" "Base Domain" >}}

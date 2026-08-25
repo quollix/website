@@ -1,5 +1,5 @@
 ---
-title: "Quollix Is Now Available"
+title: "Quollix is now available"
 date: 2026-06-20
 ---
 

@@ -13,6 +13,6 @@ title: "Vikunja"
 | OIDC client    | Native                                                                                     |
 | Business model | Open-core-like model with paid feature gating for self-hosted Pro features; also funded through Vikunja Cloud and sponsorships. |
 
-## Single Sign-On
+## Single sign-on
 
 Vikunja works out of the box. When you visit the Vikunja web UI, Quollix signs you in through OpenID Connect and redirects you to Vikunja.

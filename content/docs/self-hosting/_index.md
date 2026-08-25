@@ -1,5 +1,5 @@
 ---
-title: "Self-Hosting"
+title: "Self-hosting"
 weight: 30
 ---
 

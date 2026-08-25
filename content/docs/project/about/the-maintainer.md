@@ -1,5 +1,5 @@
 ---
-title: "Who Is Behind Quollix"
+title: "Who is behind Quollix"
 ---
 
 <a href="/images/personal-photo.jpeg">

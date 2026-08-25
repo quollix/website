@@ -5,11 +5,11 @@ weight: 20
 
 Quollix only takes care of the system administration. The actual day-to-day functionality like chat or data cloud comes from the installed apps.
 
-## App Store
+## App store
 
 Digital infrastructure can be installed as apps, much like a smartphone. An app store simplifies the process of discovering and installing new apps. Public app publishing is planned, so third-party maintainers will be able to upload their own apps in the future.
 
-## Official Apps
+## Official apps
 
 These are the apps from the official maintainer 'quollix' currently available on the App Store. They are actively maintained with regular updates. The OIDC SSO column shows whether the app can use Quollix accounts for sign-in:
 
@@ -26,10 +26,10 @@ These are the apps from the official maintainer 'quollix' currently available on
 | WordPress   | Website and blog publishing system.                              |   {{<cross>}}   | [wordpress.org](https://wordpress.org)         |
 | Zulip       | Team chat with topic-based conversations.                        | {{<checkmark>}} | [zulip.com](https://zulip.com)                 |
 
-## Email Servers
+## Email servers
 
 Email servers are not included as official apps because reliable email delivery depends on external factors outside Quollix's control, including DNS configuration, IP reputation, and filtering policies of third-party email providers. Self-hosting email often requires ongoing operational attention beyond application management. Advanced users may still run a self-hosted email server at their own discretion.
 
-## Unofficial Apps
+## Unofficial apps
 
-Third-party app publishing is planned. Once available, third-party maintainers will be able to upload apps to the App Store, and users will be able to download them from the App Store page.
+Third-party app publishing is planned. Once available, third-party maintainers will be able to upload apps to the App Store, and users will be able to download them from the [App Store]({{< relref "docs/usage/app-store.md" >}}) page.

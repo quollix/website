@@ -14,14 +14,14 @@ title: "Forgejo"
 | Business model | Fully open source project under Codeberg e.V. stewardship. |
 
 {{< alert title="Network prerequisite" color="warning" >}}
-If you want to use Forgejo over SSH, TCP port `2223` must be reachable by Git clients. Make sure nothing in front of Quollix blocks this port.
+If you want to use Forgejo over SSH, TCP port 2223 must be reachable by Git clients. Make sure nothing in front of Quollix blocks this port.
 {{< /alert >}}
 
 ## Introduction
 
 A general rule in Forgejo is that some settings cannot be changed via the web GUI once the installation wizard is completed. However, you can still modify them by directly editing the `app.ini` file inside the container as described below. Therefore, we recommend that you familiarize yourself with the potential configuration options before deploying a production instance.
 
-## Installation Wizard
+## Installation wizard
 
 When visiting the Forgejo web UI for the first time:
 * Ensure that this option is enabled: "Disable self-registration", as we want users to authenticate via Quollix OIDC
@@ -31,7 +31,7 @@ When visiting the Forgejo web UI for the first time:
   * Forgejo requires unique usernames and email addresses. Use values for the local administrator account that do not overlap with any Quollix user, for example username `admin2` and email `admin2@example.invalid`.
 * Click "Install Forgejo"
 
-## Adapting Configuration After Installation
+## Adapting configuration after installation
 
 This step is usually not needed for a standard installation. Treat it as a general option and skip it unless you need to change advanced Forgejo settings after installation. Open the Forgejo container through the Quollix [Terminal]({{< relref "../terminal.md" >}}) page and edit the `app.ini` as desired:
 
@@ -42,7 +42,7 @@ nano /data/gitea/conf/app.ini
 
 Save the `app.ini` file and restart the app.
 
-## Single Sign-On
+## Single sign-on
 
 * In Quollix, go to `Apps → SSO` and copy Forgejo's client ID and client secret
 * Visit Forgejo

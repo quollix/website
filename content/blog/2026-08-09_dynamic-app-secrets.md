@@ -1,5 +1,5 @@
 ---
-title: "Dynamic App Secrets"
+title: "Dynamic app secrets"
 date: 2026-08-09
 ---
 

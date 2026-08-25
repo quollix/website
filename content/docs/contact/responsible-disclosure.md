@@ -1,5 +1,5 @@
 ---
-title: "Responsible Disclosure"
+title: "Responsible disclosure"
 aliases:
   - /docs/contact/security/
   - /docs/legal/security/

@@ -9,7 +9,7 @@ There are two setup options:
 - local storage for testing
 - external storage for production
 
-## Local Testing
+## Local testing
 
 1. Start Quollix.
 1. Create this `docker-compose.yml`:
@@ -39,7 +39,7 @@ networks:
 docker compose up -d
 ```
 
-Use these values on the Quollix **Settings → Backup server** page:
+Use these values on the Quollix [Backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page:
 
 | Field | Value |
 | --- | --- |
@@ -48,9 +48,9 @@ Use these values on the Quollix **Settings → Backup server** page:
 | SSH User | `sshadmin` |
 | SSH Password | `sshpassword` |
 
-Then follow the remaining steps on the [Remote Backup settings page]({{< ref "docs/usage/settings/backup-server.md" >}}).
+Then follow the remaining steps on the [Backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page.
 
-## External Storage
+## External storage
 
 This example uses [Hetzner Storage Box](https://www.hetzner.com/storage/storage-box). Quollix is not affiliated with or sponsored by Hetzner.
 
@@ -67,7 +67,7 @@ This example uses [Hetzner Storage Box](https://www.hetzner.com/storage/storage-
 1. Save the settings.
 1. Open the new Storage Box and copy its host and user values.
 
-Use these values on the Quollix **Settings → Backup server** page:
+Use these values on the Quollix [Backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page:
 
 | Field | Value |
 | --- | --- |
@@ -76,9 +76,9 @@ Use these values on the Quollix **Settings → Backup server** page:
 | SSH User | `uXXXXXX` |
 | SSH Password | (the password you set above) |
 
-The SSH port we need on the Hetzner Storage Box is explicitly `23`, not `22`. Then follow the remaining steps on the [Remote Backup settings page]({{< ref "docs/usage/settings/backup-server.md" >}}).
+The SSH port we need on the Hetzner Storage Box is explicitly `23`, not `22`. Then follow the remaining steps on the [Backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page.
 
-### Automatic Snapshots
+### Automatic snapshots
 
 In the Hetzner Console, open the Storage Box, go to **Snapshots**, and enable automatic snapshots.
 

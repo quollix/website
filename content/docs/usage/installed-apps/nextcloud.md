@@ -17,7 +17,7 @@ title: Nextcloud
 
 On your first visit, enter an admin username and password. Click 'Install', then skip the remaining setup steps until you reach the home page. This creates a local admin account.
 
-## Single Sign-On
+## Single sign-on
 
 The fastest way to connect Nextcloud to Quollix via OIDC is from the Nextcloud container command line. Open a terminal in the Nextcloud container using the [Terminal]({{< relref "../terminal.md" >}}) feature.
 
@@ -41,7 +41,7 @@ php occ user_oidc:provider Quollix --clientid '<client-id>' --clientsecret '<cli
 
 Sign out and use the Quollix sign-in option.
 
-## Syncing via Nextcloud Client
+## Syncing via Nextcloud client
 
 Nextcloud provides desktop and mobile client applications that sync files automatically. To use a Nextcloud client, set the Nextcloud access policy in Quollix to 'Public' so the client is not blocked by the custom Quollix authentication mechanism.
 
