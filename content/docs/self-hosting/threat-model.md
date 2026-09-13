@@ -7,32 +7,40 @@ This document describes how Quollix mitigates threats to protect its digital inf
 ## Security measures
 
 ### Cryptography
+
 We only use modern, well-tested cryptographic algorithms. Administrators can generate Let’s Encrypt–signed certificates or provide their own certificates to secure HTTPS endpoints. HTTP requests are redirected to HTTPS so users reach the encrypted endpoint by default.
 
 ### Container isolation
+
 Every app runs in its own Docker container with no shared volumes, networks, or Docker socket access, and with restricted Linux capabilities.
 
 ### Defensive coding
-* Strict input validation blocks SQL injection, XSS, RCE, and similar attacks.
-* Protection against CSRF attacks is built into the security framework.
-* Cookies are hashed, and user passwords are salted and hashed. This means that even if a hacker gains access to the database, they won't be able to read this data in plain text. Therefore, cookies and strong passwords are effectively impossible to crack.
 
-### Secure supply chain
-* Static code analysis tools run frequently.
-* Automated update tools support regular updates of Quollix infrastructure, libraries, and Docker images.
-* Official apps are cryptographically signed, and Quollix verifies the signature when downloading them. This means that even if the App Store or an app release repository is compromised, attackers cannot silently modify official app content unless they also compromise the signing credentials.
-* Official app definitions pin container images by digest. This prevents mutable tags from silently resolving to different container content and improves reproducibility.
-* This does not remove upstream supply-chain risk in the Docker images used by an app. Administrators who require additional assurance can inspect apps and upload them manually instead of relying on the public App Store.
+- Strict input validation blocks SQL injection, XSS, RCE, and similar attacks.
+- Protection against CSRF attacks is built into the security framework.
+- Cookies are hashed, and user passwords are salted and hashed. This means that even if a hacker gains access to the database, they won't be able to read this data in plain text. Therefore, cookies and strong passwords are effectively impossible to crack.
+
+### Supply chain security
+
+- Official apps are cryptographically signed, and Quollix verifies the signature when downloading them. This means that even if the App Store or an app release repository is compromised, attackers cannot silently modify official app content unless they also compromise the signing credentials.
+- Static code analysis tools run frequently.
+- Automated update tools support regular updates of Quollix infrastructure, libraries, and Docker images.
+- Official [app definitions]({{< relref "docs/project/terminology.md" >}}) pin container images by digest. This prevents mutable tags from silently resolving to different container content and improves reproducibility.
+- For third-party apps, Quollix verifies a maintainer trust chain. The Quollix maintainer approves an App maintainer account and signs the maintainer's public key with the official Quollix signing key. When a Quollix server downloads a third-party app definition, it verifies the maintainer key approval and then uses that maintainer key to verify the app version signature.
+  - This confirms that the app definition was published by the approved App maintainer, but it does not mean that Quollix reviewed, endorses, or guarantees the third-party app.
+- This does not remove upstream supply-chain risk in the Docker images used by an app. Administrators who require additional assurance can inspect apps and upload them manually instead of relying on the public App Store.
 
 ### Access control
-* All endpoints enforce authentication and role-based authorization.
-* Quollix uses separate server-side authentication sessions for the Quollix UI and each app, keeping access to different services isolated.
-* Administrators can define access policies for apps, restricting access to specific users.
-* Quollix currently uses the OIDC authorization code flow for confidential clients with a client ID and client secret. PKCE is not required for this client type and is currently not enforced, which keeps integration simpler and improves compatibility with existing OIDC clients, such as apps.
+
+- All endpoints enforce authentication and role-based authorization.
+- Quollix uses separate server-side authentication sessions for the Quollix UI and each app, keeping access to different services isolated.
+- Administrators can define access policies for apps, restricting access to specific users.
+- Quollix currently uses the OIDC authorization code flow for confidential clients with a client ID and client secret. PKCE is not required for this client type and is currently not enforced, which keeps integration simpler and improves compatibility with existing OIDC clients, such as apps.
 
 ### Backups and updates
-* Quollix automatically updates apps and creates backups.
-* Quollix allows backups to be stored on remote servers using end-to-end encryption. This enables disaster recovery in case of hardware failure or data loss, but must be set up by the administrator.
+
+- Quollix automatically updates apps and creates backups.
+- Quollix allows backups to be stored on remote servers using end-to-end encryption. This enables disaster recovery in case of hardware failure or data loss, but must be set up by the administrator.
 
 ## Limitations and assumptions
 
@@ -40,20 +48,20 @@ The following areas remain under the administrator’s control and are out of sc
 
 ### Infrastructure
 
-* When administrators host Quollix on their own hardware, they are responsible for the physical security of the servers and networks.
-* Host OS, kernel, and Docker Engine updates must be maintained by the administrator to ensure security. Apps run in Docker containers rather than full virtual machines, which is lighter and easier to operate, but means container escape and kernel-level vulnerabilities remain part of the host security model. 
-We recommend using a simple, automatically updating system like Ubuntu, along with a cron job that reboots the system regularly to apply kernel upgrades.
-* OS-level network security such as firewall configuration must be enforced by the administrator to protect the deployment.
-* Quollix does not yet provide built-in IP banning or rate limiting. Resource-exhaustion attacks, including attempts to overload CPU, memory, disk, or network capacity, therefore remain a relevant threat and should currently be mitigated at the infrastructure layer, for example with a firewall or reverse proxy.
+- When administrators host Quollix on their own hardware, they are responsible for the physical security of the servers and networks.
+- Host OS, kernel, and Docker Engine updates must be maintained by the administrator to ensure security. Apps run in Docker containers rather than full virtual machines, which is lighter and easier to operate, but means container escape and kernel-level vulnerabilities remain part of the host security model.
+  We recommend using a simple, automatically updating system like Ubuntu, along with a cron job that reboots the system regularly to apply kernel upgrades.
+- OS-level network security such as firewall configuration must be enforced by the administrator to protect the deployment.
+- Quollix does not yet provide built-in IP banning or rate limiting. Resource-exhaustion attacks, including attempts to overload CPU, memory, disk, or network capacity, therefore remain a relevant threat and should currently be mitigated at the infrastructure layer, for example with a firewall or reverse proxy.
 
 ### Apps and data
 
-* App Store content is not moderated, except for official apps. Third-party apps may contain malicious code, so we recommend that administrators only use trusted third-party sources or evaluate third-party apps before installation.
-* App updates depend on each app's maintainer. Outdated apps may introduce vulnerabilities, and compromised maintainer accounts or release repositories may result in malicious updates for third-party apps.
-* Official app definitions are maintained by Quollix. Custom and third-party app definitions are controlled by their authors or the server administrator.
-* Apps can use generated secrets for internal credentials such as database passwords, service passwords, admin tokens, and signing keys. These services are still intended to be reachable only inside the app's private Docker network, usually by the app's main service. Vulnerabilities such as SQL injection, remote code execution, leaked configuration, or an attacker with Docker-level access may still expose or misuse the internal service.
+- App Store content is not moderated, except for official apps. Third-party apps may contain malicious code, so we recommend that administrators only use trusted third-party sources or evaluate third-party apps before installation.
+- App updates depend on each app maintainer. Outdated apps may introduce vulnerabilities, and compromised app maintainer accounts or release repositories may result in malicious updates for third-party apps.
+- Official app definitions are maintained by Quollix. Custom and third-party app definitions are controlled by their authors or the server administrator.
+- Apps can use generated secrets for internal credentials such as database passwords, service passwords, admin tokens, and signing keys. These services are still intended to be reachable only inside the app's private Docker network, usually by the app's [main service]({{< relref "docs/project/terminology.md" >}}). Vulnerabilities such as SQL injection, remote code execution, leaked configuration, or an attacker with Docker-level access may still expose or misuse the internal service.
 
 ### Miscellaneous
 
-* The owner of the Quollix installation is responsible for legal and regulatory compliance, such as privacy laws, although Quollix provides tools to help reduce the effort involved.
-* Quollix comes with a default self-signed certificate. This may be suitable for local testing or trusted LAN environments, but it is vulnerable to man-in-the-middle (MITM) attacks, especially during the first login before a trusted certificate is configured. To ensure security, administrators must upload or generate a trusted certificate as soon as possible and keep it up to date.
+- The owner of the Quollix installation is responsible for legal and regulatory compliance, such as privacy laws, although Quollix provides tools to help reduce the effort involved.
+- Quollix comes with a default self-signed certificate. This may be suitable for local testing or trusted LAN environments, but it is vulnerable to man-in-the-middle (MITM) attacks, especially during the first login before a trusted certificate is configured. To ensure security, administrators must upload or generate a trusted certificate as soon as possible and keep it up to date.

@@ -6,8 +6,8 @@ Server migration means moving Quollix and app data from one server to another. T
 
 ## Old server
 
-- Backups need to be enabled in [Backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) settings.
-- Open [Installed apps]({{< relref "docs/usage/installed-apps/_index.md" >}}) and create a backup of each app.
+- Backups need to be enabled in [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) settings.
+- Open [installed apps]({{< relref "docs/usage/installed-apps/_index.md" >}}) and create a backup of each app.
   - First, back up all apps except Postgres.
   - Last, back up the Postgres app.
 

@@ -43,8 +43,8 @@ sudo docker logs quollix_quollix_quollix | grep "initial admin password"
 
 8. **Sign in**: use the username `administrator` with the generated password from the logs. After signing in, open the [Settings]({{< relref "docs/usage/settings/_index.md" >}}) page in Quollix.
 
-9. **Set the base domain**: set [Base domain]({{< relref "docs/usage/settings/base-domain.md" >}}) to `<base-domain>`, and save.
-10. **Set up a certificate**: in the [Certificate]({{< relref "docs/usage/settings/certificate.md" >}}) section, start the challenge to generate a wildcard certificate, then follow the instructions until you see a success message. Restart the browser because browsers usually cache the old self-signed certificate.
+9. **Set the base domain**: set [base domain]({{< relref "docs/usage/settings/base-domain.md" >}}) to `<base-domain>`, and save.
+10. **Set up a certificate**: in the [certificate]({{< relref "docs/usage/settings/certificate.md" >}}) section, start the challenge to generate a wildcard certificate, then follow the instructions until you see a success message. Restart the browser because browsers usually cache the old self-signed certificate.
 
 Visiting `https://quollix.<base-domain>` should now use a certificate signed by Let's Encrypt.
 

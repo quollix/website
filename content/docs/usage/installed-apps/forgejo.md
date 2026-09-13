@@ -33,7 +33,7 @@ When visiting the Forgejo web UI for the first time:
 
 ## Adapting configuration after installation
 
-This step is usually not needed for a standard installation. Treat it as a general option and skip it unless you need to change advanced Forgejo settings after installation. Open the Forgejo container through the Quollix [Terminal]({{< relref "../terminal.md" >}}) page and edit the `app.ini` as desired:
+This step is usually not needed for a standard installation. Treat it as a general option and skip it unless you need to change advanced Forgejo settings after installation. Open the Forgejo container through the Quollix [terminal]({{< relref "../terminal.md" >}}) page and edit the `app.ini` as desired:
 
 ```bash
 apk add nano

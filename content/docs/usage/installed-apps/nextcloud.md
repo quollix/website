@@ -19,7 +19,7 @@ On your first visit, enter an admin username and password. Click 'Install', then
 
 ## Single sign-on
 
-The fastest way to connect Nextcloud to Quollix via OIDC is from the Nextcloud container command line. Open a terminal in the Nextcloud container using the [Terminal]({{< relref "../terminal.md" >}}) feature.
+The fastest way to connect Nextcloud to Quollix via OIDC is from the Nextcloud container command line. Open a terminal in the Nextcloud container using the [terminal]({{< relref "../terminal.md" >}}) feature.
 
 Install the OIDC user backend app:
 

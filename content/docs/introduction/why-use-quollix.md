@@ -7,14 +7,14 @@ weight: 5
 
 - **Open source**: Quollix is fully open source under the permissive MIT License, which keeps legal complexity low.
 - **Migration support**: Move Quollix to another server by restoring its app backups on a new server.
-- **Vendor independence**: These properties mean users are not locked into a single vendor.
+- **Vendor independence**: The properties above mean users are not locked into a single vendor.
 
 ## Installation and administration
 
 - **Setup**: Quollix provides a [guided installation]({{< relref "docs/getting-started/_index.md" >}}) flow with limited prerequisites.
 - **Automated maintenance**: Quollix can update installed apps, create backups, and run selected [service migrations]({{< relref "docs/project/app-store/service-migration.md" >}}) automatically. For example, updating Postgres to a new major version no longer requires administrators to run the migration commands by hand.
 - **Generated secrets**: Quollix generates app secrets automatically, so app installations do not need manual secret generation or injection steps.
-- **Official apps**: The Quollix team maintains [app definitions]({{< relref "/docs/introduction/apps.md" >}}) for selected services.
+- **Official apps**: The Quollix team maintains [app definitions]({{< relref "docs/project/terminology.md" >}}) for selected services. See [official apps]({{< relref "/docs/introduction/apps.md" >}}) for the current list.
 - **Unified user management**: Users can access multiple apps with one Quollix account through built-in OIDC integration.
 - **Private network support**: Quollix can issue Let's Encrypt certificates for home lab and private-network deployments without requiring a public-facing server.
 
@@ -28,10 +28,11 @@ weight: 5
 
 ## App definitions and extensibility
 
-- **App Store**: Install and manage apps through the Quollix App Store. Third-party app publishing is planned.
-- **Single-file app definitions**: Quollix defines each app through a single Docker Compose file. From that file, Quollix derives platform features automatically, including updates, backups, networking, and app secret generation.
-- **Portable app definitions**: App definitions are human-readable YAML files released as open source software, so they can be inspected, modified, shared, and used outside the App Store.
+- **[App Store]({{< relref "docs/project/app-store/_index.md" >}})**: Install and manage official and third-party apps.
 - **Custom apps**: Create your own app definitions when the existing App Store entries do not cover a service.
+- **Software distribution**: If you build web software, the App Store can help you offer your product to customers who prefer self-hosting. Quollix provides a lower-friction option with guided setup and automated maintenance.
+- **Portable app definitions**: Apps are defined in human-readable YAML files that are released as open source.
+- **Single-file app definitions**: Each Quollix app is defined through a single Docker Compose file, keeping setup simple.
 
 ## Data location and infrastructure
 

@@ -5,18 +5,17 @@ aliases:
   - /docs/resources/feedback/
 ---
 
-We appreciate feedback about:
+For example, we appreciate feedback about:
 
-- Quollix and the website
-- Positive experiences with the project
-- Legal and policy texts that are unclear, too broad, or missing important context
-- The topics listed below
+- Experiences with Quollix and the website
+- Legal texts that could be improved
+- The topics listed below:
 
-| Topic                  | Use this for                                                                                                                                                                      | Action                                                                                                                 |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Security vulnerability | Responsible disclosure or suspected vulnerabilities in Quollix. Please read [Responsible Disclosure]({{< relref "docs/contact/responsible-disclosure.md" >}}) first.  | <button type="button" class="feedback-draft-button" onclick="window.openContactMailDraft('security')">Open draft</button>    |
-| Bug report             | Reproducible behavior that seems incorrect.                                                                                                                                       | <button type="button" class="feedback-draft-button" onclick="window.openContactMailDraft('bug')">Open draft</button>         |
-| Suggest an improvement | Feature ideas, additional official apps, [website text improvements]({{< relref "docs/project/community/contributing/website.md" >}}), and workflows that feel confusing or slow. | <button type="button" class="feedback-draft-button" onclick="window.openContactMailDraft('improvement')">Open draft</button> |
+| Topic                  | Use this for                                                                                                                                                                      | Action                                                                                                                           |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Security vulnerability | Responsible disclosure or suspected vulnerabilities in Quollix. Please read [Responsible disclosure]({{< relref "docs/contact/responsible-disclosure.md" >}}) first.              | <button type="button" class="feedback-draft-button" onclick="window.openContactMailDraft('security')">Open draft</button>        |
+| Bug report             | Reproducible behavior that seems incorrect.                                                                                                                                       | <button type="button" class="feedback-draft-button" onclick="window.openContactMailDraft('bug')">Open draft</button>             |
+| Suggest an improvement | Feature ideas, additional official apps, [website text improvements]({{< relref "docs/project/community/contributing/website.md" >}}), and workflows that feel confusing or slow. | <button type="button" class="feedback-draft-button" onclick="window.openContactMailDraft('improvement')">Open draft</button>     |
 
 <script>
   const feedbackEmailAddress = 'quollix-feedback@mailbox.org'

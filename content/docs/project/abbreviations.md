@@ -26,6 +26,7 @@ aliases:
 | SaaS         | Software as a Service                 |
 | SSO          | Single Sign-On                        |
 | SSR          | Server-Side Rendering                 |
+| TUI          | Terminal User Interface               |
 | UEFI         | Unified Extensible Firmware Interface |
 | VPS          | Virtual Private Server                |
 | WSL          | Windows Subsystem for Linux           |

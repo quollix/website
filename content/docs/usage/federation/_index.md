@@ -35,4 +35,4 @@ The client server must be able to connect to the provider server, but the provid
 
 No. Quollix federation is identity federation. It lets users sign in to multiple Quollix servers or compatible OIDC clients through a shared identity provider. The Fediverse usually refers to application-level federation, commonly through protocols such as ActivityPub, where different servers exchange application data.
 
-You can still use Quollix to deploy apps that participate in the Fediverse, if suitable app definitions are available. In that setup, the app provides the Fediverse protocol support, while Quollix provides hosting and the option for OIDC-based sign-in.
+You can still use Quollix to deploy apps that participate in the Fediverse, if suitable [app definitions]({{< relref "docs/project/terminology.md" >}}) are available. In that setup, the app provides the Fediverse protocol support, while Quollix provides hosting and the option for OIDC-based sign-in.

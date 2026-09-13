@@ -39,7 +39,7 @@ networks:
 docker compose up -d
 ```
 
-Use these values on the Quollix [Backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page:
+Use these values on the Quollix [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page:
 
 | Field | Value |
 | --- | --- |
@@ -48,7 +48,7 @@ Use these values on the Quollix [Backup server]({{< relref "docs/usage/settings/
 | SSH User | `sshadmin` |
 | SSH Password | `sshpassword` |
 
-Then follow the remaining steps on the [Backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page.
+Then follow the remaining steps on the [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page.
 
 ## External storage
 
@@ -67,7 +67,7 @@ This example uses [Hetzner Storage Box](https://www.hetzner.com/storage/storage-
 1. Save the settings.
 1. Open the new Storage Box and copy its host and user values.
 
-Use these values on the Quollix [Backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page:
+Use these values on the Quollix [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page:
 
 | Field | Value |
 | --- | --- |
@@ -76,7 +76,7 @@ Use these values on the Quollix [Backup server]({{< relref "docs/usage/settings/
 | SSH User | `uXXXXXX` |
 | SSH Password | (the password you set above) |
 
-The SSH port we need on the Hetzner Storage Box is explicitly `23`, not `22`. Then follow the remaining steps on the [Backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page.
+The SSH port we need on the Hetzner Storage Box is explicitly `23`, not `22`. Then follow the remaining steps on the [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page.
 
 ### Automatic snapshots
 

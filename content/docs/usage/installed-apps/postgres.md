@@ -14,7 +14,7 @@ title: "Postgres"
 
 ## Introduction
 
-Quollix uses a Postgres database called **postgres** to store its own system data. It is listed as **quollix / postgres** on the [Installed apps]({{< relref "docs/usage/installed-apps/_index.md" >}}) page because it behaves similarly to other apps from an operational perspective.
+Quollix uses a Postgres database called **postgres** to store its own system data. It is listed as **quollix / postgres** on the [installed apps]({{< relref "docs/usage/installed-apps/_index.md" >}}) page because it behaves similarly to other apps from an operational perspective.
 
 Unlike ordinary apps, this database is part of the Quollix installation itself and stores all its data. Because Quollix depends on this database, it must remain running and available.
 

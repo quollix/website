@@ -4,17 +4,17 @@ title: "Maintenance agent"
 
 {{< ui-location "System" "Settings" "Maintenance agent" >}}
 
-This page configures when the Maintenance Agent runs and how long automatic backups are kept. The agent runs automatic maintenance jobs in the background once a day. It uses the per-app [maintenance policy]({{< relref "docs/usage/maintenance.md" >}}) to decide which apps are included in automatic updates and automatic backups.
+This page configures when the maintenance agent runs and how long automatic backups are kept. The agent runs automatic maintenance jobs in the background once a day. It uses the per-app [maintenance policy]({{< relref "docs/usage/maintenance.md" >}}) to decide which apps are included in automatic updates and automatic backups.
 
-If automatic updates are enabled for an app, the Maintenance Agent checks the App Store, creates a backup, and applies available updates. If the update fails, you can restore the previous version.
+If automatic updates are enabled for an app, the maintenance agent checks the [App Store]({{< relref "docs/usage/app-store/" >}}), creates a backup, and applies available updates. If the update fails, you can restore the previous version.
 
-In **Preferred time for maintenance (UTC)**, you can select a time window in which maintenance may run. Choose a period when Quollix is unlikely to be used by your users, such as around 04:00 in your local time zone. The default time zone is London time. The Maintenance Agent selects a random time within the window to spread app updates across installations and avoid excessive simultaneous load on the App Store.
+In **Preferred time for maintenance (UTC)**, you can select a time window in which maintenance may run. Choose a period when Quollix is unlikely to be used by your users, such as around 04:00 in your local time zone. The default time zone is London time. The maintenance agent selects a random time within the window to spread app updates across installations and avoid excessive simultaneous load on the App Store.
 
-If remote backups are enabled on the [Backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page, the Maintenance Agent will also create backups on the remote backup server.
+If remote backups are enabled on the [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page, the maintenance agent will also create backups on the remote backup server.
 
 ## Retention policy
 
-To free up storage space, the Maintenance Agent applies a retention policy. It keeps only the:
+To free up storage space, the maintenance agent applies a retention policy. It keeps only the:
 
 - last 5 pre-update backups
 - last 7 daily backups
@@ -30,4 +30,4 @@ Changing the retention policy can delete backups during the next maintenance run
 
 ## Artifacts cleanup
 
-The Maintenance Agent also removes unused artifacts, such as Docker images, to free up disk space. Docker volumes are not removed automatically. To remove volumes that are no longer needed, delete the associated app.
+The maintenance agent also removes unused artifacts, such as Docker images, to free up disk space. Docker volumes are not removed automatically. To remove volumes that are no longer needed, delete the associated app.

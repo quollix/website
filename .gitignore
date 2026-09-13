@@ -7,3 +7,10 @@ node_modules
 **tar.gz
 **.bkp
 **.mp4
+
+.stfolder
+.stversions
+.stignore
+.obsidian
+**.tmp
+.trash

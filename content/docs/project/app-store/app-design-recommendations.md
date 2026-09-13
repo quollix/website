@@ -2,16 +2,18 @@
 title: "App design recommendations"
 ---
 
-This document is intended for developers who develop software and want to distribute it through the Quollix App Store. You are free to design your app in any way you like. However, following the recommendations ensures smooth integration with Quollix and improves the experience for administrators and end users.
+This article is meant for developers who want to distribute their software through the [App Store]({{< relref "docs/project/app-store/_index.md" >}}). You are free to design your app in any way you like. However, following the recommendations ensures smooth integration with Quollix and improves the experience for administrators and end users.
 
-Tip: Downloading a few official app definitions from the Quollix UI and inspecting their `docker-compose.yml` files can be useful. Some recommendations below are easier to understand when compared with working examples.
+## Official app repository
+
+Tip: The [official app definitions](https://github.com/quollix/apps) provide working examples. Some recommendations below are easier to understand when compared with these examples.
 
 ## Introduction and development model
 
-Any software that provides a web interface can be published as an app in the Quollix App Store. At a high level, the development and distribution flow looks like this:
+Any software that provides a web interface can be published as an app in the App Store. At a high level, the development and distribution flow looks like this:
 
 - You package your software as a Docker image and publish it to a public registry.
-- You provide a `docker-compose.yml` that follows Quollix conventions and upload the app to the Quollix App Store.
+- You provide an app definition that follows Quollix conventions and upload the app to the App Store.
 - Users can download the app from the App Store and install it on their Quollix servers.
 
 ## What Quollix handles for you
@@ -36,18 +38,18 @@ Ideally, an administrator installs an app, opens it, signs in directly through Q
 
 ### Platform compatibility
 
-- Apps should support both AMD64 and ARM64 architectures by publishing multi-platform Docker images.
+- Apps should support both AMD64 and ARM64 architectures by [publishing a multi-platform Docker image](https://docs.docker.com/build/building/multi-platform) for the [main service]({{< relref "docs/project/terminology.md" >}}) and using multi-platform Docker images for [side services]({{< relref "docs/project/terminology.md" >}}).
 
 ### Installation and updates
 
 - The app must be deployable using a simple `docker compose up` without manual pre- or post-installation steps.
-- All services defined in `docker-compose.yml` must use clear, descriptive names that explicitly indicate the software they run. For example, use 'postgres' instead of 'db', 'database' or 'service1'.
+- All services defined in the app definition must use clear, descriptive names that explicitly indicate the software they run. For example, use `postgres` instead of `db`, `database`, or `service1`.
 - Docker image tags should use release versions in the format `X.Y.Z`, for example `1.2.3`.
 - App Docker containers are frequently started and stopped, which is why these operations should be fast.
 - Apps should be usable immediately on first visit and take users directly to the app's landing page. Avoid installation wizards and web-based configuration on first boot by using environment variables instead. Also avoid welcome popups, guided onboarding, tutorial modals, and informational overlays.
 - Updates should be non-interactive. When updated, the app should migrate database schemas and configuration automatically.
-- Apps should not perform self-updates from inside the running container. The Quollix App Store is the primary update mechanism and updates apps by changing Docker image tags and restarting services. In-container updates can create state that no longer matches the declared image version.
-- Apps should disable automatic update checks and in-app update notifications where possible. Administrators should not receive newer-version notices through the app UI, because the Quollix App Store is the primary update mechanism.
+- Apps should not perform self-updates from inside the running container. The App Store is the primary update mechanism and updates apps by changing Docker image tags and restarting services. In-container updates can create state that no longer matches the declared image version.
+- Apps should disable automatic update checks and in-app update notifications where possible. Administrators should not receive newer-version notices through the app UI, because the App Store is the primary update mechanism.
 
 ### Networking and reverse proxy model
 
@@ -62,10 +64,10 @@ Ideally, an administrator installs an app, opens it, signs in directly through Q
 
 ### Configuration model
 
-Configuration should be handled by the app itself and should not complicate deployment. The `docker-compose.yml` should stay lean. If configuration is necessary, use the following preference order:
+Configuration should be handled by the app itself and should not complicate deployment. The app definition should stay lean. If configuration is necessary, use the following preference order:
 
-1. Opinionated defaults built into the app. These should cover the common use cases and remain hidden from compose yamls where possible.
-2. Environment variables in `docker-compose.yml`.
+1. Opinionated defaults built into the app. These should cover the common use cases and remain hidden from app definitions where possible.
+2. Environment variables in the app definition.
 3. Web-based or CLI-based configuration. Usually used for settings that may change over time.
 
 Direct editing of config files is discouraged. Internally managed config files are acceptable if they are fully controlled by the app.
@@ -74,7 +76,7 @@ Direct editing of config files is discouraged. Internally managed config files a
 
 If needed, apps should use the following environment variables provided by Quollix during deployment: `BASE_DOMAIN`, `CLIENT_ID`, `CLIENT_SECRET`, `IANA_TIMEZONE`, and generated `SECRET_*` values. On startup, the app should apply these values automatically. Restarting the app must be sufficient to adapt to configuration changes.
 
-Apps should not persist dynamic values injected through environment variables into long-lived application configuration. For example, when `BASE_DOMAIN` changes, restarting the app with the new value should be sufficient. The administrator should not need to update the same value manually in the web UI or server settings.
+Apps should not persist dynamic values injected through environment variables into long-lived application configuration. For example, when `CLIENT_SECRET` changes, restarting the app with the new value should be sufficient. The administrator should not need to update the same value manually in the web UI or server settings.
 
 ### Operations
 
@@ -83,11 +85,11 @@ Apps should not persist dynamic values injected through environment variables in
 - Apps should be efficient in terms of CPU, memory, and disk usage. Apps should be able to run on low-end hardware.
 - The app and its services should scale well vertically. For example, if a database is needed, prefer PostgreSQL over SQLite to support larger production workloads.
 - Docker images should be small. Minimal base images such as Alpine are preferred.
-  - For example, the Quollix Docker image based on Alpine, and we use `postgres-alpine` instead of `postgres` for the database container image.
+  - For example, the Quollix Docker image is based on Alpine, and Quollix uses `postgres-alpine` instead of `postgres` for the database service image.
 - Prefer compiled languages that produce small, static binaries, such as Go or Rust.
-- Keep the number of services in `docker-compose.yml` small to simplify operation and updating.
-  - Apps are deployed on a single node, so a horizontally scalable microservice architecture usually adds operational overhead without benefit.
-  - Ideally one monolithic main service with an HTTP server, and optionally a database container if required.
+- Keep the number of services in the app definition small to simplify operation and updating.
+  - Apps are deployed on a single Quollix server, so a horizontally scalable microservice architecture adds operational overhead without benefit.
+  - Ideally, use one monolithic main service with an HTTP server, and optionally a database service if required.
   - Add separate services, such as search engines or LLMs, only when they are necessary.
 - Prefer a single, opinionated deployment approach. If multiple equivalent services or databases are possible, standardize on one instead of maintaining multiple app variants.
   - We prefer PostgreSQL over MySQL/MariaDB as app database.
@@ -115,7 +117,7 @@ Avoid hard-coded assumptions or irreversible dependencies.
 
 #### Operator tooling
 
-Containers may include useful operational tooling for the software they run. For example, database containers commonly include the matching database client, and application containers may expose a small CLI for administrative or diagnostic tasks.
+Services may include useful operational tooling for the software they run. For example, database services commonly include the matching database client, and application services may expose a small CLI for administrative or diagnostic tasks.
 
 ### Logging and observability
 
@@ -149,7 +151,7 @@ The custom claim `role` currently contains `admin` or `user`. The custom claim `
 
 Quollix automatically generates persistent values for environment placeholders whose name starts with `SECRET_`. Apps should use purpose-specific names, such as `SECRET_POSTGRES_PASSWORD`, `SECRET_SESSION_SECRET`, or `SECRET_ADMIN_TOKEN`. These values are stored with the installed app and remain stable across container restarts, app updates, and backups.
 
-`docker-compose.yml` example:
+App definition example:
 
 ```yaml
 services:
@@ -165,7 +167,7 @@ OIDC integration should use the authorization code flow. The app should retrieve
 
 OIDC integration should be configurable through environment variables provided by Quollix. Ideally, the app should only require an issuer URL, `CLIENT_ID`, and `CLIENT_SECRET`, without requiring administrators to configure these settings manually. The app should derive the discovery endpoint from the issuer by using `/.well-known/openid-configuration`, and then read the remaining OIDC endpoints from that metadata document.
 
-For example, the Docker Compose YAML could look like this:
+For example, the app definition could look like this:
 
 ```yaml
 services:
@@ -181,4 +183,4 @@ services:
 
 If an app supports OIDC, Quollix should be the primary source of truth for user identities. Self-registration features of the app should therefore be disabled by default or by environment variables.
 
-Some apps distinguish sign-in and account creation, where the latter sometimes requires extra configuration to be enabled. Instead, the preferred bootstrap model is that OIDC integration is configured through environment variables, as described in [OIDC integration](#oidc-integration), and accounts are created automatically through OIDC sign-in. The first user who signs in through OIDC should become an admin, while subsequent users become regular users. The second-best option is to create a local admin account on first visit, while all other users sign in through OIDC.
+Some apps distinguish sign-in and account creation, where the latter sometimes requires extra configuration to be enabled. Instead, the preferred bootstrap model is that OIDC integration is configured through environment variables, as described in [OIDC integration](#oidc-integration), and accounts are created automatically through OIDC sign-in. The first user who signs in through OIDC should become an administrator, while subsequent users become regular users. The second-best option is to create a local administrator account on first visit, while all other users sign in through OIDC.

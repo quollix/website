@@ -37,7 +37,7 @@ Quollix is made possible by people and organizations committed to free and open 
 | [Helix](https://helix-editor.com/) | editor used for day-to-day development |
 | [tmux](https://github.com/tmux/tmux) | terminal workflow and session management |
 
-## Website and app store
+## Website and App Store
 
 | Name | Role |
 |------|------|

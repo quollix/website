@@ -4,7 +4,7 @@ title: "Users"
 
 {{< ui-location "Identity" "Users" >}}
 
-To access private apps in Quollix, you need a local account. The Users page enables you to invite, disable, and delete these accounts. Users with the "User" role can only access apps and their own account and have no access to administrative features.
+To access private apps in Quollix, you need a local account. The users page enables you to invite, disable, and delete these accounts. Users with the "User" role can only access apps and their own account and have no access to administrative features.
 
 ## Inviting users and password reset
 

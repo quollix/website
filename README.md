@@ -9,7 +9,7 @@ The website is powered by [Hugo](https://gohugo.io/) and the [Docsy](https://www
 On Debian or Ubuntu, install the tools and project dependencies needed to run the website locally:
 
 ```bash
-bash scripts/install-hugo.sh
+bash scripts/bootstrap.sh
 ```
 
 Start a local development server from the repository root:
@@ -26,6 +26,8 @@ Please read the [Community](https://quollix.org/docs/project/community/) article
 
 ### License
 
-This website content is licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/deed.en). See [LICENSE](LICENSE) for details.
+This project is licensed under the [MIT License](LICENSE).
+
+Quollix branding is not part of that license. See [TRADEMARKS.md](https://github.com/quollix/quollix/blob/main/TRADEMARKS.md).
 
 Third-party assets are distributed under their own licenses. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

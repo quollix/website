@@ -15,7 +15,7 @@ title: "Zulip"
 
 ## Setup
 
-After installing Zulip, visiting it for the first time shows a "No organization found" page. To create an organization, open a terminal session for the Zulip container/service from the Quollix [Terminal]({{< relref "../terminal.md" >}}) page and run:
+After installing Zulip, visiting it for the first time shows a "No organization found" page. To create an organization, open a terminal session for the Zulip container/service from the Quollix [terminal]({{< relref "../terminal.md" >}}) page and run:
 
 ```bash
 su zulip -c '/home/zulip/deployments/current/manage.py generate_realm_creation_link'

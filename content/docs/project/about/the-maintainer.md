@@ -3,7 +3,7 @@ title: "Who is behind Quollix"
 ---
 
 <a href="/images/personal-photo.jpeg">
-  <img src="/images/personal-photo.jpeg" alt="Portrait of the Quollix maintainer" width="200">
+  <img src="/images/personal-photo.jpeg" alt="Portrait of the Quollix creator" width="200">
 </a>
 <br>
 <br>

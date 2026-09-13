@@ -7,11 +7,11 @@ Quollix is built for people who want to self-host web services without making in
 
 ## Quollix may be for you if
 
-* You are comfortable running or renting a server, but prefer a guided, opinionated system over assembling every service, integration, and maintenance workflow manually.
-* You value self-hosting, but want automation to reduce setup effort and routine maintenance work instead of handling everything manually.
-* You want to operate services for yourself, a household, a community, or a small to medium-sized organization.
+- You are comfortable running or renting a server, but want a guided, opinionated system that automates setup, integrations, and routine maintenance instead of assembling everything manually.
+- You want to operate services for yourself, a household, a community, or a small to medium-sized organization.
 
 ## Quollix may not be for you if
 
-* You need horizontally scaling infrastructure, Kubernetes-style orchestration, or a platform designed for large multi-node deployments.
-* You dislike opinionated defaults and want full control over every infrastructure layer, accepting more manual setup in exchange for maximum configuration freedom.
+- You are not comfortable with basic Linux, IP networking, DNS, and web service concepts, unless someone else can help you operate the server.
+- You need horizontally scaling infrastructure, Kubernetes-style orchestration, or a platform designed for large multi-node deployments.
+- You dislike opinionated defaults and want full control over every infrastructure layer, accepting more manual setup in exchange for maximum configuration freedom.

@@ -6,7 +6,7 @@ no_list: true
 <div style="display:flex; align-items:center; gap:1rem; margin:1rem 0 1.5rem 0; flex-wrap:wrap;">
   <img src="/images/logo.svg" alt="Quollix logo" width="200">
   <div style="flex:1; min-width:260px;">
-  <p style="max-width: 500px">Quollix is an open source self-hosting platform for Docker Compose based web apps such as Nextcloud, Forgejo, and Vaultwarden. It aims to minimize the time and effort required to get your own infrastructure running. Quollix automates recurring tasks such as updates, backups, certificate generation, subdomain routing, and access control, and provides native OIDC SSO integration.</p>
+  <p style="max-width: 500px">Quollix is an open source self-hosting platform for Docker Compose based web apps such as Nextcloud and Vaultwarden. It aims to minimize the time and knowledge required to get your own infrastructure running. Quollix automates recurring tasks such as updates, backups, certificate generation, routing, and access control, and provides native OIDC SSO integration.</p>
   </div>
 </div>
 

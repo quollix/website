@@ -2,27 +2,12 @@
 title: "Developer guide"
 ---
 
-Quollix aims to keep its codebase lean, understandable, and easy to maintain. Contributions should fit the existing design, avoid unnecessary complexity, and solve the problem with the simplest clean implementation.
+Detailed coding conventions are maintained in the [agents repository](https://github.com/quollix/agents). They apply to both human-written and AI-assisted contributions.
 
-Detailed development conventions are maintained in the [quollix/work codex directory](https://github.com/quollix/work/tree/main/codex). They apply to both human-written and AI-assisted contributions. Larger code changes require a contributor with sufficient programming experience to understand the design, tradeoffs, and maintenance impact of the change. This is especially important for AI-assisted work.
+Larger code changes should only be made by someone with enough programming experience to understand the tradeoffs and maintenance impact.
+
+Before submitting code, run the relevant test suite and fix any failures. The Quollix maintainer also runs the test suite before release when preparing release artifacts.
 
 ## AI-assisted contributions
 
-AI-assisted contributions are welcome when there is strong human involvement. Contributors are expected to review, understand, simplify, and test all submitted code before opening a PR. Unreviewed generated code, overly complex output, or "vibe coding" is strictly rejected. The final contribution must be intentional and consistent with the surrounding codebase.
-
-## Technical expectations
-
-Quollix uses a deliberately simple technology stack. Prefer Go and Docker unless there is a compelling reason to introduce something else.
-
-Contributions should:
-
-* follow the existing structure and naming style
-* avoid unnecessary dependencies
-* avoid app-specific logic
-  * app behavior should be handled by app definitions, app configuration, or the app itself
-  * for app integration expectations, see [App Design Recommendations]({{< relref "docs/project/app-store/app-design-recommendations.md" >}})
-* remove or simplify code where possible
-* include meaningful tests for new behavior
-* pass the relevant CI checks before merge
-
-If a repository contains a `ci-runner`, use it as the main entry point for local development and verification. DevOps-related automation should be implemented in Go instead of Bash. Repository-specific setup steps are documented in the repository itself.
+AI-assisted contributions are welcome, but a coding agent is a tool, not an autonomous software engineer. The contributor remains responsible for understanding, simplifying, and testing the submitted code. Unreviewed generated code, overly complex output, or "vibe coding" is strictly rejected. The final contribution must be intentional and consistent with the surrounding codebase.

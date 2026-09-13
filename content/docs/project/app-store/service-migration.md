@@ -2,7 +2,7 @@
 title: "Service migration"
 ---
 
-Quollix automatically runs selected service migrations during app updates from the App Store. For example, updating Postgres to a new major version no longer requires administrators to run the migration commands by hand. The same service migration mechanism is also used when an administrator directly uploads an app version to Quollix.
+This article explains service migrations that Quollix can run automatically during app updates from the [App Store]({{< relref "docs/project/app-store/_index.md" >}}). For example, updating Postgres to a new major version no longer requires administrators to run the migration commands by hand. The same service migration mechanism is also used when an administrator directly uploads an app version to Quollix.
 
 ## Current support
 
@@ -16,11 +16,11 @@ Quollix currently handles these service migrations:
 
 ### RabbitMQ
 
-For RabbitMQ, app definitions should keep the RabbitMQ node name stable across container recreations and upgrades, for example by setting `RABBITMQ_NODENAME`.
+For RabbitMQ, app definitions should keep the RabbitMQ node name stable across container recreations during backups and updates, for example by setting the environment variable `RABBITMQ_NODENAME: rabbit@rabbitmq`.
 
 ### MariaDB
 
-Maintainers of apps containing MariaDB services can use MariaDB's built-in automatic upgrade handling:
+App maintainers publishing apps with MariaDB services can use MariaDB's built-in automatic upgrade handling:
 
 ```yaml
 environment:

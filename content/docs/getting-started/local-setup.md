@@ -31,7 +31,7 @@ sudo docker compose up -d
 
 3. Visit [http://localhost](http://localhost) in your browser, sign in with the default credentials (`administrator`/`password`). Quollix uses a self-signed HTTPS certificate by default. Your browser may show a certificate warning when you open Quollix or an installed app over HTTPS. For initial access you must accept the warning.
 
-Now you can install apps from the store, start and open them.
+Now you can install apps from the App Store, start them, and open them.
 
 Note: When you open a local app over HTTPS, your browser may show a warning because the app is served from another local domain with a self-signed certificate. Continue past the warning. The first request may return a "Bad Request" response. If that happens, open the app again. Subsequent attempts should work normally.
 

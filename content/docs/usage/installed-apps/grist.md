@@ -2,6 +2,14 @@
 title: "Grist"
 ---
 
+{{< alert title="Note" color="warning" >}}
+Updates to the official Grist app are currently paused.
+{{< /alert >}}
+
+This is due to [Grist's August 2026 licensing change](https://support.getgrist.com/newsletters/2026-08/#update-on-oidcsaml-support) for new self-hosted installations. OIDC/SAML SSO is now officially supported only in Grist's proprietary edition.
+
+For now, Grist remains available as an official app in Quollix while we monitor the response from the community. The current App Store version of Grist can still be used with OIDC support. However, while updates are paused, future bug fixes and security fixes from upstream are not included in the official app.
+
 ## Resources
 
 | Resource       | Description                                                                                                          |

@@ -12,14 +12,15 @@ Legend:
 | Feature                                                            | Implementation Status |
 | ------------------------------------------------------------------ | :-------------------: |
 | [Access Policy]({{< relref "docs/usage/installed-apps" >}})        |    {{<checkmark>}}    |
-| [App Store]({{< relref "docs/project/app-store" >}})               |      {{<tilde>}}      |
 | [App Secrets]({{< relref "docs/usage/app-secrets.md" >}})          |    {{<checkmark>}}    |
+| [App Store]({{< relref "docs/project/app-store" >}})               |    {{<checkmark>}}    |
 | [Backups]({{< relref "docs/usage/backups.md" >}})                  |    {{<checkmark>}}    |
 | [Certificate]({{< relref "docs/usage/settings/certificate.md" >}}) |    {{<checkmark>}}    |
 | Compliance                                                         |      {{<cross>}}      |
 | [Email]({{< relref "docs/usage/email.md" >}})                      |      {{<tilde>}}      |
 | [Federation]({{< relref "docs/usage/federation" >}})               |    {{<checkmark>}}    |
 | [Groups]({{< relref "docs/usage/groups.md" >}})                    |    {{<checkmark>}}    |
+| Log centralization                                                 |      {{<cross>}}      |
 | [Maintenance]({{< relref "docs/usage/maintenance.md" >}})          |    {{<checkmark>}}    |
 | Monitoring                                                         |      {{<cross>}}      |
 | Networking                                                         |    {{<checkmark>}}    |
@@ -31,13 +32,13 @@ Legend:
 
 Admins can set an access policy for each app individually, for example restricting access to registered users or making an app public so anyone can use it without an account. Public access can be used for blogs, forums, and websites.
 
-## App store
-
-The App Store is the central location for downloading and installing apps and updates. Public app publishing is planned, so third-party maintainers will be able to upload their own apps in the future.
-
 ## App secrets
 
 Quollix generates and injects app-specific random secrets for installed apps. These secrets provide cryptographic randomness that some apps need for secure operation.
+
+## App store
+
+The [App Store]({{< relref "docs/project/app-store/_index.md" >}}) is the central location for downloading and installing apps and updates. It supports official and third-party [app definitions]({{< relref "docs/project/terminology.md" >}}).
 
 ## Backups
 
@@ -69,15 +70,17 @@ Together, these provider and client capabilities make up Quollix federation, whe
 
 Groups allow you to organize people by role, team, or department and manage which apps they can access across your organization.
 
+## Log centralization
+
+Quollix collects and stores app logs locally. The UI lets administrators inspect logs in one place, making it easier to troubleshoot apps and understand app behavior.
+
 ## Maintenance
 
 Quollix runs a background maintenance agent that automatically updates installed apps, creates backups, and removes outdated backups.
 
 ## Monitoring
 
-Quollix centralizes the collection of logs and system metrics, including CPU, memory, disk, and network utilization. Data is stored locally on the Quollix server and is not sent outside the environment. A built-in GUI provides visualization and analysis, giving administrators a unified system view.
-
-Collected data is also used to alert administrators about critical events, such as high CPU load or low disk space.
+Quollix collects and stores app resource metrics locally, including CPU, memory, disk, and network utilization. The UI visualizes resource usage and alerts administrators about critical events, such as high CPU load or low disk space.
 
 ## Networking
 

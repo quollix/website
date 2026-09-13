@@ -4,18 +4,22 @@ title: "Installed apps"
 
 {{< ui-location "Apps" "Installed" >}}
 
-On the Installed Apps page, you can manage your apps. You can perform the following operations on an app:
+On the installed apps page, you can manage your apps. After installing an app through the [App Store page]({{< relref "docs/usage/app-store/" >}}), you can perform the following operations on it:
 
 - Start
 - Stop, which stops the app and excludes it from [automatic updates]({{< relref "docs/usage/maintenance.md" >}}) until it is started again.
-- Backup
+- Backup, if you enabled the [backup server]({{< relref "docs/usage/settings/backup-server" >}})
 - Update, which will create a backup, if enabled, and then install the latest version of the app.
 - Delete, which removes the app and its artifacts. Only its backups are preserved.
-- Download, which downloads the app definition file in the browser.
+- Download, which downloads the [app definition]({{< relref "docs/project/terminology.md" >}}) file in the browser.
 
 ## First start
 
 Starting an app for the first time can take a while. Containers may need to be downloaded in the background, and the app may need to prepare its initial configuration or download additional components. Even after the app is marked as running, it can take anywhere from a few seconds to a few minutes before the app webpage becomes available.
+
+{{< alert title="Note" color="warning" >}}
+When installing an official app, you should always read the related articles at the bottom, as they contain setup guidelines, security instructions, and information about self-registration.
+{{< /alert >}}
 
 If you change the Quollix base domain, an app's client ID, or its client secret (OIDC), some apps may need additional attention before they work correctly again. If an app stops working or still uses the old settings, restart it first. If the issue remains after the restart, update the related settings in the app's own admin interface.
 
@@ -27,7 +31,7 @@ Available access policies are:
 
 - `Admin only`: Only administrators can access the app.
 - `Authenticated`: Any signed-in Quollix user can access the app.
-- `Group restricted`: Only signed-in users who belong to an authorized group can access the app. See [Groups]({{< relref "docs/usage/groups" >}}).
+- `Group restricted`: Only signed-in users who belong to an authorized group can access the app. See [groups]({{< relref "docs/usage/groups" >}}).
 - `Public`: Anyone can access the app without signing in to Quollix.
 
 Making an app accessible to more users, especially by setting it to `Public`, increases the risk of exposing potential vulnerabilities. Only grant app access to users who genuinely need it.
@@ -40,7 +44,7 @@ Typical use cases for public apps include:
 
 ## Downloading and uploading apps
 
-You can manually download and upload apps locally without relying on the official App Store. Backups will still be handled automatically. However, this approach increases your maintenance responsibility because updates must be performed manually. Enabling automatic updates via the app store later for an uploaded app may lead to incompatibilities if the configurations differ.
+You can manually download and upload apps locally without relying on the official [App Store]({{< relref "docs/usage/app-store/" >}}). Backups will still be handled automatically. However, this approach increases your maintenance responsibility because updates must be performed manually. Enabling automatic updates via the App Store later for an uploaded app may lead to incompatibilities if the configurations differ.
 
 Only upload app definitions from sources you trust. App definitions can run containers, access app data, use system resources, and expose services on your server. If the uploaded app does not exist yet, a new app will be created from the file. If the app already exists, the existing app will be updated. If enabled, a backup may be created before the update.
 
