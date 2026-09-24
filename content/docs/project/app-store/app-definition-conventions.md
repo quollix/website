@@ -25,5 +25,5 @@ When [creating apps]({{< relref "docs/project/app-store/create-your-first-app" >
 - Use the validation command to check your app definitions against these conventions:
 
 ```bash
-./qsc local validate -d <path/to/apps/dir>
+./qsc local validate
 ```

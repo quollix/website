@@ -8,10 +8,10 @@ There are two ways to update app definitions:
 - **Automatic**: use `qsc` to search for newer Docker image tags and their hashes, then write the selected updates to the app definitions.
 
 ```bash
-./qsc local update -d /home/sampleuser/Documents/quollix-apps
+./qsc local update
 ```
 
-`qsc` reads the Compose YAML files, fetches available tags from each image repository, and selects the highest tag that matches the format of the current tag.
+`qsc` reads the Compose YAML files from the apps folder configured during onboarding, fetches available tags from each image repository, and selects the highest tag that matches the format of the current tag.
 
 ### Pinning image tags
 

@@ -50,10 +50,18 @@ Set the file path to the private key corresponding to the Ed25519 public key you
 ./qsc onboarding set-private-key ~/.ssh/quollix_app_store
 ```
 
-Verify that you are signed in by showing the account details:
+Create a folder for your local app definitions and save its path in `qsc`:
+
+```bash
+mkdir -p /home/sampleuser/Documents/quollix-apps
+./qsc onboarding set-apps-directory /home/sampleuser/Documents/quollix-apps
+```
+
+Display App Store account and local configuration:
 
 ```bash
 ./qsc account details
+./qsc session show
 ```
 
 <script>

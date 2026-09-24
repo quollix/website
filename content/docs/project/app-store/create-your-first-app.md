@@ -54,7 +54,7 @@ List your apps to confirm that `hedgedoc` was created.
 ./qsc apps list
 ```
 
-Then create an apps folder and add a HedgeDoc app definition at `/home/sampleuser/Documents/quollix-apps/hedgedoc.yml`:
+Then add a HedgeDoc app definition named `hedgedoc.yml` to the apps folder configured during onboarding:
 
 ```yaml
 # This file is licensed under the 0BSD License: https://opensource.org/license/0bsd
@@ -75,7 +75,7 @@ services:
 This app definition is not meant for production use. Next, upload the file:
 
 ```
-./qsc versions upload -d /home/sampleuser/Documents/quollix-apps
+./qsc local upload
 ```
 
 List the app versions to confirm that the upload succeeded:
