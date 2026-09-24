@@ -1,5 +1,6 @@
 ---
 title: "Join the App Store"
+weight: 10
 ---
 
 Anyone who wants to publish app definitions through the App Store can request an app maintainer account. Account creation is manual for now. We ask for enough information to reduce spam, impersonation, namespace squatting, and misleading app maintainer names.

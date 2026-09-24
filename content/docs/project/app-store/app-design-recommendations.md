@@ -22,7 +22,7 @@ Quollix provides a standardized operational environment. App developers should a
 
 - Reverse proxying and TLS certificate management
 - Traffic control
-- Update orchestration and restarts
+- Update orchestration and restarts, but not application database or configuration migrations
 - Backups and restores
 - Log rotation, monitoring and alerting
 - User management (when your app supports OIDC)
@@ -183,4 +183,4 @@ services:
 
 If an app supports OIDC, Quollix should be the primary source of truth for user identities. Self-registration features of the app should therefore be disabled by default or by environment variables.
 
-Some apps distinguish sign-in and account creation, where the latter sometimes requires extra configuration to be enabled. Instead, the preferred bootstrap model is that OIDC integration is configured through environment variables, as described in [OIDC integration](#oidc-integration), and accounts are created automatically through OIDC sign-in. The first user who signs in through OIDC should become an administrator, while subsequent users become regular users. The second-best option is to create a local administrator account on first visit, while all other users sign in through OIDC.
+Some apps distinguish sign-in and account creation, where the latter sometimes requires extra configuration to be enabled. Instead, OIDC integration should be configured through environment variables, as described in [OIDC integration](#oidc-integration), and accounts should be created automatically through OIDC sign-in. The first user who signs in through OIDC can become an administrator, while subsequent users become regular users. Alternatively, the app can create a local administrator account on first visit, while all other users sign in through OIDC.

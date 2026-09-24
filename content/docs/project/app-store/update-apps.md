@@ -1,5 +1,6 @@
 ---
 title: Update apps
+weight: 20
 ---
 
 There are two ways to update app definitions:
