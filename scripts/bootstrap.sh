@@ -8,7 +8,8 @@ temp_dir="$(mktemp -d)"
 trap 'rm -rf "$temp_dir"' EXIT
 
 sudo apt-get update
-sudo apt-get install -y ca-certificates curl tar xz-utils git nodejs npm
+# Docsy v0.17.0 uses the Dart Sass transpiler supported by Hugo v0.114.0 and later.
+sudo apt-get install -y ca-certificates curl tar xz-utils git nodejs npm dart-sass
 
 go_version="$(curl -fsSL 'https://go.dev/VERSION?m=text' | sed -n '1p')"
 go_archive="${go_version}.linux-amd64.tar.gz"
@@ -32,3 +33,4 @@ npm ci
 node --version
 go version
 hugo version
+dart-sass --version
