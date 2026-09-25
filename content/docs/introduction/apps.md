@@ -13,6 +13,7 @@ These are the apps from the official app maintainer 'quollix' currently availabl
 
 | App         | Description                                                    |    OIDC SSO     | Website                                        |
 | ----------- | -------------------------------------------------------------- | :-------------: | ---------------------------------------------- |
+| AdGuard     | DNS server for network-wide ad blocking and local DNS records. |   {{<cross>}}   | [adguard.com](https://adguard.com)             |
 | Forgejo     | Git server for code hosting and collaboration.                 | {{<checkmark>}} | [forgejo.org](https://forgejo.org)             |
 | HedgeDoc    | Real-time collaborative markdown notes.                        | {{<checkmark>}} | [hedgedoc.org](https://hedgedoc.org)           |
 | Jitsi       | Video meetings in the browser.                                 |   {{<cross>}}   | [jitsi.org](https://jitsi.org/jitsi-meet/)     |

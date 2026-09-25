@@ -2,34 +2,24 @@
 title: "DNS and networking"
 ---
 
-Quollix can run on a public internet-facing server or inside a LAN, optionally with VPN access. Choose the network exposure model before configuring DNS and certificates.
+Quollix can run as a public server that is reachable from the internet or as a private server inside a LAN.
 
-## Public internet access
+## Public server
 
-Use public DNS when users should reach Quollix directly from the internet. Create DNS records that point to the public IP address of the Quollix server:
+Use public DNS when users should reach Quollix directly from the internet. Create a wildcard DNS record that points all subdomains to the public IP address of the server:
 
 ```text
-quollix.example.com     A  <public-server-ip>
-nextcloud.example.com   A  <public-server-ip>
-vaultwarden.example.com A  <public-server-ip>
+*.example.com A <public-server-ip>
 ```
 
 If you use IPv6, also create the corresponding `AAAA` records.
 
-## LAN or VPN access
+## LAN server
 
-For private deployments, Quollix can run behind a VPN instead of being exposed directly to the public internet. This is common for home labs and company networks: users first connect to the private network through a VPN, then access Quollix and its apps through internal domain names. Many routers and firewalls provide built-in VPN support, or you can run a separate VPN service. This adds an extra access layer in front of Quollix and can reduce public attack surface. It does not replace Quollix access control, HTTPS, updates, backups, or normal server hardening.
+A LAN server is accessible directly to devices on the same local network and does not need to be exposed to the public internet.
 
-In LAN or VPN setups, the DNS names must resolve to the private IP address of the Quollix server from inside the network:
+If users need access from outside the LAN, you can provide it through a VPN. Users connect to the private network first and then access Quollix and its apps through their internal domain names. Many routers and firewalls include VPN support, or you can run a separate VPN service.
 
-```text
-quollix.example.com     A  <private-server-ip>
-nextcloud.example.com   A  <private-server-ip>
-vaultwarden.example.com A  <private-server-ip>
-```
+In this setup, clients need a local DNS service that resolves the Quollix domain to the server's private IP address. We recommend installing [AdGuard]({{< relref "docs/usage/installed-apps/adguard.md" >}}) from the Quollix App Store and using it as the local DNS server.
 
-Some routers can provide local DNS records for connected clients. Support varies by router. If your router cannot provide the records you need, use a local DNS service such as dnsmasq, Unbound, or Pi-hole.
-
-## Certificates
-
-Quollix can generate Let's Encrypt certificates through a DNS-01 challenge. This works even when the Quollix server is only reachable through a LAN or VPN, because certificate issuance depends on DNS records, not public HTTP access to the server.
+Quollix can obtain a trusted certificate through a DNS-01 challenge even when the server is accessible only from the LAN, because certificate issuance does not require public HTTP access to the server. See [Certificate settings]({{< relref "docs/usage/settings/certificate.md" >}}).
