@@ -56,7 +56,7 @@ Common traits of the included projects:
 | App networking integration    | App declares target web port; platform maps app subdomain                 | App package ships Apache / firewall integration                                           | App package ships nginx integration and domain / path settings                    | App declares port and Traefik metadata; exposure is optional  | App package declares service interfaces                                                            |
 | Per-app host networking work  | Usually none after base domain, wildcard DNS, and certificates are set up | Usually none after app enablement; external reachability depends on server / router setup | Admin chooses domain / path; dedicated domains may need DNS and certificate setup | Admin enables exposure and sets a domain for public access    | Admin enables the desired interface address; public access may need port forwarding or relay setup |
 | App URL model                 | Dedicated subdomains                                                      | App-dependent                                                                             | Subdomains or subpaths                                                            | IP / port locally; domains or paths when exposed              | Same host with service ports, private domains optional                                             |
-| App catalog size              | [10 official apps]({{< relref "docs/introduction/apps.md" >}})             | 40+ documented apps                                                                       | 600+ apps                                                                         | 260+ apps                                                     | Registry-dependent                                                                                 |
+| App catalog size              | [11 official apps]({{< relref "docs/introduction/apps.md" >}})             | 40+ documented apps                                                                       | 600+ apps                                                                         | 260+ apps                                                     | Registry-dependent                                                                                 |
 
 ## Backups
 
@@ -92,15 +92,15 @@ Common traits of the included projects:
 | App health monitoring                    | Planned          | Partial          | Partial                         | Partial                                   | Yes                       |
 | Operational alert notifications          | Planned          | No               | Partial, diagnosis email alerts | No                                        | SMTP notifications        |
 
-## Platform-managed services
+## Platform and app services
 
 | Aspect                        | Quollix                 | FreedomBox          | YunoHost      | Runtipi                         | StartOS                                     |
 | ----------------------------- | ----------------------- | ------------------- | ------------- | ------------------------------- | ------------------------------------------- |
 | Platform-managed mail server  | No                      | Yes                 | Yes           | No                              | No                                          |
-| Platform-managed VPN          | No, host responsibility | OpenVPN / WireGuard | No            | No, host or app responsibility  | StartTunnel WireGuard, router VPN supported |
+| VPN server                    | [WgEasy app]({{< relref "docs/usage/installed-apps/wgeasy.md" >}}) | OpenVPN / WireGuard | [WireGuard app](https://apps.yunohost.org/app/wireguard) | Host or custom app | StartTunnel WireGuard, router VPN supported |
+| DNS server                    | [AdGuard app]({{< relref "docs/usage/installed-apps/adguard.md" >}}) | [BIND](https://wiki.debian.org/FreedomBox/Manual/Bind) | [AdGuard Home app](https://apps.yunohost.org/app/adguardhome) | [AdGuard app](https://github.com/runtipi/runtipi-appstore/blob/master/README.md) | [Built-in resolver](https://docs.start9.com/start-os/0.4.0.x/faq.html) / [StartTunnel DNS](https://docs.start9.com/start-tunnel/1.0.x/dns-records.html) |
 | Dynamic DNS                   | No                      | Yes                 | Yes           | No, host or app responsibility  | No                                          |
-| Private / relay remote access | No, host responsibility | PageKite            | No            | Manual Cloudflare Tunnel setup  | StartTunnel                                 |
-| Platform-managed file sharing | No                      | Samba               | App-dependent | Partial, shared media directory | App-dependent                               |
+| Relay remote access           | No built-in relay       | PageKite            | No built-in relay | Manual Cloudflare Tunnel setup  | StartTunnel                                 |
 
 ## Quollix differentiators
 

@@ -9,24 +9,26 @@ Legend:
 - {{<tilde>}} partially implemented
 - {{<cross>}} not yet implemented
 
-| Feature                                                            | Implementation Status |
-| ------------------------------------------------------------------ | :-------------------: |
-| [Access Policy]({{< relref "docs/usage/installed-apps" >}})        |    {{<checkmark>}}    |
-| [App Secrets]({{< relref "docs/usage/app-secrets.md" >}})          |    {{<checkmark>}}    |
-| [App Store]({{< relref "docs/project/app-store" >}})               |    {{<checkmark>}}    |
-| [Backups]({{< relref "docs/usage/backups.md" >}})                  |    {{<checkmark>}}    |
-| [Certificate]({{< relref "docs/usage/settings/certificate.md" >}}) |    {{<checkmark>}}    |
-| Compliance                                                         |      {{<cross>}}      |
-| [Email]({{< relref "docs/usage/email.md" >}})                      |      {{<tilde>}}      |
-| [Federation]({{< relref "docs/usage/federation" >}})               |    {{<checkmark>}}    |
-| [Groups]({{< relref "docs/usage/groups.md" >}})                    |    {{<checkmark>}}    |
-| Log centralization                                                 |      {{<cross>}}      |
-| [Maintenance]({{< relref "docs/usage/maintenance.md" >}})          |    {{<checkmark>}}    |
-| Monitoring                                                         |      {{<cross>}}      |
-| Networking                                                         |    {{<checkmark>}}    |
-| Report                                                             |      {{<cross>}}      |
-| [Terminal]({{< relref "docs/usage/terminal.md" >}})                |    {{<checkmark>}}    |
-| [Users]({{< relref "docs/usage/users.md" >}})                      |    {{<checkmark>}}    |
+| Feature                                                             | Implementation Status |
+| ------------------------------------------------------------------- | :-------------------: |
+| [Access Policy]({{< relref "docs/usage/installed-apps" >}})         |    {{<checkmark>}}    |
+| [App Secrets]({{< relref "docs/usage/app-secrets.md" >}})           |    {{<checkmark>}}    |
+| [App Store]({{< relref "docs/project/app-store" >}})                |    {{<checkmark>}}    |
+| [Backups]({{< relref "docs/usage/backups.md" >}})                   |    {{<checkmark>}}    |
+| [Certificate]({{< relref "docs/usage/settings/certificate.md" >}})  |    {{<checkmark>}}    |
+| Compliance                                                          |      {{<cross>}}      |
+| [DNS server]({{< relref "docs/usage/installed-apps/adguard.md" >}}) |    {{<checkmark>}}    |
+| [Email]({{< relref "docs/usage/email.md" >}})                       |      {{<tilde>}}      |
+| [Federation]({{< relref "docs/usage/federation" >}})                |    {{<checkmark>}}    |
+| [Groups]({{< relref "docs/usage/groups.md" >}})                     |    {{<checkmark>}}    |
+| Log centralization                                                  |      {{<cross>}}      |
+| [Maintenance]({{< relref "docs/usage/maintenance.md" >}})           |    {{<checkmark>}}    |
+| Monitoring                                                          |      {{<cross>}}      |
+| Networking                                                          |    {{<checkmark>}}    |
+| Report                                                              |      {{<cross>}}      |
+| [Terminal]({{< relref "docs/usage/terminal.md" >}})                 |    {{<checkmark>}}    |
+| [Users]({{< relref "docs/usage/users.md" >}})                       |    {{<checkmark>}}    |
+| [VPN server]({{< relref "docs/usage/installed-apps/wgeasy.md" >}})  |    {{<checkmark>}}    |
 
 ## Access policy
 
@@ -51,6 +53,10 @@ Quollix enables you to generate certificates that encrypt network data transmitt
 ## Compliance
 
 Administrators can publish legal documents such as terms of service, privacy policies, or codes of conduct. Users can be required to review and accept these documents before accessing Quollix. Quollix records accepted document versions so administrators can track which conditions users agreed to.
+
+## DNS server
+
+From the [App Store]({{< relref "docs/usage/app-store/_index.md" >}}), install the [official AdGuard app]({{< relref "docs/usage/installed-apps/adguard.md" >}}) as a DNS server for local name resolution and DNS filtering.
 
 ## Email
 
@@ -97,3 +103,7 @@ Provides browser-based shell access to app containers. It allows administrators 
 ## Users
 
 Create user accounts and grant them access to apps. You can create an unlimited number of users.
+
+## VPN server
+
+From the [App Store]({{< relref "docs/usage/app-store/_index.md" >}}), install the [official WgEasy app]({{< relref "docs/usage/installed-apps/wgeasy.md" >}}) as a WireGuard VPN server for remote access to Quollix and its apps without exposing those them directly to the internet.
