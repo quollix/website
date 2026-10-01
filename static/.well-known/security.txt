@@ -1,4 +1,4 @@
-Contact: mailto:quollix-feedback@mailbox.org
+Contact: mailto:contact@quollix.org
 Policy: https://quollix.org/docs/contact/responsible-disclosure/
 Preferred-Languages: en
 Canonical: https://quollix.org/.well-known/security.txt

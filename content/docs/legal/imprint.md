@@ -17,7 +17,7 @@ Germany
 
 ## Contact
 
-Email: [quollix-feedback@mailbox.org](mailto:quollix-feedback@mailbox.org)
+Email: [contact@quollix.org](mailto:contact@quollix.org)
 
 ## Person responsible for editorial content
 

@@ -11,14 +11,14 @@ For example, we appreciate feedback about:
 - Legal texts that could be improved
 - The topics listed below:
 
-| Topic                  | Use this for                                                                                                                                                                      | Action                                                                                                                           |
-| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Security vulnerability | Responsible disclosure or suspected vulnerabilities in Quollix. Please read [Responsible disclosure]({{< relref "docs/contact/responsible-disclosure.md" >}}) first.              | <button type="button" class="feedback-draft-button" onclick="window.openContactMailDraft('security')">Open draft</button>        |
-| Bug report             | Reproducible behavior that seems incorrect.                                                                                                                                       | <button type="button" class="feedback-draft-button" onclick="window.openContactMailDraft('bug')">Open draft</button>             |
-| Suggest an improvement | Feature ideas, additional official apps, [website text improvements]({{< relref "docs/project/community/contributing/website.md" >}}), and workflows that feel confusing or slow. | <button type="button" class="feedback-draft-button" onclick="window.openContactMailDraft('improvement')">Open draft</button>     |
+| Topic                  | Use this for                                                                                                                                                                      | Action                                                                                                                       |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Security vulnerability | Responsible disclosure or suspected vulnerabilities in Quollix. Please read [Responsible disclosure]({{< relref "docs/contact/responsible-disclosure.md" >}}) first.              | <button type="button" class="feedback-draft-button" onclick="window.openContactMailDraft('security')">Open draft</button>    |
+| Bug report             | Reproducible behavior that seems incorrect.                                                                                                                                       | <button type="button" class="feedback-draft-button" onclick="window.openContactMailDraft('bug')">Open draft</button>         |
+| Suggest an improvement | Feature ideas, additional official apps, [website text improvements]({{< relref "docs/project/community/contributing/website.md" >}}), and workflows that feel confusing or slow. | <button type="button" class="feedback-draft-button" onclick="window.openContactMailDraft('improvement')">Open draft</button> |
 
 <script>
-  const feedbackEmailAddress = 'quollix-feedback@mailbox.org'
+  const feedbackEmailAddress = 'contact@quollix.org'
 
   const openMailDraft = (emailAddress, subject, body) => {
     const encodedSubject = encodeURIComponent(subject)
@@ -91,4 +91,4 @@ How this would help me:
 
 ## Miscellaneous
 
-Feedback can also be sent directly to [quollix-feedback@mailbox.org](mailto:quollix-feedback@mailbox.org).
+Feedback can also be sent directly to [contact@quollix.org](mailto:contact@quollix.org).

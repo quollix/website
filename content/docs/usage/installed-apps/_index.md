@@ -4,7 +4,12 @@ title: "Installed apps"
 
 {{< ui-location "Apps" "Installed" >}}
 
-On the installed apps page, you can manage your apps. After installing an app through the [App Store page]({{< relref "docs/usage/app-store/" >}}), you can perform the following operations on it:
+On the installed apps page, you can manage your apps.
+You can open the app's documentation by selecting the external-link icon next to the app name.
+
+## App operations
+
+After installing an app through the [App Store page]({{< relref "docs/usage/app-store/" >}}), you can perform the following operations on it:
 
 - Start
 - Stop, which stops the app and excludes it from [automatic updates]({{< relref "docs/usage/maintenance.md" >}}) until it is started again.

@@ -67,7 +67,7 @@ Display App Store account and local configuration:
 
 <script>
   const openAppStoreAccountMailDraft = () => {
-    const emailAddress = 'quollix-feedback@mailbox.org'
+    const emailAddress = 'contact@quollix.org'
     const subject = 'App Store: App maintainer account request'
     const body = `Hi Quollix team,
 

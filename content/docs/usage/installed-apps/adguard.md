@@ -44,6 +44,10 @@ After setup, AdGuard Home may redirect to an unusable address ending in `:3000` 
 AdGuard Home needs TCP and UDP port 53 to be reachable by DNS clients. Make sure nothing in front of Quollix blocks this port.
 {{< /alert >}}
 
+{{< alert title="Security warning" color="warning" >}}
+Never expose AdGuard Home's DNS service publicly. Restrict port 53 to trusted LAN or VPN clients and do not forward it from the internet. Public open DNS resolvers can be abused for DNS reflection and amplification attacks against third parties.
+{{< /alert >}}
+
 ## Configure the LAN
 
 Configure the router to always assign the same private IP address to the Quollix server before other devices start using it for DNS. Next, configure the router's DHCP settings to advertise that address as the local DNS server. This automatically applies the setting to clients when they renew their DHCP leases.
