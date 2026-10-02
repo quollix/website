@@ -11,7 +11,7 @@ You can upload your own certificate or download the currently configured certifi
 Uploading a certificate replaces the currently configured certificate. Before replacing a production certificate, download the existing certificate file and store it somewhere safe so that you can restore it if the new certificate does not work.
 
 {{< alert title="Private key handling" color="warning" >}}
-The downloaded certificate file contains the private key. Anyone with this file can impersonate your Quollix server for matching domains. Store it securely and never share it through untrusted channels.
+If you download the certificate file, note that it contains the private key. Anyone with the file could impersonate your Quollix server for the domains covered by the certificate. Never share it through untrusted channels or with untrusted people.
 {{< /alert >}}
 
 By default, Quollix is available on port 443 via HTTPS using a universal self-signed wildcard certificate. This default certificate works for all domains or IP addresses through which you access Quollix and any host configured in the Settings. This option may be sufficient for test deployments or private LAN networks.
@@ -28,8 +28,8 @@ If you plan to operate multiple Quollix instances for the same domain, download 
 
 This option generates a certificate via a Let's Encrypt DNS-01 challenge:
 
-* Pros: no public IP address needed, can be used in a private LAN; covers the domains of all apps you install
-* Cons: expires after 90 days and must be renewed by hand
+- Pros: no public IP address needed, can be used in a private LAN, also it covers the domains of new apps you install
+- Cons: expires after 90 days and must be renewed by hand
 
 {{< alert title="Certificate Issuance Limits" color="warning" >}}
 Let's Encrypt limits how many certificates can be issued within a given period. Avoid generating new certificates unnecessarily, especially while testing or troubleshooting. If you reach a limit, certificate generation may be unavailable until the limit resets. See the <a href="https://letsencrypt.org/docs/rate-limits/">Let's Encrypt rate limits documentation</a> for current details.

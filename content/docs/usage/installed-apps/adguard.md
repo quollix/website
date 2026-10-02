@@ -15,7 +15,7 @@ title: "AdGuard"
 
 ## Introduction
 
-The app is commonly called AdGuard, but its full product name is AdGuard Home. It blocks domains used to deliver advertisements and tracking, reducing the ads displayed while browsing when a device uses it as its DNS server. It can also provide local DNS records for reaching Quollix and its apps inside a LAN. See [DNS and networking]({{< relref "docs/self-hosting/dns-and-networking.md" >}}) for the general Quollix network setup.
+The app is commonly called AdGuard, but its full product name is AdGuard Home. It blocks domains used to deliver advertisements and tracking, reducing the ads displayed while browsing when a device uses it as its DNS server. It can also provide local DNS records for reaching Quollix and its apps inside a LAN. See [Deployment options]({{< relref "docs/self-hosting/deployment-options.md" >}}) for the general Quollix network setup.
 
 ## Free port 53
 
@@ -50,7 +50,7 @@ Never expose AdGuard Home's DNS service publicly. Restrict port 53 to trusted LA
 
 ## Configure the LAN
 
-Configure the router to always assign the same private IP address to the Quollix server before other devices start using it for DNS. Next, configure the router's DHCP settings to advertise that address as the local DNS server. This automatically applies the setting to clients when they renew their DHCP leases.
+If you have a LAN setup, configure the router to always assign the same private IP address to the Quollix server before other devices start using it for DNS. Next, configure the router's DHCP settings to advertise that address as the local DNS server. This automatically applies the setting to clients when they renew their DHCP leases.
 
 If the router cannot advertise a custom DNS server, configure the Quollix server's private IP address as the DNS server on each device instead. AdGuard Home provides [device-specific instructions](https://adguard-dns.io/kb/adguard-home/getting-started/#configure-devices).
 
@@ -60,7 +60,7 @@ A DNS rewrite can make the Quollix domains resolve to the Quollix server inside 
 
 1. Open **Filters → DNS rewrites**.
 2. Select **Add DNS rewrite**.
-3. Enter the base domain as a wildcard and the private IP address of the Quollix server. For example:
+3. Enter the [base domain]({{< relref "docs/usage/settings/base-domain" >}}) as a wildcard and the private IP address of the Quollix server. For example:
 
 ```text
 Domain: *.example.com

@@ -2,13 +2,11 @@
 title: "Production setup"
 ---
 
-For an example walkthrough, see the [speedrun production setup video]({{< relref "docs/getting-started/videos/speedrun-production-setup.md" >}}). This guide shows how to install Quollix for production use on a LAN or an internet-facing server. The examples assume a base domain such as `example.com`, referred to below as `<base-domain>`.
+For an example walkthrough, see the [speedrun production setup video]({{< relref "docs/getting-started/videos/speedrun-production-setup.md" >}}). This guide shows how to install Quollix for production use. The examples assume a base domain such as `example.com`, referred to below as `<base-domain>`. A prerequisite is, that you own the domain.
 
-1. **Choose a server**: for example, a virtual private server (VPS) from a hosting provider or a physical server at home. For provider-specific VPS notes, see the [Hetzner Cloud server setup]({{< relref "docs/self-hosting/hetzner-cloud.md" >}}) guide.
-2. **Install Docker**: install Docker on the server, see [Getting started]({{< relref "docs/getting-started/_index.md" >}}).
-3. **Configure DNS and network access**: Decide whether Quollix should be reachable from the public internet, only inside your LAN, or through a VPN. Quollix needs DNS names for itself and installed apps. See [DNS and Networking]({{< relref "docs/self-hosting/dns-and-networking.md" >}}) and [Base Domain]({{< relref "docs/usage/settings/base-domain.md" >}}) for details.
-
-4. **Create the Docker Compose file**: add a `docker-compose.yml` file:
+1. **Choose a** [**deployment option**]({{< relref "docs/self-hosting/deployment-options.md" >}}).
+1. **Install Docker**: install Docker on the server, see [Getting started]({{< relref "docs/getting-started/_index.md" >}}).
+1. **Create the Docker Compose file**: add a `docker-compose.yml` file:
 
 ```yaml
 services:
@@ -26,7 +24,7 @@ services:
 
 If you want to run Quollix behind a reverse proxy, read the [reverse proxy setup]({{< relref "docs/self-hosting/reverse-proxy.md" >}}) guide before starting the container. If you want to configure the initial administrator account, read the [initial admin account]({{< relref "docs/self-hosting/initial-admin-account.md" >}}) guide before starting the container.
 
-5. **Start Quollix**: run the following command in the same directory as `docker-compose.yml`:
+4. **Start Quollix**: run the following command in the same directory as `docker-compose.yml`:
 
 ```bash
 sudo docker compose up -d
@@ -34,17 +32,17 @@ sudo docker compose up -d
 
 For production deployments, we recommend updating Quollix once a day so you quickly receive the latest fixes and features. The [automatic updates]({{< relref "docs/self-hosting/automatic-updates.md" >}}) guide shows how to handle this with a cronjob.
 
-6. **Open the web interface**: visit `https://quollix.<base-domain>`. Quollix initially uses a self-signed certificate, so your browser will show a certificate warning. Continue only if you trust the network path to the server. A trusted certificate is configured later in this guide.
-7. **Find the initial password**: Quollix logs a random initial password on first startup:
+5. **Open the web interface**: visit `https://quollix.<base-domain>`. Quollix initially uses a self-signed certificate, so your browser will show a certificate warning. Continue only if you trust the network path to the server. A trusted certificate is configured later in this guide.
+1. **Find the initial password**: Quollix logs a random initial password on first startup:
 
 ```bash
 sudo docker logs quollix_quollix_quollix | grep "initial admin password"
 ```
 
-8. **Sign in**: use the username `administrator` with the generated password from the logs. After signing in, open the [Settings]({{< relref "docs/usage/settings/_index.md" >}}) page in Quollix.
+7. **Sign in**: use the username `administrator` with the generated password from the logs. After signing in, open the [Settings]({{< relref "docs/usage/settings/_index.md" >}}) page in Quollix.
 
-9. **Set the base domain**: set [base domain]({{< relref "docs/usage/settings/base-domain.md" >}}) to `<base-domain>`, and save.
-10. **Set up a certificate**: in the [certificate]({{< relref "docs/usage/settings/certificate.md" >}}) section, start the challenge to generate a wildcard certificate, then follow the instructions until you see a success message. Restart the browser because browsers usually cache the old self-signed certificate.
+1. **Set the base domain**: set [base domain]({{< relref "docs/usage/settings/base-domain.md" >}}) to `<base-domain>`, and save.
+1. **Set up a certificate**: in the [certificate]({{< relref "docs/usage/settings/certificate.md" >}}) section, start the challenge to generate a wildcard certificate, then follow the instructions until you see a success message. Restart the browser because browsers usually cache the old self-signed certificate.
 
 Visiting `https://quollix.<base-domain>` should now use a certificate signed by Let's Encrypt.
 

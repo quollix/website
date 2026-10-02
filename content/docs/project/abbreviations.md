@@ -13,6 +13,8 @@ aliases:
 | CLA          | Contributor License Agreement         |
 | CLI          | Command-Line Interface                |
 | CRUD         | Create, read, update and delete       |
+| DNS          | Domain Name System                    |
+| DDNS         | Dynamic Domain Name System            |
 | FDE          | Full-Disk Encryption                  |
 | GUI          | Graphical User Interface              |
 | HTTP         | Hypertext Transfer Protocol           |
@@ -28,5 +30,6 @@ aliases:
 | SSR          | Server-Side Rendering                 |
 | TUI          | Terminal User Interface               |
 | UEFI         | Unified Extensible Firmware Interface |
+| UI           | User Interface                        |
 | VPS          | Virtual Private Server                |
 | WSL          | Windows Subsystem for Linux           |

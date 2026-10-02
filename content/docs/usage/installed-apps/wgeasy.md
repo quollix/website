@@ -19,36 +19,31 @@ wg-easy provides a web interface for managing a WireGuard VPN server. It enables
 
 ## Prerequisites
 
-Configure the following from inside the LAN:
-
-- Assign a fixed LAN IP address to the Quollix server, for example through a DHCP reservation in the router.
-- A DNS server in the LAN like the official Quollix [AdGuard app]({{< relref "docs/usage/installed-apps/adguard.md" >}}), including a DNS record for `*.<base-domain>` pointing to that LAN IP address.
-- Use the router's public IP address or a public DNS hostname as the VPN endpoint. If the public IP changes, use dynamic DNS (DDNS) to keep the hostname updated.
-- Forward **UDP port 51820** on the router to the same port on Quollix's LAN IP address. Allow this traffic through any firewalls so the VPN is reachable from the internet.
+Before you start, ensure to have met the requirements of your [deployment option]({{< relref "docs/self-hosting/deployment-options" >}}).
 
 ## Installation
 
-1. Open wgeasy app.
-1. Select **Continue**, enter administrator credentials, and select **Create Account**.
-1. At **Do you have an existing setup?**, select **No**.
-1. Set **Host** to the public IP address or DNS/DDNS hostname, such as `mydomain.com`. Keep **Port** at `51820`.
-1. Select **Continue** and sign in.
+- Open wgeasy app.
+- Select **Continue**, enter administrator credentials, and select **Create Account**.
+- At **Do you have an existing setup?**, select **No**.
+- Set **Host** to a public IP address or hostname, such as `wgeasy.example.com`. If Quollix is behind a router, use the router's public IP. A static IP is simplest. If it changes regularly, use a hostname with DDNS. Keep **Port** at `51820`.
+- Select **Continue** and sign in.
 
 ## Configure DNS
 
-1. Open **Administrator → Admin Panel → Config → DNS**.
-2. Replace the existing entries with the DNS server's LAN IP address. If you use AdGuard running on Quollix, use Quollix's LAN IP address.
-3. Select **Save**.
+- Open **Administrator → Admin Panel → Config → DNS**.
+- Replace the existing entries with the DNS server's LAN IP address. If you use AdGuard running on Quollix, use Quollix's LAN IP address.
+- Select **Save**.
 
 ## Create VPN clients
 
 Create a separate client for each device:
 
-1. On the **Clients** page, create a client.
-2. Open **Edit → View Configuration**. Check that `DNS` is the configured DNS server's LAN IP address.
-3. Install a [WireGuard client](https://www.wireguard.com/install/) on the client device.
-4. Import the downloaded client configuration into WireGuard, or scan its QR code on mobile.
-5. Connect from outside the LAN, for example using mobile data, and check access to Quollix apps and the internet.
+- On the **Clients** page, create a client.
+- Open **Edit → View Configuration**. Check that `DNS` is the configured DNS server's LAN IP address.
+- Install a [WireGuard client](https://www.wireguard.com/install/) on the client device.
+- Import the downloaded client configuration into WireGuard, or scan its QR code on mobile.
+- Connect from outside the LAN, for example using mobile data, and check access to Quollix apps and the internet.
 
 By default, all traffic goes through the VPN (`AllowedIPs = 0.0.0.0/0, ::/0`). For split tunneling, adjust `AllowedIPs` to select which destinations use the VPN. See WireGuard's [routing configuration documentation](https://git.zx2c4.com/wireguard-tools/about/src/man/wg-quick.8#configuration).
 
