@@ -2,6 +2,8 @@
 title: "Zulip"
 ---
 
+{{< app-info >}}
+
 ## Resources
 
 | Resource | Description |

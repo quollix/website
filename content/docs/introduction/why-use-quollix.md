@@ -6,7 +6,7 @@ weight: 5
 ## Ownership and portability
 
 - **Open source**: Quollix is fully open source under the permissive MIT License, which keeps legal complexity low.
-- **Migration support**: Move Quollix to another server by restoring its app backups on a new server.
+- **Migration support**: Move Quollix to a new server by restoring app backups on a fresh instance.
 - **Vendor independence**: The properties above mean users are not locked into a single vendor.
 
 ## Installation and administration
@@ -17,6 +17,8 @@ weight: 5
 - **Official apps**: The Quollix team maintains [app definitions]({{< relref "docs/project/terminology.md" >}}) for selected services. See [official apps]({{< relref "/docs/introduction/apps.md" >}}) for the current list.
 - **Unified user management**: Users can access multiple apps with one Quollix account through built-in OIDC integration.
 - **Private network support**: Quollix can issue Let's Encrypt certificates for home lab and private-network deployments without requiring a public-facing server.
+- **Private remote access**: The integrated [AdGuard DNS server]({{< relref "docs/usage/installed-apps/adguard.md" >}}) and [WgEasy VPN server]({{< relref "docs/usage/installed-apps/wgeasy.md" >}}) support setting up a private network with secure remote access.
+- **Log centralization and resource monitoring**: Integration with the [Grafana app]({{< relref "docs/usage/installed-apps/grafana.md" >}}) reduces the setup needed for collecting logs and resource usage metrics, structuring logs, and visualizing them.
 
 ## Privacy and business model
 

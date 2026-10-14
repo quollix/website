@@ -14,7 +14,7 @@ If remote backups are enabled on the [backup server]({{< relref "docs/usage/sett
 
 ## Retention policy
 
-To free up storage space, the maintenance agent applies a retention policy. It keeps only the:
+To free up storage space, the maintenance agent applies a retention policy. By default, it keeps only the:
 
 - last 5 pre-update backups
 - last 7 daily backups
@@ -22,7 +22,7 @@ To free up storage space, the maintenance agent applies a retention policy. It k
 - last 12 monthly backups
 - last 2 yearly backups
 
-This means that backups are kept for up to a year, and older and intermediate backups are automatically deleted. On the [Backups]({{< relref "docs/usage/backups.md" >}}) page, you can still manually delete all backups, including automatically created ones. The backup descriptions show which type of backup each entry is. Manually created backups are not deleted by the retention policy and are kept until you manually delete them.
+This means that backups are kept for up to two years, and older and intermediate backups are automatically deleted. On the [Backups]({{< relref "docs/usage/backups.md" >}}) page, you can manually delete backups. The backup descriptions show which type of backup each entry is. Manually created backups are not deleted by the retention policy and are kept until you manually delete them.
 
 Backups are incremental and use disk space efficiently. Subsequent backups store only the differences from the previous backup.
 

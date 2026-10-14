@@ -43,7 +43,9 @@ Quollix includes a Go API client in the [common](https://github.com/quollix/comm
 
 ## Expand the App Store
 
-If you have software with a web interface that you would like to share with others, you can package it as an app and request an App maintainer account. See [Join the App Store]({{< relref "docs/project/app-store/join.md" >}}). If an app becomes popular, we will consider adopting it as an official app.
+If you have software with a web interface that you would like to share with others, you can package it as an app and request an App maintainer account. See [Join the App Store]({{< relref "docs/project/app-store/join.md" >}}).
+To add log parsing support for a new app, see [Log structuring]({{< relref "log-structuring.md" >}}).
+If an app is useful and technically fits well into Quollix, we will consider adopting it as an official app.
 
 ## Improve app compatibility
 
@@ -54,8 +56,8 @@ High-value improvements include:
 - OIDC authorization code flow support for confidential clients
 - automatic OIDC client configuration through Docker environment variables
 
-See [App Design Recommendations]({{< relref "docs/project/app-store/app-design-recommendations.md" >}}) for details.
+See [app design recommendations]({{< relref "docs/project/app-store/app-design-recommendations.md" >}}) for details.
 
 ## Improve security
 
-Security-related contributions are useful. Please follow [Responsible Disclosure]({{< relref "docs/contact/responsible-disclosure.md" >}}) when researching and reporting vulnerabilities.
+Security-related contributions are useful. Please follow [responsible disclosure]({{< relref "docs/contact/responsible-disclosure.md" >}}) when researching and reporting vulnerabilities.

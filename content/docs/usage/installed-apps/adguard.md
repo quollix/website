@@ -2,6 +2,8 @@
 title: "AdGuard"
 ---
 
+{{< app-info >}}
+
 ## Resources
 
 | Resource       | Description                                                                                                                                |

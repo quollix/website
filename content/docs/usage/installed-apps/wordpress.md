@@ -2,6 +2,8 @@
 title: "WordPress"
 ---
 
+{{< app-info >}}
+
 ## Resources
 
 | Resource       | Description                                                                                                                                                 |

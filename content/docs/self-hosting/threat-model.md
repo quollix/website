@@ -16,7 +16,7 @@ Every app runs in its own Docker container with no shared volumes, networks, or 
 
 ### Defensive coding
 
-- Strict input validation blocks SQL injection, XSS, RCE, and similar attacks.
+- Input validation and safe data handling help mitigate SQL injection, XSS, RCE, and similar attacks.
 - Protection against CSRF attacks is built into the security framework.
 - Cookies are hashed, and user passwords are salted and hashed. This means that even if a hacker gains access to the database, they won't be able to read this data in plain text. Therefore, cookies and strong passwords are effectively impossible to crack.
 
@@ -60,6 +60,8 @@ The following areas remain under the administrator’s control and are out of sc
 - App updates depend on each app maintainer. Outdated apps may introduce vulnerabilities, and compromised app maintainer accounts or release repositories may result in malicious updates for third-party apps.
 - Official app definitions are maintained by Quollix. Custom and third-party app definitions are controlled by their authors or the server administrator.
 - Apps can use generated secrets for internal credentials such as database passwords, service passwords, admin tokens, and signing keys. These services are still intended to be reachable only inside the app's private Docker network, usually by the app's [main service]({{< relref "docs/project/terminology.md" >}}). Vulnerabilities such as SQL injection, remote code execution, leaked configuration, or an attacker with Docker-level access may still expose or misuse the internal service.
+- Malicious or compromised apps can emit oversized or excessive logs, disrupting log collection or exhausting shared resources.
+- Quollix log parsers treat log content as data and do not execute embedded code. Subsequent display in Grafana remains a potential attack vector if those viewers or their plugins contain vulnerabilities.
 
 ### Miscellaneous
 

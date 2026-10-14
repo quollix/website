@@ -2,16 +2,18 @@
 title: "WgEasy"
 ---
 
+{{< app-info >}}
+
 ## Resources
 
-| Resource       | Description                                                                                 |
-| -------------- | ------------------------------------------------------------------------------------------- |
-| Website        | [wg-easy.github.io/wg-easy](https://wg-easy.github.io/wg-easy/latest/)                      |
-| Source code    | [github.com/wg-easy/wg-easy](https://github.com/wg-easy/wg-easy)                            |
-| License        | [AGPLv3](https://github.com/wg-easy/wg-easy/blob/master/LICENSE)                            |
-| ARM64 support  | Supported                                                                                   |
-| OIDC client    | [Native](https://wg-easy.github.io/wg-easy/latest/advanced/config/external-authentication/) |
-| Business model | Fully open source project supported by voluntary donations.                                 |
+| Resource       | Description                                                                                                           |
+| -------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Website        | [wg-easy.github.io/wg-easy](https://wg-easy.github.io/wg-easy/latest/)                                                |
+| Source code    | [github.com/wg-easy/wg-easy](https://github.com/wg-easy/wg-easy)                                                      |
+| License        | [AGPLv3](https://github.com/wg-easy/wg-easy/blob/master/LICENSE)                                                      |
+| ARM64 support  | Supported                                                                                                             |
+| OIDC client    | [Native](https://wg-easy.github.io/wg-easy/latest/advanced/config/external-authentication/), but not used in this app |
+| Business model | Fully open source project supported by voluntary donations.                                                           |
 
 ## Introduction
 

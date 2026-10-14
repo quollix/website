@@ -2,6 +2,8 @@
 title: "Forgejo"
 ---
 
+{{< app-info >}}
+
 ## Resources
 
 | Resource | Description |

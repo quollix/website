@@ -2,6 +2,8 @@
 title: "Postgres"
 ---
 
+This component is bundled with **Quollix** and does not need to be installed separately.
+
 ## Resources
 
 | Resource       | Description                                                                                                                                                       |

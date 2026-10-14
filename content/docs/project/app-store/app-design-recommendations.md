@@ -21,11 +21,9 @@ Any software that provides a web interface can be published as an app in the App
 Quollix provides a standardized operational environment. App developers should assume that the following concerns are handled externally and do not need to be implemented by the app itself:
 
 - Reverse proxying and TLS certificate management
-- Traffic control
-- Update orchestration and restarts, but not application database or configuration migrations
+- Update orchestration and restarts, but application database or configuration migrations must still be implemented
 - Backups and restores
-- Log rotation, monitoring and alerting
-- User management (when your app supports OIDC)
+- Log centralization and rotation, resource monitoring and alerting, see [Grafana app]({{< relref "docs/usage/installed-apps/grafana.md" >}})
 - Selected [service migrations]({{< relref "docs/project/app-store/service-migration.md" >}}) during app updates
 
 Relying on these platform features avoids duplication and prevents potential interference between app-level and platform-level behavior.
@@ -43,7 +41,9 @@ Ideally, an administrator installs an app, opens it, signs in directly through Q
 ### Installation and updates
 
 - The app must be deployable using a simple `docker compose up` without manual pre- or post-installation steps.
-- All services defined in the app definition must use clear, descriptive names that explicitly indicate the software they run. For example, use `postgres` instead of `db`, `database`, or `service1`.
+- Docker Compose service names:
+  - All services defined in the app definition must use clear, descriptive names that explicitly indicate the software they run. For example, use `postgres` instead of `db`, `database`, or `service1`.
+  - Quollix selects log parsers by Compose service name. When using a service already included in an official app, reuse its established name so that existing log structuring applies automatically. To add or adapt a parser, see [Log structuring]({{< relref "docs/project/community/contributing/log-structuring.md#contributing-parsers" >}}).
 - Docker image tags should use release versions in the format `X.Y.Z`, for example `1.2.3`.
 - App Docker containers are frequently started and stopped, which is why these operations should be fast.
 - Apps should be usable immediately on first visit and take users directly to the app's landing page. Avoid installation wizards and web-based configuration on first boot by using environment variables instead. Also avoid welcome popups, guided onboarding, tutorial modals, and informational overlays.
@@ -119,15 +119,25 @@ Avoid hard-coded assumptions or irreversible dependencies.
 
 Services may include useful operational tooling for the software they run. For example, database services commonly include the matching database client, and application services may expose a small CLI for administrative or diagnostic tasks.
 
-### Logging and observability
+### Logging
 
-Apps should be configurable via Docker environment variables to:
+Apps should log to stdout and stderr without creating or rotating log files. Use structured JSON logging for Quollix's [log centralization]({{< relref "docs/usage/installed-apps/grafana.md" >}}). Emit one JSON object per line. Each object should include the event time, log level, and log message. Field names used by existing integrations are listed below, with the preferred name first.
 
-- Log exclusively to stdout and stderr
-- Avoid creating log files and internal log rotation
-- Use structured logging where possible
+- Event time: `timestamp`, `time`, `t`, or `@timestamp`. Prefer UTC using RFC3339 with `Z`, for example `2026-10-04T12:34:56.123Z`. Fractional seconds are optional and may contain up to nine digits for nanosecond precision (`RFC3339Nano`). This should be the time the event occurred. Quollix records collection time separately.
+- Level: `level` or `log.level`. Prefer the values `trace`, `debug`, `info`, `warn`, `error`, or `fatal`. Uppercase values such as `INFO` and `WARN` are also accepted and normalized to lowercase internally.
+- Message: `message` or `msg`, containing a readable description of the event.
 
-Quollix collects logs centrally, so writing logs to the filesystem is unnecessary. JSON is the preferred log format, as it integrates well with centralized logging and monitoring systems. Plain text logging is discouraged for production mode since it may not be parsed reliably.
+Keep the message text stable and put dynamic values in separate fields. Additional fields with meaningful context are encouraged. For example:
+
+```json
+{
+  "timestamp": "2026-10-04T12:34:56.123Z",
+  "level": "INFO",
+  "message": "Request completed",
+  "request_id": "abc123",
+  "status": 200
+}
+```
 
 ### User management and security
 

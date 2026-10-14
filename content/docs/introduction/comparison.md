@@ -56,7 +56,7 @@ Common traits of the included projects:
 | App networking integration    | App declares target web port; platform maps app subdomain                 | App package ships Apache / firewall integration                                           | App package ships nginx integration and domain / path settings                    | App declares port and Traefik metadata; exposure is optional  | App package declares service interfaces                                                            |
 | Per-app host networking work  | Usually none after base domain, wildcard DNS, and certificates are set up | Usually none after app enablement; external reachability depends on server / router setup | Admin chooses domain / path; dedicated domains may need DNS and certificate setup | Admin enables exposure and sets a domain for public access    | Admin enables the desired interface address; public access may need port forwarding or relay setup |
 | App URL model                 | Dedicated subdomains                                                      | App-dependent                                                                             | Subdomains or subpaths                                                            | IP / port locally; domains or paths when exposed              | Same host with service ports, private domains optional                                             |
-| App catalog size              | [11 official apps]({{< relref "docs/introduction/apps.md" >}})             | 40+ documented apps                                                                       | 600+ apps                                                                         | 260+ apps                                                     | Registry-dependent                                                                                 |
+| App catalog size              | [12 official apps]({{< relref "docs/introduction/apps.md" >}})             | 40+ documented apps                                                                       | 600+ apps                                                                         | 260+ apps                                                     | Registry-dependent                                                                                 |
 
 ## Backups
 
@@ -88,9 +88,19 @@ Common traits of the included projects:
 | Certificates without public inbound HTTP | Yes, DNS-01      | No               | No                              | Yes, Cloudflare DNS-01 via custom Traefik | Yes, via StartTunnel      |
 | HTTP-01 certificates with auto-renewal   | Planned          | Yes              | Yes                             | Yes                                       | Yes                       |
 | App / admin shell access                 | Browser terminal | Browser terminal | Native CLI                      | Host / CLI                                | SSH plus start-cli attach |
-| Hardware resource monitoring             | Planned          | Partial          | Limited, diagnosis only         | No                                        | Yes                       |
+
+## Monitoring and logging
+
+| Aspect | Quollix | FreedomBox | YunoHost | Runtipi | StartOS |
+| --- | --- | --- | --- | --- | --- |
+| Resource monitoring                      | Through [Grafana]({{< relref "docs/usage/installed-apps/grafana.md" >}}) | Partial          | Limited, diagnosis only         | Container metrics via [Dozzle](https://dozzle.dev/guide/what-is-dozzle) | Yes                       |
 | App health monitoring                    | Planned          | Partial          | Partial                         | Partial                                   | Yes                       |
-| Operational alert notifications          | Planned          | No               | Partial, diagnosis email alerts | No                                        | SMTP notifications        |
+| Operational alert notifications          | Through Grafana | No               | Partial, diagnosis email alerts | Log alerts via [Dozzle](https://dozzle.dev/guide/alerts-and-webhooks) | SMTP notifications        |
+| App/service logs | Yes | Yes | [Registered services](https://github.com/YunoHost/yunohost/blob/dev/src/service.py) | Via optional [Dozzle app](https://runtipi.io/docs/apps-available) | [Yes](https://docs.start9.com/start-os/0.4.0.x/logs.html) |
+| Host/system logs | Yes | Via [Cockpit](https://wiki.debian.org/FreedomBox/Manual/Cockpit) | Partial, registered services | Not documented | Yes |
+| Centralized log access | Yes, through Grafana | Shared journal, per-app views | Per-service views | Container logs via Dozzle | Separate service and system views |
+| Log structuring | App and host logs | Journal fields | App parsing not documented | [JSON fields via Dozzle](https://dozzle.dev/guide/sql-engine) | App parsing not documented |
+| Log search and visualization | Grafana queries and dashboards | [Journal search and filters](https://docs.cockpit-project.org/cockpit-guide/362/guide/api-logs-html.html) | Recent lines per service | Live logs, [JSON SQL queries](https://dozzle.dev/guide/sql-engine) | Live logs, history, downloads |
 
 ## Platform and app services
 
@@ -107,10 +117,9 @@ Common traits of the included projects:
 The most relevant Quollix differentiators in this comparison are:
 
 - Backup and restore are automatically integrated for all Compose apps, including custom uploaded apps, with per-app retention policies.
+- App and host logs and resource metrics are collected automatically. Quollix extracts structured fields from recognized app log formats, with centralized log storage and querying through the Grafana app.
 - OIDC is the central identity layer. Quollix can act as both OIDC provider and OIDC client, which enables cross-instance identity and federation.
-- User onboarding is invite-based, with expiring one-time codes and native email delivery.
-- DNS-01 certificate generation is supported, so Quollix can get certificates without public inbound HTTP access.
-- The [App Store]({{< relref "docs/project/app-store/_index.md" >}}) supports third-party app publishing and makes [app definitions]({{< relref "docs/project/terminology.md" >}}) discoverable for Quollix servers.
+- Users receive expiring, single-use email invitations, so administrators do not need to create and share passwords. This avoids leaving reusable passwords in email.
 
 ## Adjacent projects
 

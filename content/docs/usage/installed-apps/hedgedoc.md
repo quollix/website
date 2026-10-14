@@ -2,6 +2,8 @@
 title: "HedgeDoc"
 ---
 
+{{< app-info >}}
+
 ## Resources
 
 | Resource | Description |

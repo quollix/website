@@ -9,21 +9,22 @@ Quollix only takes care of the system administration. The actual day-to-day func
 
 Digital infrastructure can be installed as apps, much like a smartphone. The [App Store]({{< relref "docs/usage/app-store/" >}}) simplifies the process of discovering and installing new apps and updates.
 
-These are the apps from the official app maintainer 'quollix' currently available on the App Store. They are actively maintained with regular updates. The OIDC SSO column shows whether the app can use Quollix accounts for sign-in:
+These are the apps from the official app maintainer 'quollix' currently available on the App Store. They are actively maintained with regular updates.
 
-| App         | Description                                                    |    OIDC SSO     | Website                                                        |
-| ----------- | -------------------------------------------------------------- | :-------------: | -------------------------------------------------------------- |
-| AdGuard     | DNS server for network-wide ad blocking and DNS records.       |   {{<cross>}}   | [adguard.com](https://adguard.com)                             |
-| Forgejo     | Git server for code hosting and collaboration.                 | {{<checkmark>}} | [forgejo.org](https://forgejo.org)                             |
-| HedgeDoc    | Real-time collaborative markdown notes.                        | {{<checkmark>}} | [hedgedoc.org](https://hedgedoc.org)                           |
-| Jitsi       | Video meetings in the browser.                                 |   {{<cross>}}   | [jitsi.org](https://jitsi.org/jitsi-meet/)                     |
-| Nextcloud   | File sync, sharing, calendars, contacts, and collaboration.    | {{<checkmark>}} | [nextcloud.com](https://nextcloud.com)                         |
-| Vaultwarden | Password manager compatible with Bitwarden clients.            | {{<checkmark>}} | [vaultwarden.net](https://www.vaultwarden.net)                 |
-| Vikunja     | Task and project management with lists, boards, and calendars. | {{<checkmark>}} | [vikunja.io](https://vikunja.io)                               |
-| WgEasy      | WireGuard VPN server for remote access to LAN services.        | {{<checkmark>}} | [wg-easy.github.io](https://wg-easy.github.io/wg-easy/latest/) |
-| Wiki.js     | Wiki for team and project documentation.                       | {{<checkmark>}} | [js.wiki](https://js.wiki)                                     |
-| WordPress   | Website and blog publishing system.                            |   {{<cross>}}   | [wordpress.org](https://wordpress.org)                         |
-| Zulip       | Team chat with topic-based conversations.                      | {{<checkmark>}} | [zulip.com](https://zulip.com)                                 |
+| App         | Description                                                    | Website                                                        |
+| ----------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| AdGuard     | DNS server for network-wide ad blocking and DNS records.       | [adguard.com](https://adguard.com)                             |
+| Forgejo     | Git server for code hosting and collaboration.                 | [forgejo.org](https://forgejo.org)                             |
+| Grafana     | Centralized app logs and resource metrics.                     | [grafana.com](https://grafana.com)                             |
+| HedgeDoc    | Real-time collaborative markdown notes.                        | [hedgedoc.org](https://hedgedoc.org)                           |
+| Jitsi       | Video meetings in the browser.                                 | [jitsi.org](https://jitsi.org/jitsi-meet/)                     |
+| Nextcloud   | File sync, sharing, calendars, contacts, and collaboration.    | [nextcloud.com](https://nextcloud.com)                         |
+| Vaultwarden | Password manager compatible with Bitwarden clients.            | [vaultwarden.net](https://www.vaultwarden.net)                 |
+| Vikunja     | Task and project management with lists, boards, and calendars. | [vikunja.io](https://vikunja.io)                               |
+| WgEasy      | WireGuard VPN server for remote access to LAN services.        | [wg-easy.github.io](https://wg-easy.github.io/wg-easy/latest/) |
+| Wiki.js     | Wiki for team and project documentation.                       | [js.wiki](https://js.wiki)                                     |
+| WordPress   | Website and blog publishing system.                            | [wordpress.org](https://wordpress.org)                         |
+| Zulip       | Team chat with topic-based conversations.                      | [zulip.com](https://zulip.com)                                 |
 
 ## Email servers
 

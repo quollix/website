@@ -2,6 +2,8 @@
 title: "Vaultwarden"
 ---
 
+{{< app-info >}}
+
 ## Resources
 
 | Resource | Description |

@@ -2,24 +2,43 @@
 title: Nextcloud
 ---
 
+{{< app-info >}}
+
 ## Resources
 
-| Resource | Description |
-|----------|-------------|
-| Website | [nextcloud.com](https://nextcloud.com) |
-| Source code | [github.com/nextcloud/server](https://github.com/nextcloud/server) |
-| License | [AGPL-3.0](https://github.com/nextcloud/server/blob/master/COPYING) |
-| ARM64 support | Supported |
-| OIDC client | Official plugin |
+| Resource       | Description                                                                                                                                |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Website        | [nextcloud.com](https://nextcloud.com)                                                                                                     |
+| Source code    | [github.com/nextcloud/server](https://github.com/nextcloud/server)                                                                         |
+| License        | [AGPL-3.0](https://github.com/nextcloud/server/blob/master/COPYING)                                                                        |
+| ARM64 support  | Supported                                                                                                                                  |
+| OIDC client    | Official plugin                                                                                                                            |
 | Business model | Fully open source server with paid enterprise subscriptions for support, long-term maintenance, certified builds, and enterprise delivery. |
 
 ## Initial setup
 
 On your first visit, enter an admin username and password. Click 'Install', then skip the remaining setup steps until you reach the home page. This creates a local admin account.
 
+## Running commands
+
+Run the commands below as Nextcloud's `www-data` user. Each time you open a new Nextcloud [terminal]({{< relref "../terminal.md" >}}), switch to that user and enter the Nextcloud directory first:
+
+```bash
+su -s /bin/sh www-data
+cd /var/www/html
+```
+
+## Logging
+
+Run this to include application logs in the container output. These provide valuable context when you enable centralized logging with [Grafana]({{< relref "grafana.md" >}}):
+
+```bash
+php occ config:system:set log_type --value=errorlog
+```
+
 ## Single sign-on
 
-The fastest way to connect Nextcloud to Quollix via OIDC is from the Nextcloud container command line. Open a terminal in the Nextcloud container using the [terminal]({{< relref "../terminal.md" >}}) feature.
+To connect Nextcloud to Quollix via OIDC, follow the [command setup](#running-commands), then run the commands below.
 
 Install the OIDC user backend app:
 
@@ -47,7 +66,7 @@ Nextcloud provides desktop and mobile client applications that sync files automa
 
 ## Updates
 
-Quollix can update the Nextcloud container. Installed Nextcloud apps/plugins are preserved but may not be updated automatically. If OIDC sign-in or another app stops working after the update, run this in the Nextcloud container:
+Quollix can update the Nextcloud container. Installed Nextcloud apps/plugins are preserved but may not be updated automatically. If OIDC sign-in or another app stops working after the update, follow the [command setup](#running-commands), then run:
 
 ```
 php occ app:update --all

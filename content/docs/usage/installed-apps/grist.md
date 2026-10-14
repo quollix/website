@@ -2,6 +2,8 @@
 title: "Grist"
 ---
 
+{{< app-info >}}
+
 {{< alert title="Note" color="warning" >}}
 Updates to the official Grist app are currently paused.
 {{< /alert >}}

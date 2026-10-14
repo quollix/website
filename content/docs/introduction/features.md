@@ -9,26 +9,25 @@ Legend:
 - {{<tilde>}} partially implemented
 - {{<cross>}} not yet implemented
 
-| Feature                                                             | Implementation Status |
-| ------------------------------------------------------------------- | :-------------------: |
-| [Access Policy]({{< relref "docs/usage/installed-apps" >}})         |    {{<checkmark>}}    |
-| [App Secrets]({{< relref "docs/usage/app-secrets.md" >}})           |    {{<checkmark>}}    |
-| [App Store]({{< relref "docs/project/app-store" >}})                |    {{<checkmark>}}    |
-| [Backups]({{< relref "docs/usage/backups.md" >}})                   |    {{<checkmark>}}    |
-| [Certificate]({{< relref "docs/usage/settings/certificate.md" >}})  |    {{<checkmark>}}    |
-| Compliance                                                          |      {{<cross>}}      |
-| [DNS server]({{< relref "docs/usage/installed-apps/adguard.md" >}}) |    {{<checkmark>}}    |
-| [Email]({{< relref "docs/usage/email.md" >}})                       |      {{<tilde>}}      |
-| [Federation]({{< relref "docs/usage/federation" >}})                |    {{<checkmark>}}    |
-| [Groups]({{< relref "docs/usage/groups.md" >}})                     |    {{<checkmark>}}    |
-| Log centralization                                                  |      {{<cross>}}      |
-| [Maintenance]({{< relref "docs/usage/maintenance.md" >}})           |    {{<checkmark>}}    |
-| Monitoring                                                          |      {{<cross>}}      |
-| Networking                                                          |    {{<checkmark>}}    |
-| Report                                                              |      {{<cross>}}      |
-| [Terminal]({{< relref "docs/usage/terminal.md" >}})                 |    {{<checkmark>}}    |
-| [Users]({{< relref "docs/usage/users.md" >}})                       |    {{<checkmark>}}    |
-| [VPN server]({{< relref "docs/usage/installed-apps/wgeasy.md" >}})  |    {{<checkmark>}}    |
+| Feature                                                                      | Implementation Status |
+| ---------------------------------------------------------------------------- | :-------------------: |
+| [Access Policy]({{< relref "docs/usage/installed-apps" >}})                  |    {{<checkmark>}}    |
+| [App Secrets]({{< relref "docs/usage/app-secrets.md" >}})                    |    {{<checkmark>}}    |
+| [App Store]({{< relref "docs/project/app-store" >}})                         |    {{<checkmark>}}    |
+| [Backups]({{< relref "docs/usage/backups.md" >}})                            |    {{<checkmark>}}    |
+| [Certificate]({{< relref "docs/usage/settings/certificate.md" >}})           |    {{<checkmark>}}    |
+| [DNS server]({{< relref "docs/usage/installed-apps/adguard.md" >}})          |    {{<checkmark>}}    |
+| [Email]({{< relref "docs/usage/email.md" >}})                                |      {{<tilde>}}      |
+| [Federation]({{< relref "docs/usage/federation" >}})                         |    {{<checkmark>}}    |
+| [Groups]({{< relref "docs/usage/groups.md" >}})                              |    {{<checkmark>}}    |
+| [Log centralization]({{< relref "docs/usage/installed-apps/grafana.md" >}})  |    {{<checkmark>}}    |
+| [Maintenance]({{< relref "docs/usage/maintenance.md" >}})                    |    {{<checkmark>}}    |
+| [Resource monitoring]({{< relref "docs/usage/installed-apps/grafana.md" >}}) |    {{<checkmark>}}    |
+| Networking                                                                   |    {{<checkmark>}}    |
+| Report                                                                       |      {{<cross>}}      |
+| [Terminal]({{< relref "docs/usage/terminal.md" >}})                          |    {{<checkmark>}}    |
+| [Users]({{< relref "docs/usage/users.md" >}})                                |    {{<checkmark>}}    |
+| [VPN server]({{< relref "docs/usage/installed-apps/wgeasy.md" >}})           |    {{<checkmark>}}    |
 
 ## Access policy
 
@@ -50,17 +49,13 @@ Create backups of your apps on an external server and restore them when needed. 
 
 Quollix enables you to generate certificates that encrypt network data transmitted between users' browsers and the app.
 
-## Compliance
-
-Administrators can publish legal documents such as terms of service, privacy policies, or codes of conduct. Users can be required to review and accept these documents before accessing Quollix. Quollix records accepted document versions so administrators can track which conditions users agreed to.
-
 ## DNS server
 
-From the [App Store]({{< relref "docs/usage/app-store/_index.md" >}}), install the [official AdGuard app]({{< relref "docs/usage/installed-apps/adguard.md" >}}) as a DNS server for local name resolution and DNS filtering.
+Install the [official AdGuard app]({{< relref "docs/usage/installed-apps/adguard.md" >}}) as a DNS server for local name resolution and DNS filtering.
 
 ## Email
 
-The email function supports user invitations and password resets by sending templated emails directly from Quollix. It also supports system reports for important events such as updates, backups, and critical system conditions.
+Quollix can send templated emails for user invitations and password resets. It also delivers system reports for important events, such as updates, backups, and critical system conditions. Administrators can email all users of a Quollix server, for example, to share news and important updates.
 
 ## Federation
 
@@ -78,15 +73,15 @@ Groups allow you to organize people by role, team, or department and manage whic
 
 ## Log centralization
 
-Quollix collects and stores app logs locally. The UI lets administrators inspect logs in one place, making it easier to troubleshoot apps and understand app behavior.
+Quollix and the [Grafana app]({{< relref "docs/usage/installed-apps/grafana.md" >}}) collect and store app and host logs centrally, structuring recognized log formats for detailed filtering, searching, and visualization.
 
 ## Maintenance
 
 Quollix runs a background maintenance agent that automatically updates installed apps, creates backups, and removes outdated backups.
 
-## Monitoring
+## Resource monitoring
 
-Quollix collects and stores app resource metrics locally, including CPU, memory, disk, and network utilization. The UI visualizes resource usage and alerts administrators about critical events, such as high CPU load or low disk space.
+Quollix and the [Grafana app]({{< relref "docs/usage/installed-apps/grafana.md" >}}) collect, store, and visualize app and host resource metrics. Administrators can configure alerts for conditions such as high CPU load or low disk space.
 
 ## Networking
 
@@ -106,4 +101,4 @@ Create user accounts and grant them access to apps. You can create an unlimited 
 
 ## VPN server
 
-From the [App Store]({{< relref "docs/usage/app-store/_index.md" >}}), install the [official WgEasy app]({{< relref "docs/usage/installed-apps/wgeasy.md" >}}) as a WireGuard VPN server for remote access to Quollix and its apps without exposing those them directly to the internet.
+Install the [official WgEasy app]({{< relref "docs/usage/installed-apps/wgeasy.md" >}}) as a WireGuard VPN server for remote access to Quollix and its apps without exposing them directly to the internet.

@@ -2,6 +2,8 @@
 title: "Vikunja"
 ---
 
+{{< app-info >}}
+
 ## Resources
 
 | Resource       | Description                                                                                |

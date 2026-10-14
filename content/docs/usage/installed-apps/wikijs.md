@@ -2,6 +2,8 @@
 title: "Wiki.js"
 ---
 
+{{< app-info >}}
+
 ## Resources
 
 | Resource | Description |

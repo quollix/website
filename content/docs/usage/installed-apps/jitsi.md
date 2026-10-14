@@ -2,6 +2,8 @@
 title: "Jitsi"
 ---
 
+{{< app-info >}}
+
 ## Resources
 
 | Resource | Description |
