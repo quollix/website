@@ -12,7 +12,7 @@ There are two setup options:
 ## Local testing
 
 1. Start Quollix.
-1. Create this `docker-compose.yml`:
+2. Create this `docker-compose.yml`:
 
 ```yml
 services:
@@ -33,7 +33,7 @@ networks:
     external: true
 ```
 
-1. Start the backup server:
+3. Start the backup server:
 
 ```bash
 docker compose up -d
@@ -41,12 +41,12 @@ docker compose up -d
 
 Use these values on the Quollix [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page:
 
-| Field | Value |
-| --- | --- |
-| Remote Host | `dummy_backup_server` |
-| SSH Port | `2222` |
-| SSH User | `sshadmin` |
-| SSH Password | `sshpassword` |
+| Field        | Value                 |
+| ------------ | --------------------- |
+| Remote Host  | `dummy_backup_server` |
+| SSH Port     | `2222`                |
+| SSH User     | `sshadmin`            |
+| SSH Password | `sshpassword`         |
 
 Then follow the remaining steps on the [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page.
 
@@ -69,11 +69,11 @@ This example uses [Hetzner Storage Box](https://www.hetzner.com/storage/storage-
 
 Use these values on the Quollix [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page:
 
-| Field | Value |
-| --- | --- |
-| Remote Host | `uXXXXXX.your-storagebox.de` |
-| SSH Port | `23` |
-| SSH User | `uXXXXXX` |
+| Field        | Value                        |
+| ------------ | ---------------------------- |
+| Remote Host  | `uXXXXXX.your-storagebox.de` |
+| SSH Port     | `23`                         |
+| SSH User     | `uXXXXXX`                    |
 | SSH Password | (the password you set above) |
 
 The SSH port we need on the Hetzner Storage Box is explicitly `23`, not `22`. Then follow the remaining steps on the [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page.

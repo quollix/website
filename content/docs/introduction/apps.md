@@ -11,20 +11,20 @@ Digital infrastructure can be installed as apps, much like a smartphone. The [Ap
 
 These are the apps from the official app maintainer 'quollix' currently available on the App Store. They are actively maintained with regular updates.
 
-| App         | Description                                                    | Website                                                        |
-| ----------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| AdGuard     | DNS server for network-wide ad blocking and DNS records.       | [adguard.com](https://adguard.com)                             |
-| Forgejo     | Git server for code hosting and collaboration.                 | [forgejo.org](https://forgejo.org)                             |
-| Grafana     | Centralized app logs and resource metrics.                     | [grafana.com](https://grafana.com)                             |
-| HedgeDoc    | Real-time collaborative markdown notes.                        | [hedgedoc.org](https://hedgedoc.org)                           |
-| Jitsi       | Video meetings in the browser.                                 | [jitsi.org](https://jitsi.org/jitsi-meet/)                     |
-| Nextcloud   | File sync, sharing, calendars, contacts, and collaboration.    | [nextcloud.com](https://nextcloud.com)                         |
-| Vaultwarden | Password manager compatible with Bitwarden clients.            | [vaultwarden.net](https://www.vaultwarden.net)                 |
-| Vikunja     | Task and project management with lists, boards, and calendars. | [vikunja.io](https://vikunja.io)                               |
-| WgEasy      | WireGuard VPN server for remote access to LAN services.        | [wg-easy.github.io](https://wg-easy.github.io/wg-easy/latest/) |
-| Wiki.js     | Wiki for team and project documentation.                       | [js.wiki](https://js.wiki)                                     |
-| WordPress   | Website and blog publishing system.                            | [wordpress.org](https://wordpress.org)                         |
-| Zulip       | Team chat with topic-based conversations.                      | [zulip.com](https://zulip.com)                                 |
+| App                                                                      | Description                                                    |
+| ------------------------------------------------------------------------ | -------------------------------------------------------------- |
+| [AdGuard]({{< relref "docs/usage/installed-apps/adguard.md" >}})         | DNS server for network-wide ad blocking and DNS records.       |
+| [Forgejo]({{< relref "docs/usage/installed-apps/forgejo.md" >}})         | Git server for code hosting and collaboration.                 |
+| [Grafana]({{< relref "docs/usage/installed-apps/grafana.md" >}})         | Centralized app logs and resource metrics.                     |
+| [HedgeDoc]({{< relref "docs/usage/installed-apps/hedgedoc.md" >}})       | Real-time collaborative markdown notes.                        |
+| [Jitsi]({{< relref "docs/usage/installed-apps/jitsi.md" >}})             | Video meetings in the browser.                                 |
+| [Nextcloud]({{< relref "docs/usage/installed-apps/nextcloud.md" >}})     | File sync, sharing, calendars, contacts, and collaboration.    |
+| [Vaultwarden]({{< relref "docs/usage/installed-apps/vaultwarden.md" >}}) | Password manager compatible with Bitwarden clients.            |
+| [Vikunja]({{< relref "docs/usage/installed-apps/vikunja.md" >}})         | Task and project management with lists, boards, and calendars. |
+| [WgEasy]({{< relref "docs/usage/installed-apps/wgeasy.md" >}})           | WireGuard VPN server for remote access to LAN services.        |
+| [Wiki.js]({{< relref "docs/usage/installed-apps/wikijs.md" >}})          | Wiki for team and project documentation.                       |
+| [WordPress]({{< relref "docs/usage/installed-apps/wordpress.md" >}})     | Website and blog publishing system.                            |
+| [Zulip]({{< relref "docs/usage/installed-apps/zulip.md" >}})             | Team chat with topic-based conversations.                      |
 
 ## Email servers
 
