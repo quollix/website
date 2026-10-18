@@ -64,6 +64,8 @@ App logs include these fields:
 | `log_timestamp`                | Timestamp extracted from the service's log entry, when available. |
 | `attributes`                   | Additional structured metadata extracted from the entry.          |
 
+See [Known log warnings]({{< relref "docs/usage/installed-apps/grafana/known-log-warnings.md" >}}) for warnings that can be tolerated under specific conditions and guidance on when to investigate.
+
 ### Log structuring
 
 Quollix uses parsers to turn recognized service log formats into structured fields.

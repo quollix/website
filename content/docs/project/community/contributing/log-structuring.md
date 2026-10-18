@@ -2,7 +2,7 @@
 title: "Log structuring"
 ---
 
-You can help improve app log structuring by reporting parsing problems or adding/improving parsers. To find log entries and inspect their fields, see [Finding logs in Grafana]({{< relref "docs/usage/installed-apps/grafana.md#finding-logs" >}}).
+You can help improve app log structuring by reporting parsing problems or adding/improving parsers. To find log entries and inspect their fields, see [Finding logs in Grafana]({{< relref "docs/usage/installed-apps/grafana#finding-logs" >}}).
 
 ## Reporting parsing problems
 

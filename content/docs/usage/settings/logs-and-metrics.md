@@ -4,7 +4,7 @@ title: Logs and metrics
 
 {{< ui-location "System" "Settings" "Logs and metrics" >}}
 
-These settings control logging and resource monitoring through the [Grafana app]({{< relref "docs/usage/installed-apps/grafana.md" >}}):
+These settings control logging and resource monitoring through the [Grafana app]({{< relref "docs/usage/installed-apps/grafana" >}}):
 
 - **Log retention (days)\***: How long logs are kept.
 - **Log storage target (GB)\***: Target disk usage for logs. Actual usage may exceed this target.

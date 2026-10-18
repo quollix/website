@@ -20,9 +20,9 @@ Legend:
 | [Email]({{< relref "docs/usage/email.md" >}})                                |      {{<tilde>}}      |
 | [Federation]({{< relref "docs/usage/federation" >}})                         |    {{<checkmark>}}    |
 | [Groups]({{< relref "docs/usage/groups.md" >}})                              |    {{<checkmark>}}    |
-| [Log centralization]({{< relref "docs/usage/installed-apps/grafana.md" >}})  |    {{<checkmark>}}    |
+| [Log centralization]({{< relref "docs/usage/installed-apps/grafana" >}})  |    {{<checkmark>}}    |
 | [Maintenance]({{< relref "docs/usage/maintenance.md" >}})                    |    {{<checkmark>}}    |
-| [Resource monitoring]({{< relref "docs/usage/installed-apps/grafana.md" >}}) |    {{<checkmark>}}    |
+| [Resource monitoring]({{< relref "docs/usage/installed-apps/grafana" >}}) |    {{<checkmark>}}    |
 | Networking                                                                   |    {{<checkmark>}}    |
 | Report                                                                       |      {{<cross>}}      |
 | [Terminal]({{< relref "docs/usage/terminal.md" >}})                          |    {{<checkmark>}}    |
@@ -73,7 +73,7 @@ Groups allow you to organize people by role, team, or department and manage whic
 
 ## Log centralization
 
-Quollix and the [Grafana app]({{< relref "docs/usage/installed-apps/grafana.md" >}}) collect and store app and host logs centrally, structuring recognized log formats for detailed filtering, searching, and visualization.
+Quollix and the [Grafana app]({{< relref "docs/usage/installed-apps/grafana" >}}) collect and store app and host logs centrally, structuring recognized log formats for detailed filtering, searching, and visualization.
 
 ## Maintenance
 
@@ -81,7 +81,7 @@ Quollix runs a background maintenance agent that automatically updates installed
 
 ## Resource monitoring
 
-Quollix and the [Grafana app]({{< relref "docs/usage/installed-apps/grafana.md" >}}) collect, store, and visualize app and host resource metrics. Administrators can configure alerts for conditions such as high CPU load or low disk space.
+Quollix and the [Grafana app]({{< relref "docs/usage/installed-apps/grafana" >}}) collect, store, and visualize app and host resource metrics. Administrators can configure alerts for conditions such as high CPU load or low disk space.
 
 ## Networking
 

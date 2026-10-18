@@ -18,7 +18,7 @@ weight: 5
 - **Unified user management**: Users can access multiple apps with one Quollix account through built-in OIDC integration.
 - **Private network support**: Quollix can issue Let's Encrypt certificates for home lab and private-network deployments without requiring a public-facing server.
 - **Private remote access**: The integrated [AdGuard DNS server]({{< relref "docs/usage/installed-apps/adguard.md" >}}) and [WgEasy VPN server]({{< relref "docs/usage/installed-apps/wgeasy.md" >}}) support setting up a private network with secure remote access.
-- **Log centralization and resource monitoring**: Integration with the [Grafana app]({{< relref "docs/usage/installed-apps/grafana.md" >}}) reduces the setup needed for collecting logs and resource usage metrics, structuring logs, and visualizing them.
+- **Log centralization and resource monitoring**: Integration with the [Grafana app]({{< relref "docs/usage/installed-apps/grafana" >}}) reduces the setup needed for collecting logs and resource usage metrics, structuring logs, and visualizing them.
 
 ## Privacy and business model
 

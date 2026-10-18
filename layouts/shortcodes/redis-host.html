@@ -1,0 +1,8 @@
+## Redis host configuration
+
+This app uses [Redis](https://redis.io/). To support reliable background saves, enable memory overcommit once on the Docker host. Run as root on the host:
+
+```sh
+printf 'vm.overcommit_memory = 1\n' > /etc/sysctl.d/99-redis.conf
+sysctl -p /etc/sysctl.d/99-redis.conf
+```

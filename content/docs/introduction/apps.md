@@ -15,7 +15,7 @@ These are the apps from the official app maintainer 'quollix' currently availabl
 | ------------------------------------------------------------------------ | -------------------------------------------------------------- |
 | [AdGuard]({{< relref "docs/usage/installed-apps/adguard.md" >}})         | DNS server for network-wide ad blocking and DNS records.       |
 | [Forgejo]({{< relref "docs/usage/installed-apps/forgejo.md" >}})         | Git server for code hosting and collaboration.                 |
-| [Grafana]({{< relref "docs/usage/installed-apps/grafana.md" >}})         | Centralized app logs and resource metrics.                     |
+| [Grafana]({{< relref "docs/usage/installed-apps/grafana" >}})         | Centralized app logs and resource metrics.                     |
 | [HedgeDoc]({{< relref "docs/usage/installed-apps/hedgedoc.md" >}})       | Real-time collaborative markdown notes.                        |
 | [Jitsi]({{< relref "docs/usage/installed-apps/jitsi.md" >}})             | Video meetings in the browser.                                 |
 | [Nextcloud]({{< relref "docs/usage/installed-apps/nextcloud.md" >}})     | File sync, sharing, calendars, contacts, and collaboration.    |

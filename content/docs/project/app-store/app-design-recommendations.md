@@ -23,7 +23,7 @@ Quollix provides a standardized operational environment. App developers should a
 - Reverse proxying and TLS certificate management
 - Update orchestration and restarts, but application database or configuration migrations must still be implemented
 - Backups and restores
-- Log centralization and rotation, resource monitoring and alerting, see [Grafana app]({{< relref "docs/usage/installed-apps/grafana.md" >}})
+- Log centralization and rotation, resource monitoring and alerting, see [Grafana app]({{< relref "docs/usage/installed-apps/grafana" >}})
 - Selected [service migrations]({{< relref "docs/project/app-store/service-migration.md" >}}) during app updates
 
 Relying on these platform features avoids duplication and prevents potential interference between app-level and platform-level behavior.
@@ -121,7 +121,7 @@ Services may include useful operational tooling for the software they run. For e
 
 ### Logging
 
-Apps should log to stdout and stderr without creating or rotating log files. Use structured JSON logging for Quollix's [log centralization]({{< relref "docs/usage/installed-apps/grafana.md" >}}). Emit one JSON object per line. Each object should include the event time, log level, and log message. Field names used by existing integrations are listed below, with the preferred name first.
+Apps should log to stdout and stderr without creating or rotating log files. Use structured JSON logging for Quollix's [log centralization]({{< relref "docs/usage/installed-apps/grafana" >}}). Emit one JSON object per line. Each object should include the event time, log level, and log message. Field names used by existing integrations are listed below, with the preferred name first.
 
 - Event time: `timestamp`, `time`, `t`, or `@timestamp`. Prefer UTC using RFC3339 with `Z`, for example `2026-10-04T12:34:56.123Z`. Fractional seconds are optional and may contain up to nine digits for nanosecond precision (`RFC3339Nano`). This should be the time the event occurred. Quollix records collection time separately.
 - Level: `level` or `log.level`. Prefer the values `trace`, `debug`, `info`, `warn`, `error`, or `fatal`. Uppercase values such as `INFO` and `WARN` are also accepted and normalized to lowercase internally.

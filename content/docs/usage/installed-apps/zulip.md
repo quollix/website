@@ -15,6 +15,8 @@ title: "Zulip"
 | OIDC client | Native |
 | Business model | Fully open source server with Zulip Cloud and paid self-hosted plans for commercial support and hosted push-notification relay. |
 
+{{% redis-host %}}
+
 ## Setup
 
 After installing Zulip, visiting it for the first time shows a "No organization found" page. To create an organization, open a terminal session for the Zulip container/service from the Quollix [terminal]({{< relref "../terminal.md" >}}) page and run:

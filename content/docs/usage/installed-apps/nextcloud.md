@@ -15,6 +15,8 @@ title: Nextcloud
 | OIDC client    | Official plugin                                                                                                                            |
 | Business model | Fully open source server with paid enterprise subscriptions for support, long-term maintenance, certified builds, and enterprise delivery. |
 
+{{% redis-host %}}
+
 ## Initial setup
 
 On your first visit, enter an admin username and password. Click 'Install', then skip the remaining setup steps until you reach the home page. This creates a local admin account.
@@ -30,7 +32,7 @@ cd /var/www/html
 
 ## Logging
 
-Run this to include application logs in the container output. These provide valuable context when you enable centralized logging with [Grafana]({{< relref "grafana.md" >}}):
+Run this to include application logs in the container output. These provide valuable context when you enable centralized logging with [Grafana]({{< relref "grafana" >}}):
 
 ```bash
 php occ config:system:set log_type --value=errorlog

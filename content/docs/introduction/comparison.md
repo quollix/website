@@ -93,7 +93,7 @@ Common traits of the included projects:
 
 | Aspect | Quollix | FreedomBox | YunoHost | Runtipi | StartOS |
 | --- | --- | --- | --- | --- | --- |
-| Resource monitoring                      | Through [Grafana]({{< relref "docs/usage/installed-apps/grafana.md" >}}) | Partial          | Limited, diagnosis only         | Container metrics via [Dozzle](https://dozzle.dev/guide/what-is-dozzle) | Yes                       |
+| Resource monitoring                      | Through [Grafana]({{< relref "docs/usage/installed-apps/grafana" >}}) | Partial          | Limited, diagnosis only         | Container metrics via [Dozzle](https://dozzle.dev/guide/what-is-dozzle) | Yes                       |
 | App health monitoring                    | Planned          | Partial          | Partial                         | Partial                                   | Yes                       |
 | Operational alert notifications          | Through Grafana | No               | Partial, diagnosis email alerts | Log alerts via [Dozzle](https://dozzle.dev/guide/alerts-and-webhooks) | SMTP notifications        |
 | App/service logs | Yes | Yes | [Registered services](https://github.com/YunoHost/yunohost/blob/dev/src/service.py) | Via optional [Dozzle app](https://runtipi.io/docs/apps-available) | [Yes](https://docs.start9.com/start-os/0.4.0.x/logs.html) |
