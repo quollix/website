@@ -17,7 +17,8 @@ title: "WgEasy"
 
 ## Introduction
 
-wg-easy provides a web interface for managing a WireGuard VPN server. It enables remote access to Quollix and its apps without exposing them directly to the internet.
+wg-easy provides a web interface for managing a WireGuard VPN server.
+It enables remote access to Quollix and its apps without exposing them directly to the internet.
 
 ## Prerequisites
 
@@ -47,7 +48,9 @@ Create a separate client for each device:
 - Import the downloaded client configuration into WireGuard, or scan its QR code on mobile.
 - Connect from outside the LAN, for example using mobile data, and check access to Quollix apps and the internet.
 
-By default, all traffic goes through the VPN (`AllowedIPs = 0.0.0.0/0, ::/0`). For split tunneling, adjust `AllowedIPs` to select which destinations use the VPN. See WireGuard's [routing configuration documentation](https://git.zx2c4.com/wireguard-tools/about/src/man/wg-quick.8#configuration).
+By default, all traffic goes through the VPN (`AllowedIPs = 0.0.0.0/0, ::/0`).
+For split tunneling, adjust `AllowedIPs` to select which destinations use the VPN.
+See WireGuard's [routing configuration documentation](https://git.zx2c4.com/wireguard-tools/about/src/man/wg-quick.8#configuration).
 
 ## Access policy
 

@@ -2,15 +2,19 @@
 title: "App design recommendations"
 ---
 
-This article is meant for developers who want to distribute their software through the [App Store]({{< relref "docs/project/app-store/_index.md" >}}). You are free to design your app in any way you like. However, following the recommendations ensures smooth integration with Quollix and improves the experience for administrators and end users.
+This article is meant for developers who want to distribute their software through the [App Store]({{< relref "docs/project/app-store/_index.md" >}}).
+You are free to design your app in any way you like.
+However, following the recommendations ensures smooth integration with Quollix and improves the experience for administrators and end users.
 
 ## Official app repository
 
-Tip: The [official app definitions](https://github.com/quollix/apps) provide working examples. Some recommendations below are easier to understand when compared with these examples.
+Tip: The [official app definitions](https://github.com/quollix/apps) provide working examples.
+Some recommendations below are easier to understand when compared with these examples.
 
 ## Introduction and development model
 
-Any software that provides a web interface can be published as an app in the App Store. At a high level, the development and distribution flow looks like this:
+Any software that provides a web interface can be published as an app in the App Store.
+At a high level, the development and distribution flow looks like this:
 
 - You package your software as a Docker image and publish it to a public registry.
 - You provide an app definition that follows Quollix conventions and upload the app to the App Store.
@@ -18,7 +22,8 @@ Any software that provides a web interface can be published as an app in the App
 
 ## What Quollix handles for you
 
-Quollix provides a standardized operational environment. App developers should assume that the following concerns are handled externally and do not need to be implemented by the app itself:
+Quollix provides a standardized operational environment.
+App developers should assume that the following concerns are handled externally and do not need to be implemented by the app itself:
 
 - Reverse proxying and TLS certificate management
 - Update orchestration and restarts, but application database or configuration migrations must still be implemented
@@ -32,7 +37,8 @@ Relying on these platform features avoids duplication and prevents potential int
 
 ### The ideal integration
 
-Ideally, an administrator installs an app, opens it, signs in directly through Quollix via OIDC, and can use the app without any manual setup. [Vikunja]({{< relref "docs/usage/installed-apps/vikunja.md" >}}) and [HedgeDoc]({{< relref "docs/usage/installed-apps/hedgedoc.md" >}}) are good examples of this model.
+Ideally, an administrator installs an app, opens it, signs in directly through Quollix via OIDC, and can use the app without any manual setup.
+[Vikunja]({{< relref "docs/usage/installed-apps/vikunja.md" >}}) and [HedgeDoc]({{< relref "docs/usage/installed-apps/hedgedoc.md" >}}) are good examples of this model.
 
 ### Platform compatibility
 
@@ -64,19 +70,26 @@ Ideally, an administrator installs an app, opens it, signs in directly through Q
 
 ### Configuration model
 
-Configuration should be handled by the app itself and should not complicate deployment. The app definition should stay lean. If configuration is necessary, use the following preference order:
+Configuration should be handled by the app itself and should not complicate deployment.
+The app definition should stay lean.
+If configuration is necessary, use the following preference order:
 
 1. Opinionated defaults built into the app. These should cover the common use cases and remain hidden from app definitions where possible.
 2. Environment variables in the app definition.
 3. Web-based or CLI-based configuration. Usually used for settings that may change over time.
 
-Direct editing of config files is discouraged. Internally managed config files are acceptable if they are fully controlled by the app.
+Direct editing of config files is discouraged.
+Internally managed config files are acceptable if they are fully controlled by the app.
 
 #### Environment variables
 
-If needed, apps should use the following environment variables provided by Quollix during deployment: `BASE_DOMAIN`, `CLIENT_ID`, `CLIENT_SECRET`, `IANA_TIMEZONE`, and generated `SECRET_*` values. On startup, the app should apply these values automatically. Restarting the app must be sufficient to adapt to configuration changes.
+If needed, apps should use the following environment variables provided by Quollix during deployment: `BASE_DOMAIN`, `CLIENT_ID`, `CLIENT_SECRET`, `IANA_TIMEZONE`, and generated `SECRET_*` values.
+On startup, the app should apply these values automatically.
+Restarting the app must be sufficient to adapt to configuration changes.
 
-Apps should not persist dynamic values injected through environment variables into long-lived application configuration. For example, when `CLIENT_SECRET` changes, restarting the app with the new value should be sufficient. The administrator should not need to update the same value manually in the web UI or server settings.
+Apps should not persist dynamic values injected through environment variables into long-lived application configuration.
+For example, when `CLIENT_SECRET` changes, restarting the app with the new value should be sufficient.
+The administrator should not need to update the same value manually in the web UI or server settings.
 
 ### Operations
 
@@ -103,7 +116,8 @@ If the main service depends on other services, for example a database, it should
 - Exit with an error if the dependency is unavailable
 - Expose an HTTP health endpoint for the main service. It should return HTTP 200 only once the server is running, required migrations are complete, and required integrated services are available and compatible.
 
-If internal services require credentials, apps should use generated `SECRET_*` values instead of hard-coded defaults. Authentication should still be enforced on public entry points, usually through the exposed web service port.
+If internal services require credentials, apps should use generated `SECRET_*` values instead of hard-coded defaults.
+Authentication should still be enforced on public entry points, usually through the exposed web service port.
 
 #### Flexibility
 
@@ -117,17 +131,24 @@ Avoid hard-coded assumptions or irreversible dependencies.
 
 #### Operator tooling
 
-Services may include useful operational tooling for the software they run. For example, database services commonly include the matching database client, and application services may expose a small CLI for administrative or diagnostic tasks.
+Services may include useful operational tooling for the software they run.
+For example, database services commonly include the matching database client, and application services may expose a small CLI for administrative or diagnostic tasks.
 
 ### Logging
 
-Apps should log to stdout and stderr without creating or rotating log files. Use structured JSON logging for Quollix's [log centralization]({{< relref "docs/usage/installed-apps/grafana" >}}). Emit one JSON object per line. Each object should include the event time, log level, and log message. Field names used by existing integrations are listed below, with the preferred name first.
+Apps should log to stdout and stderr without creating or rotating log files.
+Use structured JSON logging for Quollix's [log centralization]({{< relref "docs/usage/installed-apps/grafana" >}}).
+Emit one JSON object per line.
+Each object should include the event time, log level, and log message.
+Field names used by existing integrations are listed below, with the preferred name first.
 
 - Event time: `timestamp`, `time`, `t`, or `@timestamp`. Prefer UTC using RFC3339 with `Z`, for example `2026-10-04T12:34:56.123Z`. Fractional seconds are optional and may contain up to nine digits for nanosecond precision (`RFC3339Nano`). This should be the time the event occurred. Quollix records collection time separately.
 - Level: `level` or `log.level`. Prefer the values `trace`, `debug`, `info`, `warn`, `error`, or `fatal`. Uppercase values such as `INFO` and `WARN` are also accepted and normalized to lowercase internally.
 - Message: `message` or `msg`, containing a readable description of the event.
 
-Keep the message text stable and put dynamic values in separate fields. Additional fields with meaningful context are encouraged. For example:
+Keep the message text stable and put dynamic values in separate fields.
+Additional fields with meaningful context are encouraged.
+For example:
 
 ```json
 {
@@ -141,13 +162,15 @@ Keep the message text stable and put dynamic values in separate fields. Addition
 
 ### User management and security
 
-Apps should support integration with an OIDC provider. This enables integration with Quollix features such as:
+Apps should support integration with an OIDC provider.
+This enables integration with Quollix features such as:
 
 - Single sign-on
 - User management
 - Role- and group-based access control
 
-By relying on an OIDC provider, apps can delegate authentication and core user management to a central system. However, the app remains fully responsible for enforcing its own authorization logic.
+By relying on an OIDC provider, apps can delegate authentication and core user management to a central system.
+However, the app remains fully responsible for enforcing its own authorization logic.
 
 At the moment, Quollix provides these claims for integration:
 
@@ -155,11 +178,15 @@ At the moment, Quollix provides these claims for integration:
 - Standard token metadata claims in ID tokens: `iss`, `aud`, `exp`, `iat`, `nonce`
 - Quollix-specific custom claims: `role`, `groups`
 
-The custom claim `role` currently contains `admin` or `user`. The custom claim `groups` contains comma-separated list of [Quollix group names]({{< relref "docs/usage/groups" >}}) the user is member of. Apps can use these claims for authorization, role and group mapping if desired.
+The custom claim `role` currently contains `admin` or `user`.
+The custom claim `groups` contains comma-separated list of [Quollix group names]({{< relref "docs/usage/groups" >}}) the user is member of.
+Apps can use these claims for authorization, role and group mapping if desired.
 
 #### App secrets
 
-Quollix automatically generates persistent values for environment placeholders whose name starts with `SECRET_`. Apps should use purpose-specific names, such as `SECRET_POSTGRES_PASSWORD`, `SECRET_SESSION_SECRET`, or `SECRET_ADMIN_TOKEN`. These values are stored with the installed app and remain stable across container restarts, app updates, and backups.
+Quollix automatically generates persistent values for environment placeholders whose name starts with `SECRET_`.
+Apps should use purpose-specific names, such as `SECRET_POSTGRES_PASSWORD`, `SECRET_SESSION_SECRET`, or `SECRET_ADMIN_TOKEN`.
+These values are stored with the installed app and remain stable across container restarts, app updates, and backups.
 
 App definition example:
 
@@ -173,9 +200,12 @@ services:
 
 #### OIDC integration
 
-OIDC integration should use the authorization code flow. The app should retrieve all required metadata from the discovery endpoint.
+OIDC integration should use the authorization code flow.
+The app should retrieve all required metadata from the discovery endpoint.
 
-OIDC integration should be configurable through environment variables provided by Quollix. Ideally, the app should only require an issuer URL, `CLIENT_ID`, and `CLIENT_SECRET`, without requiring administrators to configure these settings manually. The app should derive the discovery endpoint from the issuer by using `/.well-known/openid-configuration`, and then read the remaining OIDC endpoints from that metadata document.
+OIDC integration should be configurable through environment variables provided by Quollix.
+Ideally, the app should only require an issuer URL, `CLIENT_ID`, and `CLIENT_SECRET`, without requiring administrators to configure these settings manually.
+The app should derive the discovery endpoint from the issuer by using `/.well-known/openid-configuration`, and then read the remaining OIDC endpoints from that metadata document.
 
 For example, the app definition could look like this:
 
@@ -191,6 +221,10 @@ services:
 
 #### Identity model
 
-If an app supports OIDC, Quollix should be the primary source of truth for user identities. Self-registration features of the app should therefore be disabled by default or by environment variables.
+If an app supports OIDC, Quollix should be the primary source of truth for user identities.
+Self-registration features of the app should therefore be disabled by default or by environment variables.
 
-Some apps distinguish sign-in and account creation, where the latter sometimes requires extra configuration to be enabled. Instead, OIDC integration should be configured through environment variables, as described in [OIDC integration](#oidc-integration), and accounts should be created automatically through OIDC sign-in. The first user who signs in through OIDC can become an administrator, while subsequent users become regular users. Alternatively, the app can create a local administrator account on first visit, while all other users sign in through OIDC.
+Some apps distinguish sign-in and account creation, where the latter sometimes requires extra configuration to be enabled.
+Instead, OIDC integration should be configured through environment variables, as described in [OIDC integration](#oidc-integration), and accounts should be created automatically through OIDC sign-in.
+The first user who signs in through OIDC can become an administrator, while subsequent users become regular users.
+Alternatively, the app can create a local administrator account on first visit, while all other users sign in through OIDC.

@@ -2,7 +2,8 @@
 title: "Server preparations"
 ---
 
-This sample guide walks you through setting up a hardened Ubuntu Server host for Quollix. Adapt it to your own environment as needed.
+This sample guide walks you through setting up a hardened Ubuntu Server host for Quollix.
+Adapt it to your own environment as needed.
 
 ## Restrict physical access
 
@@ -19,7 +20,9 @@ Place the device in a locked rack or drawer.
 
 ## Internet connection
 
-Connect the server to a wired LAN to avoid having to configure a Wi-Fi connection on boot. With FDE, Wi-Fi setup would even be required twice: once in the encrypted-mode initramfs and again in the decrypted-mode main operating system. Please note that the LAN IP address of the server may differ between initramfs mode and the main operating system, since the router may recognise them as two distinct devices.
+Connect the server to a wired LAN to avoid having to configure a Wi-Fi connection on boot.
+With FDE, Wi-Fi setup would even be required twice: once in the encrypted-mode initramfs and again in the decrypted-mode main operating system.
+Please note that the LAN IP address of the server may differ between initramfs mode and the main operating system, since the router may recognise them as two distinct devices.
 
 ## Basic hardening
 
@@ -41,11 +44,13 @@ sudo ufw enable
 
 ### Additional open ports
 
-Some apps need to expose extra ports to work properly. When you start such an app, Docker handles the port exposure in the background by inserting its own firewall rules.
+Some apps need to expose extra ports to work properly.
+When you start such an app, Docker handles the port exposure in the background by inserting its own firewall rules.
 
 ### SSH hardening
 
-Add your public key to the file `~/.ssh/authorized_keys`, then try logging in via SSH. If it works, disable password authentication.
+Add your public key to the file `~/.ssh/authorized_keys`, then try logging in via SSH.
+If it works, disable password authentication.
 
 ```bash
 sudo sed -Ei 's/^#?PasswordAuthentication .*/PasswordAuthentication no/' /etc/ssh/sshd_config
@@ -109,7 +114,9 @@ Add the following line to run the script daily at 4:00 AM and log output:
 
 FDE keeps your data unreadable for third parties even if the server is physically stolen.
 
-To continue, you will need a private/public key pair on your work PC. Run the commands below on the server to install your public key in its initramfs. This will then allow you to access the server via SSH during boot and unlock the disk.
+To continue, you will need a private/public key pair on your work PC.
+Run the commands below on the server to install your public key in its initramfs.
+This will then allow you to access the server via SSH during boot and unlock the disk.
 
 ```bash
 sudo apt install -y dropbear-initramfs
@@ -117,7 +124,10 @@ read -rp "Paste your SSH public key: " k; echo "$k" | sudo tee -a /etc/dropbear/
 sudo update-initramfs -u
 ```
 
-Use the `remote-unlock.sh` script below on your work PC to unlock the server disk. This script is designed for Linux, e.g. Ubuntu Desktop. It can also be used on Windows via WSL or Git Bash.
+Use the `remote-unlock.sh` script below on your work PC to unlock the server disk.
+This script is designed for Linux, e.g.
+Ubuntu Desktop.
+It can also be used on Windows via WSL or Git Bash.
 
 ```bash
 #!/usr/bin/env bash
@@ -134,8 +144,12 @@ printf %s "$p" | ssh -i ~/.ssh/id_ed25519 root@SERVER-IP cryptroot-unlock
 
 ## Server reboots
 
-To ensure that the latest kernel and security updates are applied, you should reboot the server periodically, for example once a month. Reboots can be automated using a cron job. However, if you have FDE, you need to unlock the disk during boot, which requires you to unlock the encryption manually. You should be aware of this additional effort when choosing FDE.
+To ensure that the latest kernel and security updates are applied, you should reboot the server periodically, for example once a month.
+Reboots can be automated using a cron job.
+However, if you have FDE, you need to unlock the disk during boot, which requires you to unlock the encryption manually.
+You should be aware of this additional effort when choosing FDE.
 
 ## Install Docker
 
-Follow the official [Docker installation guide](https://docs.docker.com/engine/install/ubuntu/). This Docker installation prepares the installation of Quollix.
+Follow the official [Docker installation guide](https://docs.docker.com/engine/install/ubuntu/).
+This Docker installation prepares the installation of Quollix.

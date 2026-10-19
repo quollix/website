@@ -3,7 +3,9 @@ title: "Automatic updates"
 weight: 40
 ---
 
-This article is on automatic updates of Quollix itself. The apps installed in Quollix are already automatically updated by Quollix. On the server, run:
+This article is on automatic updates of Quollix itself.
+The apps installed in Quollix are already automatically updated by Quollix.
+On the server, run:
 
 ```bash
 sudo crontab -e

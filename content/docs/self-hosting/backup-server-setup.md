@@ -2,7 +2,8 @@
 title: "Backup server setup"
 ---
 
-This guide shows how to set up a backup server for Quollix. For production use, this can serve as the external backup system in the [3-2-1 backup strategy]({{< ref "docs/self-hosting/backup-strategy.md" >}}).
+This guide shows how to set up a backup server for Quollix.
+For production use, this can serve as the external backup system in the [3-2-1 backup strategy]({{< ref "docs/self-hosting/backup-strategy.md" >}}).
 
 There are two setup options:
 
@@ -52,7 +53,8 @@ Then follow the remaining steps on the [backup server]({{< relref "docs/usage/se
 
 ## External storage
 
-This example uses [Hetzner Storage Box](https://www.hetzner.com/storage/storage-box). Quollix is not affiliated with or sponsored by Hetzner.
+This example uses [Hetzner Storage Box](https://www.hetzner.com/storage/storage-box).
+Quollix is not affiliated with or sponsored by Hetzner.
 
 1. Create a Hetzner account.
 1. Open the [Hetzner Cloud Console](https://console.hetzner.com/projects).
@@ -76,10 +78,13 @@ Use these values on the Quollix [backup server]({{< relref "docs/usage/settings/
 | SSH User     | `uXXXXXX`                    |
 | SSH Password | (the password you set above) |
 
-The SSH port we need on the Hetzner Storage Box is explicitly `23`, not `22`. Then follow the remaining steps on the [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page.
+The SSH port we need on the Hetzner Storage Box is explicitly `23`, not `22`.
+Then follow the remaining steps on the [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) page.
 
 ### Automatic snapshots
 
 In the Hetzner Console, open the Storage Box, go to **Snapshots**, and enable automatic snapshots.
 
-These snapshots add a recovery path for worst-case incidents. If a compromised Quollix server is used to delete both the server data and the Storage Box data, the provider-managed snapshots can restore the Storage Box. After that, configure the same backup server on a clean Quollix server and restore the app backups.
+These snapshots add a recovery path for worst-case incidents.
+If a compromised Quollix server is used to delete both the server data and the Storage Box data, the provider-managed snapshots can restore the Storage Box.
+After that, configure the same backup server on a clean Quollix server and restore the app backups.

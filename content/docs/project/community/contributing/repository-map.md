@@ -2,7 +2,8 @@
 title: "Repository map"
 ---
 
-The public source code repositories are listed in the [Quollix GitHub organization](https://github.com/orgs/quollix/repositories). This page groups them by their role in the ecosystem.
+The public source code repositories are listed in the [Quollix GitHub organization](https://github.com/orgs/quollix/repositories).
+This page groups them by their role in the ecosystem.
 
 - Foundational standalone repositories
   - **taskrunner**: CI task handling library

@@ -31,19 +31,23 @@ Legend:
 
 ## Access policy
 
-Admins can set an access policy for each app individually, for example restricting access to registered users or making an app public so anyone can use it without an account. Public access can be used for blogs, forums, and websites.
+Admins can set an access policy for each app individually, for example restricting access to registered users or making an app public so anyone can use it without an account.
+Public access can be used for blogs, forums, and websites.
 
 ## App secrets
 
-Quollix generates and injects app-specific random secrets for installed apps. These secrets provide cryptographic randomness that some apps need for secure operation.
+Quollix generates and injects app-specific random secrets for installed apps.
+These secrets provide cryptographic randomness that some apps need for secure operation.
 
 ## App store
 
-The [App Store]({{< relref "docs/project/app-store/_index.md" >}}) is the central location for downloading and installing apps and updates. It supports official and third-party [app definitions]({{< relref "docs/project/terminology.md" >}}).
+The [App Store]({{< relref "docs/project/app-store/_index.md" >}}) is the central location for downloading and installing apps and updates.
+It supports official and third-party [app definitions]({{< relref "docs/project/terminology.md" >}}).
 
 ## Backups
 
-Create backups of your apps on an external server and restore them when needed. Backups also support migration between servers.
+Create backups of your apps on an external server and restore them when needed.
+Backups also support migration between servers.
 
 ## Certificate
 
@@ -55,14 +59,21 @@ Install the [official AdGuard app]({{< relref "docs/usage/installed-apps/adguard
 
 ## Email
 
-Quollix can send templated emails for user invitations and password resets. It also delivers system reports for important events, such as updates, backups, and critical system conditions. Administrators can email all users of a Quollix server, for example, to share news and important updates.
+Quollix can send templated emails for user invitations and password resets.
+It also delivers system reports for important events, such as updates, backups, and critical system conditions.
+Administrators can email all users of a Quollix server, for example, to share news and important updates.
 
 ## Federation
 
-Quollix can act as an OIDC provider. This allows apps deployed with Quollix, other Quollix servers, and other compatible OIDC clients to use Quollix accounts for sign-in. Quollix can also act as an OIDC client, so users can sign in through another OIDC provider. Potential providers include Google, Microsoft Entra ID, authentik, Okta, or another Quollix server.
+Quollix can act as an OIDC provider.
+This allows apps deployed with Quollix, other Quollix servers, and other compatible OIDC clients to use Quollix accounts for sign-in.
+Quollix can also act as an OIDC client, so users can sign in through another OIDC provider.
+Potential providers include Google, Microsoft Entra ID, authentik, Okta, or another Quollix server.
 
 {{< alert title="Note" color="warning" >}}
-Quollix uses generic OIDC client support, so standards-compliant providers should work. The external providers mentioned above have not been tested by the Quollix project yet. If you use Quollix with one of them, feedback and integration reports are welcome through the <a href='{{< relref "docs/contact/feedback.md" >}}'>feedback page</a>.
+Quollix uses generic OIDC client support, so standards-compliant providers should work.
+The external providers mentioned above have not been tested by the Quollix project yet.
+If you use Quollix with one of them, feedback and integration reports are welcome through the <a href='{{< relref "docs/contact/feedback.md" >}}'>feedback page</a>.
 {{< /alert >}}
 
 Together, these provider and client capabilities make up Quollix federation, where multiple Quollix servers can share identity.
@@ -81,7 +92,8 @@ Quollix runs a background maintenance agent that automatically updates installed
 
 ## Resource monitoring
 
-Quollix and the [Grafana app]({{< relref "docs/usage/installed-apps/grafana" >}}) collect, store, and visualize app and host resource metrics. Administrators can configure alerts for conditions such as high CPU load or low disk space.
+Quollix and the [Grafana app]({{< relref "docs/usage/installed-apps/grafana" >}}) collect, store, and visualize app and host resource metrics.
+Administrators can configure alerts for conditions such as high CPU load or low disk space.
 
 ## Networking
 
@@ -93,11 +105,13 @@ Administrators receive reports about maintenance events, such as app updates, ba
 
 ## Terminal
 
-Provides browser-based shell access to app containers. It allows administrators to directly interact with running apps for tasks such as initial setup, troubleshooting, maintenance, configuration changes, and advanced debugging, without requiring SSH access to the host system.
+Provides browser-based shell access to app containers.
+It allows administrators to directly interact with running apps for tasks such as initial setup, troubleshooting, maintenance, configuration changes, and advanced debugging, without requiring SSH access to the host system.
 
 ## Users
 
-Create user accounts and grant them access to apps. You can create an unlimited number of users.
+Create user accounts and grant them access to apps.
+You can create an unlimited number of users.
 
 ## VPN server
 

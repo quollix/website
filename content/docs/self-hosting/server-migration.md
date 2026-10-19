@@ -2,7 +2,8 @@
 title: "Server migration"
 ---
 
-Server migration means moving Quollix and app data from one server to another. This can be useful when switching cloud providers, upgrading hardware, or moving between self-hosted and cloud infrastructure.
+Server migration means moving Quollix and app data from one server to another.
+This can be useful when switching cloud providers, upgrading hardware, or moving between self-hosted and cloud infrastructure.
 
 ## Old server
 

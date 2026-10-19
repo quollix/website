@@ -4,7 +4,9 @@ aliases:
   - /docs/self-hosting/app-version-migration/
 ---
 
-App version migration means updating an app through one or more intermediate versions instead of jumping directly to the latest version. This could apply when an app has been stopped and is excluded from automatic updates for a longer time. Some apps need to update to intermediate versions first to migrate data correctly.
+App version migration means updating an app through one or more intermediate versions instead of jumping directly to the latest version.
+This could apply when an app has been stopped and is excluded from automatic updates for a longer time.
+Some apps need to update to intermediate versions first to migrate data correctly.
 
 ## Enable backups
 

@@ -20,17 +20,22 @@ After installing an app through the [App Store page]({{< relref "docs/usage/app-
 
 ## First start
 
-Starting an app for the first time can take a while. Containers may need to be downloaded in the background, and the app may need to prepare its initial configuration or download additional components. Even after the app is marked as running, it can take anywhere from a few seconds to a few minutes before the app webpage becomes available.
+Starting an app for the first time can take a while.
+Containers may need to be downloaded in the background, and the app may need to prepare its initial configuration or download additional components.
+Even after the app is marked as running, it can take anywhere from a few seconds to a few minutes before the app webpage becomes available.
 
 {{< alert title="Note" color="warning" >}}
 When installing an official app, you should always read the related articles at the bottom, as they contain setup guidelines, security instructions, and information about self-registration.
 {{< /alert >}}
 
-If you change the Quollix base domain, an app's client ID, or its client secret (OIDC), some apps may need additional attention before they work correctly again. If an app stops working or still uses the old settings, restart it first. If the issue remains after the restart, update the related settings in the app's own admin interface.
+If you change the Quollix base domain, an app's client ID, or its client secret (OIDC), some apps may need additional attention before they work correctly again.
+If an app stops working or still uses the old settings, restart it first.
+If the issue remains after the restart, update the related settings in the app's own admin interface.
 
 ## Access policies
 
-Apps use the `Admin only` access policy by default. This is the safest option because some apps need to be configured by an administrator before other users should access them.
+Apps use the `Admin only` access policy by default.
+This is the safest option because some apps need to be configured by an administrator before other users should access them.
 
 Available access policies are:
 
@@ -39,7 +44,8 @@ Available access policies are:
 - `Group restricted`: Only signed-in users who belong to an authorized group can access the app. See [groups]({{< relref "docs/usage/groups" >}}).
 - `Public`: Anyone can access the app without signing in to Quollix.
 
-Making an app accessible to more users, especially by setting it to `Public`, increases the risk of exposing potential vulnerabilities. Only grant app access to users who genuinely need it.
+Making an app accessible to more users, especially by setting it to `Public`, increases the risk of exposing potential vulnerabilities.
+Only grant app access to users who genuinely need it.
 
 Typical use cases for public apps include:
 
@@ -49,12 +55,24 @@ Typical use cases for public apps include:
 
 ## Downloading and uploading apps
 
-You can manually download and upload apps locally without relying on the official [App Store]({{< relref "docs/usage/app-store/" >}}). Backups will still be handled automatically. However, this approach increases your maintenance responsibility because updates must be performed manually. Enabling automatic updates via the App Store later for an uploaded app may lead to incompatibilities if the configurations differ.
+You can manually download and upload apps locally without relying on the official [App Store]({{< relref "docs/usage/app-store/" >}}).
+Backups will still be handled automatically.
+However, this approach increases your maintenance responsibility because updates must be performed manually.
+Enabling automatic updates via the App Store later for an uploaded app may lead to incompatibilities if the configurations differ.
 
-Only upload app definitions from sources you trust. App definitions can run containers, access app data, use system resources, and expose services on your server. If the uploaded app does not exist yet, a new app will be created from the file. If the app already exists, the existing app will be updated. If enabled, a backup may be created before the update.
+Only upload app definitions from sources you trust.
+App definitions can run containers, access app data, use system resources, and expose services on your server.
+If the uploaded app does not exist yet, a new app will be created from the file.
+If the app already exists, the existing app will be updated.
+If enabled, a backup may be created before the update.
 
 ## Why some apps need manual setup
 
-The app-specific pages below describe any initial manual setup that may be needed after installing an app. Quollix tries to automate generic platform integration. Some apps follow this model closely, as described in the [app design recommendations]({{< relref "docs/project/app-store/app-design-recommendations.md" >}}), and work with little or no extra configuration.
+The app-specific pages below describe any initial manual setup that may be needed after installing an app.
+Quollix tries to automate generic platform integration.
+Some apps follow this model closely, as described in the [app design recommendations]({{< relref "docs/project/app-store/app-design-recommendations.md" >}}), and work with little or no extra configuration.
 
-Other apps have their own first-run setup, require manual interaction, or settings that depend on how you want to use the app. In those cases, Quollix documents the required steps. These setup instructions are recommended defaults, not strict requirements. It is your server, so you can deviate from them when you understand the trade-offs and want a different app configuration.
+Other apps have their own first-run setup, require manual interaction, or settings that depend on how you want to use the app.
+In those cases, Quollix documents the required steps.
+These setup instructions are recommended defaults, not strict requirements.
+It is your server, so you can deviate from them when you understand the trade-offs and want a different app configuration.

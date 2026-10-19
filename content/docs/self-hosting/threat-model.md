@@ -8,7 +8,9 @@ This document describes how Quollix mitigates threats to protect its digital inf
 
 ### Cryptography
 
-We only use modern, well-tested cryptographic algorithms. Administrators can generate Let’s Encrypt–signed certificates or provide their own certificates to secure HTTPS endpoints. HTTP requests are redirected to HTTPS so users reach the encrypted endpoint by default.
+We only use modern, well-tested cryptographic algorithms.
+Administrators can generate Let’s Encrypt–signed certificates or provide their own certificates to secure HTTPS endpoints.
+HTTP requests are redirected to HTTPS so users reach the encrypted endpoint by default.
 
 ### Container isolation
 

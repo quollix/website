@@ -2,7 +2,10 @@
 title: "Production setup"
 ---
 
-For an example walkthrough, see the [speedrun production setup video]({{< relref "docs/getting-started/videos/speedrun-production-setup.md" >}}). This guide shows how to install Quollix for production use. The examples assume a base domain such as `example.com`, referred to below as `<base-domain>`. A prerequisite is, that you own the domain.
+For an example walkthrough, see the [speedrun production setup video]({{< relref "docs/getting-started/videos/speedrun-production-setup.md" >}}).
+This guide shows how to install Quollix for production use.
+The examples assume a base domain such as `example.com`, referred to below as `<base-domain>`.
+A prerequisite is, that you own the domain.
 
 1. **Choose a** [**deployment option**]({{< relref "docs/self-hosting/deployment-options.md" >}}).
 1. **Install Docker**: install Docker on the server, see [Getting started]({{< relref "docs/getting-started/_index.md" >}}).
@@ -22,7 +25,8 @@ services:
     restart: unless-stopped
 ```
 
-If you want to run Quollix behind a reverse proxy, read the [reverse proxy setup]({{< relref "docs/self-hosting/reverse-proxy.md" >}}) guide before starting the container. If you want to configure the initial administrator account, read the [initial admin account]({{< relref "docs/self-hosting/initial-admin-account.md" >}}) guide before starting the container.
+If you want to run Quollix behind a reverse proxy, read the [reverse proxy setup]({{< relref "docs/self-hosting/reverse-proxy.md" >}}) guide before starting the container.
+If you want to configure the initial administrator account, read the [initial admin account]({{< relref "docs/self-hosting/initial-admin-account.md" >}}) guide before starting the container.
 
 4. **Start Quollix**: run the following command in the same directory as `docker-compose.yml`:
 
@@ -30,7 +34,8 @@ If you want to run Quollix behind a reverse proxy, read the [reverse proxy setup
 sudo docker compose up -d
 ```
 
-For production deployments, we recommend updating Quollix once a day so you quickly receive the latest fixes and features. The [automatic updates]({{< relref "docs/self-hosting/automatic-updates.md" >}}) guide shows how to handle this with a cronjob.
+For production deployments, we recommend updating Quollix once a day so you quickly receive the latest fixes and features.
+The [automatic updates]({{< relref "docs/self-hosting/automatic-updates.md" >}}) guide shows how to handle this with a cronjob.
 
 5. **Open the web interface**: visit `https://quollix.<base-domain>`. Quollix initially uses a self-signed certificate, so your browser will show a certificate warning. Continue only if you trust the network path to the server. A trusted certificate is configured later in this guide.
 1. **Find the initial password**: Quollix logs a random initial password on first startup:
@@ -50,7 +55,9 @@ Visiting `https://quollix.<base-domain>` should now use a certificate signed by 
 
 ### Missing initial password
 
-If you accidentally recreate the container before copying the initial password, the existing database volume may keep the old administrator account while the password is no longer visible in the logs. In that case, reset the initial installation state. This deletes the Quollix database and starts from a clean installation:
+If you accidentally recreate the container before copying the initial password, the existing database volume may keep the old administrator account while the password is no longer visible in the logs.
+In that case, reset the initial installation state.
+This deletes the Quollix database and starts from a clean installation:
 
 ```bash
 sudo docker compose down

@@ -18,10 +18,12 @@ The options are:
 | 3. Private LAN server   | Private DNS | Optional, for remote access | Runs on your own hardware, maximum data privacy      |
 
 {{< alert title="Discouraged" color="warning" >}}
-Exposing HTTP(S) ports to the internet increases the server's exposure to attacks. If your requirements allow it, we recommend keeping the server private behind a LAN or VPN.
+Exposing HTTP(S) ports to the internet increases the server's exposure to attacks.
+If your requirements allow it, we recommend keeping the server private behind a LAN or VPN.
 {{< /alert >}}
 
-We discourage exposing the Quollix server HTTP(S) ports on your LAN directly to the internet. If Quollix or an app is compromised, other devices on the LAN could also be at risk.
+We discourage exposing the Quollix server HTTP(S) ports on your LAN directly to the internet.
+If Quollix or an app is compromised, other devices on the LAN could also be at risk.
 
 ## 1. Public cloud server
 
@@ -40,7 +42,8 @@ Use this option for public collaboration services, such as discussion forums or 
 
 ## 2. Private cloud server
 
-This setup is similar to the private LAN setup below. You do not need a router, but clients must connect through a VPN to access Quollix and its apps.
+This setup is similar to the private LAN setup below.
+You do not need a router, but clients must connect through a VPN to access Quollix and its apps.
 
 - Rent a server, for example [a Hetzner VPS]({{< relref "docs/self-hosting/hetzner-cloud.md" >}}).
 - Create a public wildcard DNS record pointing to the VM's public IP. This lets you reach Quollix and AdGuard during setup. Afterward, AdGuard's private DNS rewrite resolves Quollix and app domains to the VM's private IP for VPN clients.
@@ -61,7 +64,8 @@ This setup is similar to the private LAN setup below. You do not need a router, 
 
 ## 3. Private LAN
 
-On a LAN, devices on the same local network can access Quollix directly, so a VPN is optional. Install a VPN if users also need remote access.
+On a LAN, devices on the same local network can access Quollix directly, so a VPN is optional.
+Install a VPN if users also need remote access.
 
 - Prepare an Ubuntu server on your hardware.
 - Assign the server a static IP address, for example, with a DHCP reservation in your router.

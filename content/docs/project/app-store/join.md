@@ -3,15 +3,21 @@ title: "Join the App Store"
 weight: 10
 ---
 
-Anyone who wants to publish app definitions through the App Store can request an app maintainer account. Account creation is manual for now. We ask for enough information to reduce spam, impersonation, namespace squatting, and misleading app maintainer names.
+Anyone who wants to publish app definitions through the App Store can request an app maintainer account.
+Account creation is manual for now.
+We ask for enough information to reduce spam, impersonation, namespace squatting, and misleading app maintainer names.
 
 ## Choose an app maintainer name
 
-An app maintainer name must contain only lowercase letters and digits and be between 3 and 20 characters long. Before requesting an account, check whether your desired app maintainer name is still available. In Quollix, open the [App Store page]({{< relref "docs/usage/app-store" >}}), enable the search for unofficial apps, enter the desired app maintainer name, and search. If there are no results, or if the first result has a different app maintainer name, the name is still available and you can request it.
+An app maintainer name must contain only lowercase letters and digits and be between 3 and 20 characters long.
+Before requesting an account, check whether your desired app maintainer name is still available.
+In Quollix, open the [App Store page]({{< relref "docs/usage/app-store" >}}), enable the search for unofficial apps, enter the desired app maintainer name, and search.
+If there are no results, or if the first result has a different app maintainer name, the name is still available and you can request it.
 
 ## Send account creation request
 
-Generate a dedicated Ed25519 key pair for signing app uploads. Set a passphrase for the private key when prompted.
+Generate a dedicated Ed25519 key pair for signing app uploads.
+Set a passphrase for the private key when prompted.
 
 ```bash
 ssh-keygen -t ed25519 -f ~/.ssh/quollix_app_store -C "quollix-app-store:<app-maintainer-name>"
@@ -23,7 +29,9 @@ Print the public key and paste it into the request email below:
 cat ~/.ssh/quollix_app_store.pub
 ```
 
-The public key is used to verify app versions signed with your private key. Quollix also uses it as part of the App Store maintainer trust chain. For details, see [Supply chain security]({{< relref "docs/self-hosting/threat-model.md#supply-chain-security" >}}).
+The public key is used to verify app versions signed with your private key.
+Quollix also uses it as part of the App Store maintainer trust chain.
+For details, see [Supply chain security]({{< relref "docs/self-hosting/threat-model.md#supply-chain-security" >}}).
 
 Use the draft below to send the request by email:
 
@@ -31,7 +39,8 @@ Use the draft below to send the request by email:
 
 ## Onboard your account
 
-When the request is accepted, a Quollix maintainer creates the account and sends the onboarding token by email. Download the `qsc` binary from the [GitHub Releases](https://github.com/quollix/store/releases) page, then run the commands below.
+When the request is accepted, a Quollix maintainer creates the account and sends the onboarding token by email.
+Download the `qsc` binary from the [GitHub Releases](https://github.com/quollix/store/releases) page, then run the commands below.
 
 Use the token to activate the account and set a password for your account:
 
@@ -45,7 +54,8 @@ Sign in with your app maintainer name and password:
 ./qsc account sign-in <app-maintainer-name>
 ```
 
-Set the file path to the private key corresponding to the Ed25519 public key you provided in the request email. The private key is used to sign uploaded app versions:
+Set the file path to the private key corresponding to the Ed25519 public key you provided in the request email.
+The private key is used to sign uploaded app versions:
 
 ```bash
 ./qsc onboarding set-private-key ~/.ssh/quollix_app_store

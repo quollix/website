@@ -2,7 +2,8 @@
 title: "Code of conduct"
 ---
 
-We are committed to a professional, productive, and welcoming environment for everyone involved in this project. This includes contributors, the Quollix maintainer, and users alike.
+We are committed to a professional, productive, and welcoming environment for everyone involved in this project.
+This includes contributors, the Quollix maintainer, and users alike.
 
 ## Expected behavior
 
@@ -23,7 +24,8 @@ Violations will result in consequences proportionate to the severity and frequen
 
 ## Interaction with the Quollix maintainer
 
-Quollix is maintained with limited availability, so we ask that all interactions respect that constraint. Before contacting the Quollix maintainer, for example, by opening issues, please make sure you've first done your part:
+Quollix is maintained with limited availability, so we ask that all interactions respect that constraint.
+Before contacting the Quollix maintainer, for example, by opening issues, please make sure you've first done your part:
 
 - Check to see if your topic is already covered in the documentation, existing GitHub issues, and discussions.
 - Help reduce the Quollix maintainer's workload whenever possible by doing things yourself.
@@ -36,4 +38,5 @@ When you do reach out:
 - Avoid vague questions or unstructured requests; ensure your message is actionable.
 - Bug reports, well-argued proposals, etc. that benefit the project are of course welcome.
 
-Be patient, responses may take some time. If the request is poorly worded or lacks context, it may be ignored.
+Be patient, responses may take some time.
+If the request is poorly worded or lacks context, it may be ignored.

@@ -3,13 +3,16 @@ title: "Official Apps"
 weight: 20
 ---
 
-Quollix only takes care of the system administration. The actual day-to-day functionality like chat or data cloud comes from the installed apps.
+Quollix only takes care of the system administration.
+The actual day-to-day functionality like chat or data cloud comes from the installed apps.
 
 ## App store
 
-Digital infrastructure can be installed as apps, much like a smartphone. The [App Store]({{< relref "docs/usage/app-store/" >}}) simplifies the process of discovering and installing new apps and updates.
+Digital infrastructure can be installed as apps, much like a smartphone.
+The [App Store]({{< relref "docs/usage/app-store/" >}}) simplifies the process of discovering and installing new apps and updates.
 
-These are the apps from the official app maintainer 'quollix' currently available on the App Store. They are actively maintained with regular updates.
+These are the apps from the official app maintainer 'quollix' currently available on the App Store.
+They are actively maintained with regular updates.
 
 | App                                                                      | Description                                                    |
 | ------------------------------------------------------------------------ | -------------------------------------------------------------- |
@@ -28,7 +31,9 @@ These are the apps from the official app maintainer 'quollix' currently availabl
 
 ## Email servers
 
-Email servers are not included as official apps because reliable email delivery depends on external factors outside Quollix's control, including DNS configuration, IP reputation, and filtering policies of third-party email providers. Self-hosting email often requires ongoing operational attention beyond application management. Advanced users may still run a self-hosted email server at their own discretion.
+Email servers are not included as official apps because reliable email delivery depends on external factors outside Quollix's control, including DNS configuration, IP reputation, and filtering policies of third-party email providers.
+Self-hosting email often requires ongoing operational attention beyond application management.
+Advanced users may still run a self-hosted email server at their own discretion.
 
 ## Unofficial apps
 

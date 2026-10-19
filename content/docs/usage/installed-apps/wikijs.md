@@ -33,11 +33,13 @@ Now full text search is enabled.
 
 ## Single sign-on
 
-When Wiki.js creates a user through OIDC, it must assign that user to a group with the required permissions. Therefore, the first step is to create a group and define its permissions.
+When Wiki.js creates a user through OIDC, it must assign that user to a group with the required permissions.
+Therefore, the first step is to create a group and define its permissions.
 
 ### Groups
 
-This is an example group setup, in which any authenticated user may write, manage and delete pages. Feel free to deviate.
+This is an example group setup, in which any authenticated user may write, manage and delete pages.
+Feel free to deviate.
 
 Administration > Users > Groups:
 
@@ -54,7 +56,9 @@ Administration > Users > Groups:
 
 Administration > Modules > Authentication > Add Strategy > Generic OpenID Connect / OAuth2
 
-In Quollix, go to `Apps → SSO` and copy the Wiki.js client ID and client secret. Paste them into the matching Wiki.js fields. Fill in these endpoint URLs, replacing `<base-domain>` with your Quollix base domain:
+In Quollix, go to `Apps → SSO` and copy the Wiki.js client ID and client secret.
+Paste them into the matching Wiki.js fields.
+Fill in these endpoint URLs, replacing `<base-domain>` with your Quollix base domain:
 
 * Authorization:
 
@@ -86,11 +90,15 @@ Also apply these:
 * Enable "Allow self-registration"
 * Assign to group: "Editors" (the group created previously, see above)
 
-Click 'Apply' in the top-right corner. Click "Exit", then "Create home page", and create an initial page that users will see on their first visit.
+Click 'Apply' in the top-right corner.
+Click "Exit", then "Create home page", and create an initial page that users will see on their first visit.
 
 ### First login of new users
 
-When users first open Wiki.js, they may see the initial page before signing in. To edit pages, they must click the account icon in the top-right corner and sign in. Users should now see the option 'Generic OpenID Connect / OAuth2' on the sign-in page. After selecting it, they should be signed in, see the initial page, and have editing rights.
+When users first open Wiki.js, they may see the initial page before signing in.
+To edit pages, they must click the account icon in the top-right corner and sign in.
+Users should now see the option 'Generic OpenID Connect / OAuth2' on the sign-in page.
+After selecting it, they should be signed in, see the initial page, and have editing rights.
 
 ## Troubleshooting
 
@@ -101,4 +109,6 @@ Oops, something went wrong...
 Cannot read properties of undefined (reading 'id')
 ```
 
-You can usually resolve this by clearing the Wiki.js cookies for the site in your browser. In Chrome-based browsers such as Brave or Chrome, open the developer tools with F12, go to Application > Cookies, right-click the Wiki.js cookie entry, and click "Clear". Then go to Quollix, sign in if needed, and click "Open" in the Wiki.js row.
+You can usually resolve this by clearing the Wiki.js cookies for the site in your browser.
+In Chrome-based browsers such as Brave or Chrome, open the developer tools with F12, go to Application > Cookies, right-click the Wiki.js cookie entry, and click "Clear".
+Then go to Quollix, sign in if needed, and click "Open" in the Wiki.js row.

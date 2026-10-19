@@ -2,7 +2,9 @@
 title: "Service migration"
 ---
 
-This article explains service migrations that Quollix can run automatically during app updates from the [App Store]({{< relref "docs/project/app-store/_index.md" >}}). For example, updating Postgres to a new major version no longer requires administrators to run the migration commands by hand. The same service migration mechanism is also used when an administrator directly uploads an app version to Quollix.
+This article explains service migrations that Quollix can run automatically during app updates from the [App Store]({{< relref "docs/project/app-store/_index.md" >}}).
+For example, updating Postgres to a new major version no longer requires administrators to run the migration commands by hand.
+The same service migration mechanism is also used when an administrator directly uploads an app version to Quollix.
 
 ## Current support
 
@@ -29,7 +31,8 @@ environment:
 
 ## Other services
 
-App maintainers should publish app versions that follow each service's official upgrade path. For these services, no additional manual migration steps are expected:
+App maintainers should publish app versions that follow each service's official upgrade path.
+For these services, no additional manual migration steps are expected:
 
 - Redis
 - Valkey

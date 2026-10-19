@@ -4,13 +4,16 @@ title: "Email"
 
 {{< ui-location "System" "Email" >}}
 
-The email page lets you configure the SMTP server that Quollix uses to send email. Once configured, administrators can send invitation and password-reset links directly from the [users]({{< relref "users.md" >}}) page via email instead of distributing these links manually.
+The email page lets you configure the SMTP server that Quollix uses to send email.
+Once configured, administrators can send invitation and password-reset links directly from the [users]({{< relref "users.md" >}}) page via email instead of distributing these links manually.
 
 You can customize the invitation email template at the bottom of this page according to your user onboarding preferences.
 
 ## OIDC email exposure
 
-Some apps that use App SSO need an email address in the ID token or userinfo response. By default, Quollix can avoid exposing users' stored personal email addresses. If you enable real email exposure, connected apps may receive the actual email address stored for each user.
+Some apps that use App SSO need an email address in the ID token or userinfo response.
+By default, Quollix can avoid exposing users' stored personal email addresses.
+If you enable real email exposure, connected apps may receive the actual email address stored for each user.
 
 Consider two risks before enabling this setting:
 

@@ -2,7 +2,8 @@
 title: "Manual backup restore"
 ---
 
-This guide shows how to restore backups from an SSH backup server to a local computer. It is useful when the Quollix server is unavailable and you want to inspect or recover backup data manually.
+This guide shows how to restore backups from an SSH backup server to a local computer.
+It is useful when the Quollix server is unavailable and you want to inspect or recover backup data manually.
 
 ## Requirements
 
@@ -46,7 +47,8 @@ This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
 
-Enter `yes` and press Enter to accept the host key. Then output may look like this:
+Enter `yes` and press Enter to accept the host key.
+Then output may look like this:
 
 ```
 Warning: Permanently added '[<host>]:23' (ED25519) to the list of known hosts.

@@ -33,6 +33,11 @@ sudo docker compose up -d
 
 Now you can install apps from the App Store, start them, and open them.
 
-Note: When you open a local app over HTTPS, your browser may show a warning because the app is served from another local domain with a self-signed certificate. Continue past the warning. The first request may return a "Bad Request" response. If that happens, open the app again. Subsequent attempts should work normally.
+Note: When you open a local app over HTTPS, your browser may show a warning because the app is served from another local domain with a self-signed certificate.
+Continue past the warning.
+The first request may return a "Bad Request" response.
+If that happens, open the app again.
+Subsequent attempts should work normally.
 
-Note: Single sign-on to apps is not expected to work in this local setup. It requires a valid base domain and a trusted certificate that covers the Quollix and app subdomains.
+Note: Single sign-on to apps is not expected to work in this local setup.
+It requires a valid base domain and a trusted certificate that covers the Quollix and app subdomains.

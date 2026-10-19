@@ -3,11 +3,15 @@ title: "Self-hosting platform comparison"
 weight: 40
 ---
 
-Several projects try to make self-hosting easier, but they are not all direct replacements for each other. This comparison should help you find the solution that best fits your use case. We aim to be fair and neutral.
+Several projects try to make self-hosting easier, but they are not all direct replacements for each other.
+This comparison should help you find the solution that best fits your use case.
+We aim to be fair and neutral.
 
-This article is based on our current understanding of the projects listed below. Projects change over time, so corrections, updates, and feedback are welcome through the [feedback page]({{< relref "docs/contact/feedback.md" >}}).
+This article is based on our current understanding of the projects listed below.
+Projects change over time, so corrections, updates, and feedback are welcome through the [feedback page]({{< relref "docs/contact/feedback.md" >}}).
 
-This comparison focuses on open source platforms that make self-hosting easier through an opinionated app deployment model. Related projects that do not fit this scope are listed at the end of this article with the reason why they are not part of the main comparison.
+This comparison focuses on open source platforms that make self-hosting easier through an opinionated app deployment model.
+Related projects that do not fit this scope are listed at the end of this article with the reason why they are not part of the main comparison.
 
 Included projects:
 

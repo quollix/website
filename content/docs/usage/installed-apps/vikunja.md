@@ -17,4 +17,5 @@ title: "Vikunja"
 
 ## Single sign-on
 
-Vikunja works out of the box. When you visit the Vikunja web UI, Quollix signs you in through OpenID Connect and redirects you to Vikunja.
+Vikunja works out of the box.
+When you visit the Vikunja web UI, Quollix signs you in through OpenID Connect and redirects you to Vikunja.

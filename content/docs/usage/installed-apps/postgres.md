@@ -16,22 +16,27 @@ This component is bundled with **Quollix** and does not need to be installed sep
 
 ## Introduction
 
-Quollix uses a Postgres database called **postgres** to store its own system data. It is listed as **quollix / postgres** on the [installed apps]({{< relref "docs/usage/installed-apps/_index.md" >}}) page because it behaves similarly to other apps from an operational perspective.
+Quollix uses a Postgres database called **postgres** to store its own system data.
+It is listed as **quollix / postgres** on the [installed apps]({{< relref "docs/usage/installed-apps/_index.md" >}}) page because it behaves similarly to other apps from an operational perspective.
 
-Unlike ordinary apps, this database is part of the Quollix installation itself and stores all its data. Because Quollix depends on this database, it must remain running and available.
+Unlike ordinary apps, this database is part of the Quollix installation itself and stores all its data.
+Because Quollix depends on this database, it must remain running and available.
 
 ## Available operations
 
-Operations on **quollix / postgres** are intentionally limited. You can only create and restore backups.
+Operations on **quollix / postgres** are intentionally limited.
+You can only create and restore backups.
 
 ## Restoring backups
 
 Restoring a backup of **quollix / postgres** restores Quollix system data, not the data of an ordinary app.
 
 {{< alert title="Warning" color="warning" >}}
-Restoring the Postgres backup affects the Quollix installation as a whole. Create a current backup of Postgres before restoring an older one.
+Restoring the Postgres backup affects the Quollix installation as a whole.
+Create a current backup of Postgres before restoring an older one.
 {{< /alert >}}
 
 {{< alert title="Warning" color="warning" >}}
-Restoring an older Postgres backup can make Quollix metadata inconsistent with installed apps, for example when app secrets no longer match. If this happens after restoring Postgres, restore the backups of the affected apps to fix the inconsistency.
+Restoring an older Postgres backup can make Quollix metadata inconsistent with installed apps, for example when app secrets no longer match.
+If this happens after restoring Postgres, restore the backups of the affected apps to fix the inconsistency.
 {{< /alert >}}

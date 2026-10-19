@@ -23,19 +23,28 @@ title: "Vaultwarden"
 
 ## Single sign-on
 
-OpenID Connect is enabled by default by Quollix. When opening Vaultwarden, the sign-in page displays the option “Use Single Sign-On”.
+OpenID Connect is enabled by default by Quollix.
+When opening Vaultwarden, the sign-in page displays the option “Use Single Sign-On”.
 
 ## Syncing via Bitwarden client
 
-Vaultwarden mimics the Bitwarden backend while remaining compatible with the Bitwarden API. As a result, you can use the official Bitwarden desktop and mobile applications, as well as the Bitwarden browser extension, to sync your vault. To use a Bitwarden client, set the Vaultwarden access policy in Quollix to 'Public'. Otherwise, requests from the client will be blocked by Quollix's authentication mechanism.
+Vaultwarden mimics the Bitwarden backend while remaining compatible with the Bitwarden API.
+As a result, you can use the official Bitwarden desktop and mobile applications, as well as the Bitwarden browser extension, to sync your vault.
+To use a Bitwarden client, set the Vaultwarden access policy in Quollix to 'Public'.
+Otherwise, requests from the client will be blocked by Quollix's authentication mechanism.
 
 ## Storing Quollix recovery configurations in Vaultwarden
 
-Using Vaultwarden as a single place to manage secrets is convenient. However, there are a few risks to consider when storing Quollix server data there.
+Using Vaultwarden as a single place to manage secrets is convenient.
+However, there are a few risks to consider when storing Quollix server data there.
 
 ### Catastrophic lockout
 
-Assume you have a Quollix server and an external [backup server]({{< relref "docs/usage/settings/backup-server" >}}) configured. If the Quollix server crashes, the credentials needed to access the Quollix server or restore backups may be inside the unavailable Vaultwarden instance. Your Bitwarden client may also require you to sign in again, leaving you unable to access the cached vault on your local PC. You cannot sign in while Vaultwarden or Quollix is unavailable. This circular dependency can leave you locked out of both your server and its backups.
+Assume you have a Quollix server and an external [backup server]({{< relref "docs/usage/settings/backup-server" >}}) configured.
+If the Quollix server crashes, the credentials needed to access the Quollix server or restore backups may be inside the unavailable Vaultwarden instance.
+Your Bitwarden client may also require you to sign in again, leaving you unable to access the cached vault on your local PC.
+You cannot sign in while Vaultwarden or Quollix is unavailable.
+This circular dependency can leave you locked out of both your server and its backups.
 
 {{< alert title="Warning" color="warning" >}}
 Without proper preparation, you could lose access to all data on your Quollix server.
@@ -43,7 +52,8 @@ Without proper preparation, you could lose access to all data on your Quollix se
 
 ### Exporting a vault backup
 
-To prevent catastrophic lockout, you need an independent backup of recovery configuration. Potential approaches are described below:
+To prevent catastrophic lockout, you need an independent backup of recovery configuration.
+Potential approaches are described below:
 
 - Assuming you have set up Quollix server and configured a [backup server]({{< relref "docs/usage/settings/backup-server" >}})
 - Install the Vaultwarden app
@@ -65,7 +75,8 @@ To prevent catastrophic lockout, you need an independent backup of recovery conf
 
 If you did not choose **.json (Encrypted)**, you can skip this section.
 
-You can recover the encrypted export's contents on your local PC. With Docker installed, create `docker-compose.yml`:
+You can recover the encrypted export's contents on your local PC.
+With Docker installed, create `docker-compose.yml`:
 
 ```yaml
 services:
@@ -92,13 +103,17 @@ configs:
       }
 ```
 
-Replace the placeholder with the Vaultwarden server Docker image version used for the export, ideally recorded in the export file name as suggested above. Start the temporary server:
+Replace the placeholder with the Vaultwarden server Docker image version used for the export, ideally recorded in the export file name as suggested above.
+Start the temporary server:
 
 ```sh
 docker compose up -d
 ```
 
-Open `https://localhost` in a browser window and accept the certificate warning for this temporary local instance. Caddy generates the certificate automatically. Create a temporary account, then open **Tools → Import** and select **Data → File format → Bitwarden (json)**. Enter the export password when prompted.
+Open `https://localhost` in a browser window and accept the certificate warning for this temporary local instance.
+Caddy generates the certificate automatically.
+Create a temporary account, then open **Tools → Import** and select **Data → File format → Bitwarden (json)**.
+Enter the export password when prompted.
 
 After retrieving the credentials, close the browser window and run:
 

@@ -17,7 +17,9 @@ You can provide feedback through the [feedback page]({{< relref "docs/contact/fe
 
 ## Contribute on GitHub
 
-Quollix repositories use the permissive [MIT License](https://opensource.org/license/mit). Contributions are made under the license of the repository being contributed to. Quollix does not require contributors to sign a Contributor License Agreement (CLA).
+Quollix repositories use the permissive [MIT License](https://opensource.org/license/mit).
+Contributions are made under the license of the repository being contributed to.
+Quollix does not require contributors to sign a Contributor License Agreement (CLA).
 
 {{< alert title="Note" color="warning" >}}
 GitHub is the right place for contributions and development discussions, but not for user support requests.
@@ -27,29 +29,39 @@ To get an overview of the public source code repositories, see the [Repository M
 
 ### Improve the website
 
-The website repository is [github.com/quollix/website](https://github.com/quollix/website). Contributing website content does not require coding: basic Markdown knowledge and knowing how to contribute through GitHub are sufficient. Read the [Website contributing article]({{< relref "website.md" >}}).
+The website repository is [github.com/quollix/website](https://github.com/quollix/website).
+Contributing website content does not require coding: basic Markdown knowledge and knowing how to contribute through GitHub are sufficient.
+Read the [Website contributing article]({{< relref "website.md" >}}).
 
 ### Contribute code
 
-To contribute code, fork the repository, create a new branch, make your changes, and submit a pull request (PR). Branches should use the form `<issueNumber>-<title>`. If no issue exists yet for the problem, please create one first.
+To contribute code, fork the repository, create a new branch, make your changes, and submit a pull request (PR).
+Branches should use the form `<issueNumber>-<title>`.
+If no issue exists yet for the problem, please create one first.
 
-If you are fixing a bug, include the steps to reproduce it, the expected result, and the actual result. Include screenshots or logs if useful. See the [Developer Guide]({{< relref "developer-guide.md" >}}) for code contribution expectations.
+If you are fixing a bug, include the steps to reproduce it, the expected result, and the actual result.
+Include screenshots or logs if useful.
+See the [Developer Guide]({{< relref "developer-guide.md" >}}) for code contribution expectations.
 
-Small fixes can be provided directly as PRs. Before creating a feature PR, open a feature suggestion issue and get Quollix maintainer approval first, because features must fit the design of Quollix.
+Small fixes can be provided directly as PRs.
+Before creating a feature PR, open a feature suggestion issue and get Quollix maintainer approval first, because features must fit the design of Quollix.
 
 ## Build integrations
 
-Quollix includes a Go API client in the [common](https://github.com/quollix/common) repository at `quollix/api_client`. It is used by Quollix tooling and can also be useful for experiments, automation, or external tools built around Quollix.
+Quollix includes a Go API client in the [common](https://github.com/quollix/common) repository at `quollix/api_client`.
+It is used by Quollix tooling and can also be useful for experiments, automation, or external tools built around Quollix.
 
 ## Expand the App Store
 
-If you have software with a web interface that you would like to share with others, you can package it as an app and request an App maintainer account. See [Join the App Store]({{< relref "docs/project/app-store/join.md" >}}).
+If you have software with a web interface that you would like to share with others, you can package it as an app and request an App maintainer account.
+See [Join the App Store]({{< relref "docs/project/app-store/join.md" >}}).
 To add log parsing support for a new app, see [Log structuring]({{< relref "log-structuring.md" >}}).
 If an app is useful and technically fits well into Quollix, we will consider adopting it as an official app.
 
 ## Improve app compatibility
 
-You can also help by improving the upstream software used by apps in the App Store. When those improvements are released, packaged as Docker images, and integrated into Quollix app updates, they become available to Quollix deployments.
+You can also help by improving the upstream software used by apps in the App Store.
+When those improvements are released, packaged as Docker images, and integrated into Quollix app updates, they become available to Quollix deployments.
 
 High-value improvements include:
 
@@ -60,4 +72,5 @@ See [app design recommendations]({{< relref "docs/project/app-store/app-design-r
 
 ## Improve security
 
-Security-related contributions are useful. Please follow [responsible disclosure]({{< relref "docs/contact/responsible-disclosure.md" >}}) when researching and reporting vulnerabilities.
+Security-related contributions are useful.
+Please follow [responsible disclosure]({{< relref "docs/contact/responsible-disclosure.md" >}}) when researching and reporting vulnerabilities.

@@ -2,11 +2,15 @@
 title: "Website"
 ---
 
-The Quollix website is the canonical documentation hub for the Quollix ecosystem. It follows a text-first approach, as text is searchable and easy to maintain.
+The Quollix website is the canonical documentation hub for the Quollix ecosystem.
+It follows a text-first approach, as text is searchable and easy to maintain.
 
 ## Contribution scope
 
-Please contribute text changes only. Avoid custom HTML, CSS, and JavaScript. Use Markdown for simplicity. Structural changes, layout changes, animations, and media changes such as adding or editing images must be discussed first and, if accepted, are handled by the Quollix maintainer.
+Please contribute text changes only.
+Avoid custom HTML, CSS, and JavaScript.
+Use Markdown for simplicity.
+Structural changes, layout changes, animations, and media changes such as adding or editing images must be discussed first and, if accepted, are handled by the Quollix maintainer.
 
 Useful text contributions include:
 
@@ -21,6 +25,7 @@ Useful text contributions include:
 When writing website content:
 
 - keep the content lean
+- put each sentence on its own line in Markdown. This does not change how it is rendered and makes diffs easier to review.
 - use concise, factual language
 - keep articles clearly scoped. When helpful, state the scope in the first sentence, for example "This article explains..."
 - use sentence case for titles and headings, for example "Editing users" instead of "Editing Users"
@@ -32,4 +37,5 @@ When writing website content:
 
 ## Terminology
 
-When writing content for the website, follow the [Terminology]({{< relref "docs/project/terminology.md" >}}) article for Quollix-specific terms and preferred wording. Link terms to this article when it helps readers understand a term that is not already explained by the surrounding context.
+When writing content for the website, follow the [Terminology]({{< relref "docs/project/terminology.md" >}}) article for Quollix-specific terms and preferred wording.
+Link terms to this article when it helps readers understand a term that is not already explained by the surrounding context.

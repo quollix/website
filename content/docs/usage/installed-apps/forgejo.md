@@ -16,12 +16,15 @@ title: "Forgejo"
 | Business model | Fully open source project under Codeberg e.V. stewardship. |
 
 {{< alert title="Network prerequisite" color="warning" >}}
-If you want to use Forgejo over SSH, TCP port 2223 must be reachable by Git clients. Make sure nothing in front of Quollix blocks this port.
+If you want to use Forgejo over SSH, TCP port 2223 must be reachable by Git clients.
+Make sure nothing in front of Quollix blocks this port.
 {{< /alert >}}
 
 ## Introduction
 
-A general rule in Forgejo is that some settings cannot be changed via the web GUI once the installation wizard is completed. However, you can still modify them by directly editing the `app.ini` file inside the container as described below. Therefore, we recommend that you familiarize yourself with the potential configuration options before deploying a production instance.
+A general rule in Forgejo is that some settings cannot be changed via the web GUI once the installation wizard is completed.
+However, you can still modify them by directly editing the `app.ini` file inside the container as described below.
+Therefore, we recommend that you familiarize yourself with the potential configuration options before deploying a production instance.
 
 ## Installation wizard
 
@@ -35,7 +38,9 @@ When visiting the Forgejo web UI for the first time:
 
 ## Adapting configuration after installation
 
-This step is usually not needed for a standard installation. Treat it as a general option and skip it unless you need to change advanced Forgejo settings after installation. Open the Forgejo container through the Quollix [terminal]({{< relref "../terminal.md" >}}) page and edit the `app.ini` as desired:
+This step is usually not needed for a standard installation.
+Treat it as a general option and skip it unless you need to change advanced Forgejo settings after installation.
+Open the Forgejo container through the Quollix [terminal]({{< relref "../terminal.md" >}}) page and edit the `app.ini` as desired:
 
 ```bash
 apk add nano
@@ -68,5 +73,6 @@ Now you can sign in through OIDC:
 * Sign in with Quollix
 
 {{< alert title="Note" color="warning" >}}
-A user with the username `admin` cannot authenticate via OIDC and will receive a '500 Internal Server Error' because `admin` is a reserved username. The default Quollix administrator username is `administrator`, which avoids this conflict.
+A user with the username `admin` cannot authenticate via OIDC and will receive a '500 Internal Server Error' because `admin` is a reserved username.
+The default Quollix administrator username is `administrator`, which avoids this conflict.
 {{< /alert >}}

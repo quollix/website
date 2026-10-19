@@ -4,7 +4,8 @@ title: "Known log warnings"
 
 When using the [Grafana app]({{< relref "docs/usage/installed-apps/grafana" >}}) to collect logs, you may encounter warnings from official apps that can be ignored.
 
-Warnings about disabled optional features and deprecation notices for components that remain functional are excluded from this list. Shutdown messages caused by intentional updates, backups or restarts are also excluded.
+Warnings about disabled optional features and deprecation notices for components that remain functional are excluded from this list.
+Shutdown messages caused by intentional updates, backups or restarts are also excluded.
 
 | App                   | Service      | Log                                                                                        | Description                                                                                                                                                                         |
 | --------------------- | ------------ | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

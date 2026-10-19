@@ -5,7 +5,9 @@ aliases:
   - /docs/resources/feedback/
 ---
 
-We aim to make our documentation clear and useful so you can find answers independently. If you have a question or get stuck, please get in touch. Your feedback helps us understand what’s missing or unclear and improve the docs for everyone.
+We aim to make our documentation clear and useful so you can find answers independently.
+If you have a question or get stuck, please get in touch.
+Your feedback helps us understand what’s missing or unclear and improve the docs for everyone.
 
 For example, we appreciate feedback about:
 

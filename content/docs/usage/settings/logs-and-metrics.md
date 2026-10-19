@@ -15,6 +15,8 @@ These settings control logging and resource monitoring through the [Grafana app]
 
 \* Changes to these settings require a restart of the Grafana app to take effect.
 
-These settings can significantly affect resource usage. If the Grafana app uses too many resources, shorter retention periods, a lower log storage target, and longer collection intervals can help reduce usage.
+These settings can significantly affect resource usage.
+If the Grafana app uses too many resources, shorter retention periods, a lower log storage target, and longer collection intervals can help reduce usage.
 
-The volume collection interval is usually longer than the host and container collection intervals because measuring volume disk usage requires scanning all files and directories to determine their sizes. The interval is the wait time between the end of one volume measurement and the start of the next.
+The volume collection interval is usually longer than the host and container collection intervals because measuring volume disk usage requires scanning all files and directories to determine their sizes.
+The interval is the wait time between the end of one volume measurement and the start of the next.

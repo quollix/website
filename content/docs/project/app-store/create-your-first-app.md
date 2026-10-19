@@ -10,7 +10,10 @@ Before you create and upload an app, it helps to understand a few basic concepts
 
 ### App Store data model
 
-The App Store data model is a hierarchy of app maintainers, apps, and versions. An app maintainer can publish many apps, and each app can have many versions. You can think of apps as folders that contain uploaded versions. For example:
+The App Store data model is a hierarchy of app maintainers, apps, and versions.
+An app maintainer can publish many apps, and each app can have many versions.
+You can think of apps as folders that contain uploaded versions.
+For example:
 
 ```plain
 - samplemaintainer
@@ -25,7 +28,9 @@ The App Store data model is a hierarchy of app maintainers, apps, and versions. 
 
 ### Local data model
 
-On your local machine, keep your app definitions in one folder. Each app definition is a Docker Compose YAML file, such as `nextcloud.yml` or `vaultwarden.yml`. For example:
+On your local machine, keep your app definitions in one folder.
+Each app definition is a Docker Compose YAML file, such as `nextcloud.yml` or `vaultwarden.yml`.
+For example:
 
 ```
 /home/sampleuser/Documents/quollix-apps:
@@ -34,15 +39,19 @@ On your local machine, keep your app definitions in one folder. Each app definit
 - ...
 ```
 
-The local files usually represent only the current app versions you maintain. The App Store keeps the full history of uploaded versions.
+The local files usually represent only the current app versions you maintain.
+The App Store keeps the full history of uploaded versions.
 
 ### Upload signing
 
-App version uploads are signed with your private key. This helps prevent users from downloading malicious app definitions if an App Store server is compromised.
+App version uploads are signed with your private key.
+This helps prevent users from downloading malicious app definitions if an App Store server is compromised.
 
 ## Create your first app
 
-First, create the app in the App Store with `qsc`. This creates the app entry that uploaded versions are attached to. The example below uses HedgeDoc.
+First, create the app in the App Store with `qsc`.
+This creates the app entry that uploaded versions are attached to.
+The example below uses HedgeDoc.
 
 ```bash
 ./qsc apps create hedgedoc
@@ -72,7 +81,8 @@ services:
       quollix.port: 3000
 ```
 
-This app definition is not meant for production use. Next, upload the file:
+This app definition is not meant for production use.
+Next, upload the file:
 
 ```
 ./qsc local upload
@@ -84,4 +94,5 @@ List the app versions to confirm that the upload succeeded:
 ./qsc versions list <your-app-maintainer-name> hedgedoc
 ```
 
-After the upload succeeds, the definition should appear in search results on the [App Store page]({{< relref "docs/usage/app-store" >}}). To find it, search for your exact app maintainer name.
+After the upload succeeds, the definition should appear in search results on the [App Store page]({{< relref "docs/usage/app-store" >}}).
+To find it, search for your exact app maintainer name.

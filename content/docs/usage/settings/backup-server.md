@@ -5,13 +5,16 @@ title: "Backup server"
 {{< ui-location "System" "Settings" "Backup server" >}}
 
 {{< alert title="Note" color="warning" >}}
-We strongly recommend that you enable this feature. If your hard drive becomes irreversibly damaged, external backups may be the only way to recover your data.
+We strongly recommend that you enable this feature.
+If your hard drive becomes irreversibly damaged, external backups may be the only way to recover your data.
 {{< /alert >}}
 
-Quollix uses the **restic** tool in the backend, which provides end-to-end encryption. This means that even if someone intercepts the traffic or gains access to the backup server, they cannot read your encrypted backup data.
+Quollix uses the **restic** tool in the backend, which provides end-to-end encryption.
+This means that even if someone intercepts the traffic or gains access to the backup server, they cannot read your encrypted backup data.
 
 {{< alert title="Note" color="warning" >}}
-Always keep a separate copy of your backup server settings, including the host, SSH credentials, SSH known hosts, and Restic encryption password. Without these settings, your backup data cannot be restored if this Quollix server is lost.
+Always keep a separate copy of your backup server settings, including the host, SSH credentials, SSH known hosts, and Restic encryption password.
+Without these settings, your backup data cannot be restored if this Quollix server is lost.
 {{< /alert >}}
 
 ## Usage guide
@@ -25,12 +28,15 @@ Always keep a separate copy of your backup server settings, including the host, 
 
 ## Why password for authentication instead of SSH keys?
 
-Quollix uses a password because it must store a credential for backup server authentication. Quollix does not use an SSH key, because when the Quollix server is compromised, a stored password and a stored private key provide similar backup-server access, while a password is simpler to manage. **Known Hosts** still verifies the server identity.
+Quollix uses a password because it must store a credential for backup server authentication.
+Quollix does not use an SSH key, because when the Quollix server is compromised, a stored password and a stored private key provide similar backup-server access, while a password is simpler to manage. **Known Hosts** still verifies the server identity.
 
 ## Resetting backup settings
 
-Resetting the backup server settings removes the stored connection settings and credentials, including the Restic encryption password. Existing backups may become inaccessible if you do not keep a separate copy of the required settings.
+Resetting the backup server settings removes the stored connection settings and credentials, including the Restic encryption password.
+Existing backups may become inaccessible if you do not keep a separate copy of the required settings.
 
 ## Purging the backup repository
 
-Purging the backup repository permanently deletes all backups in the configured repository and resets the backup server configuration. Use this only when you intentionally want to remove all backup data.
+Purging the backup repository permanently deletes all backups in the configured repository and resets the backup server configuration.
+Use this only when you intentionally want to remove all backup data.

@@ -6,23 +6,33 @@ title: "Certificate"
 
 ## Certificate operations
 
-You can upload your own certificate or download the currently configured certificate. The uploaded certificate file must contain the private key and certificate chain for the domains you want Quollix to serve. For the usual app setup, this is typically a wildcard certificate such as `*.sample.com`.
+You can upload your own certificate or download the currently configured certificate.
+The uploaded certificate file must contain the private key and certificate chain for the domains you want Quollix to serve.
+For the usual app setup, this is typically a wildcard certificate such as `*.sample.com`.
 
-Uploading a certificate replaces the currently configured certificate. Before replacing a production certificate, download the existing certificate file and store it somewhere safe so that you can restore it if the new certificate does not work.
+Uploading a certificate replaces the currently configured certificate.
+Before replacing a production certificate, download the existing certificate file and store it somewhere safe so that you can restore it if the new certificate does not work.
 
 {{< alert title="Private key handling" color="warning" >}}
-If you download the certificate file, note that it contains the private key. Anyone with the file could impersonate your Quollix server for the domains covered by the certificate. Never share it through untrusted channels or with untrusted people.
+If you download the certificate file, note that it contains the private key.
+Anyone with the file could impersonate your Quollix server for the domains covered by the certificate.
+Never share it through untrusted channels or with untrusted people.
 {{< /alert >}}
 
-By default, Quollix is available on port 443 via HTTPS using a universal self-signed wildcard certificate. This default certificate works for all domains or IP addresses through which you access Quollix and any host configured in the Settings. This option may be sufficient for test deployments or private LAN networks.
+By default, Quollix is available on port 443 via HTTPS using a universal self-signed wildcard certificate.
+This default certificate works for all domains or IP addresses through which you access Quollix and any host configured in the Settings.
+This option may be sufficient for test deployments or private LAN networks.
 
-Resetting the certificate removes the configured certificate and private key and replaces them with a self-signed certificate. This is useful for local testing or recovery, but browsers and clients may stop trusting the server until you install a valid certificate again. For most real-world use cases, a valid, properly signed certificate is recommended.
+Resetting the certificate removes the configured certificate and private key and replaces them with a self-signed certificate.
+This is useful for local testing or recovery, but browsers and clients may stop trusting the server until you install a valid certificate again.
+For most real-world use cases, a valid, properly signed certificate is recommended.
 
 ## ACME account private key
 
 Quollix uses an ACME account private key to identify the Let's Encrypt account that requests certificates.
 
-If you plan to operate multiple Quollix instances for the same domain, download the ACME account private key from one instance and upload it to the other instances before generating Let's Encrypt certificates. This gives all instances one uniform ACME account key, keeps certificate requests tied to one Let's Encrypt account, and avoids creating unnecessary separate ACME accounts for the same setup.
+If you plan to operate multiple Quollix instances for the same domain, download the ACME account private key from one instance and upload it to the other instances before generating Let's Encrypt certificates.
+This gives all instances one uniform ACME account key, keeps certificate requests tied to one Let's Encrypt account, and avoids creating unnecessary separate ACME accounts for the same setup.
 
 ## Generate wildcard certificate
 
@@ -32,11 +42,17 @@ This option generates a certificate via a Let's Encrypt DNS-01 challenge:
 - Cons: expires after 90 days and must be renewed by hand
 
 {{< alert title="Certificate Issuance Limits" color="warning" >}}
-Let's Encrypt limits how many certificates can be issued within a given period. Avoid generating new certificates unnecessarily, especially while testing or troubleshooting. If you reach a limit, certificate generation may be unavailable until the limit resets. See the <a href="https://letsencrypt.org/docs/rate-limits/">Let's Encrypt rate limits documentation</a> for current details.
+Let's Encrypt limits how many certificates can be issued within a given period.
+Avoid generating new certificates unnecessarily, especially while testing or troubleshooting.
+If you reach a limit, certificate generation may be unavailable until the limit resets.
+See the <a href="https://letsencrypt.org/docs/rate-limits/">Let's Encrypt rate limits documentation</a> for current details.
 {{< /alert >}}
 
-You must set the base domain to a domain that you own for the setup to work, for example `sample.com`. Simply start the challenge, create the TXT DNS record as instructed, and wait a few minutes. Quollix will handle the rest for you.
+You must set the base domain to a domain that you own for the setup to work, for example `sample.com`.
+Simply start the challenge, create the TXT DNS record as instructed, and wait a few minutes.
+Quollix will handle the rest for you.
 
-In the background, Quollix creates a `certificate.pem` file that contains keys and certificates for the domains `*.sample.com`, such as `forgejo.sample.com`, `vaultwarden.sample.com`, or `quollix.sample.com`. The wildcard certificate is valid for 90 days, so this process must be repeated manually from time to time.
+In the background, Quollix creates a `certificate.pem` file that contains keys and certificates for the domains `*.sample.com`, such as `forgejo.sample.com`, `vaultwarden.sample.com`, or `quollix.sample.com`.
+The wildcard certificate is valid for 90 days, so this process must be repeated manually from time to time.
 
 After that, you need to restart the browser so it loads the new certificate.
