@@ -12,7 +12,6 @@ title: "Jitsi"
 | Source code | [github.com/jitsi/jitsi-meet](https://github.com/jitsi/jitsi-meet) |
 | License | [Apache-2.0](https://github.com/jitsi/jitsi-meet/blob/master/LICENSE) |
 | ARM64 support | Supported |
-| OIDC client | Not supported |
 | Business model | Fully open source project built by 8x8 and the community; hosted and commercial services are available separately. |
 
 {{< alert title="Network prerequisite" color="warning" >}}

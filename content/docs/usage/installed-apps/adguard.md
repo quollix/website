@@ -12,7 +12,6 @@ title: "AdGuard"
 | Source code    | [github.com/AdguardTeam/AdGuardHome](https://github.com/AdguardTeam/AdGuardHome)                                                           |
 | License        | [GPL-3.0](https://github.com/AdguardTeam/AdGuardHome/blob/master/LICENSE.txt)                                                              |
 | ARM64 support  | Supported                                                                                                                                  |
-| OIDC client    | Not supported                                                                                                                              |
 | Business model | AdGuard Home is a fully open source DNS server from AdGuard, which also offers paid subscriptions for its commercial ad-blocking products. |
 
 ## Introduction
@@ -90,7 +89,7 @@ See the [AdGuard Home FAQ](https://adguard-dns.io/kb/adguard-home/faq/) for deta
 
 ## Access policy
 
-AdGuard Home does not need OIDC or SSO because its web interface is an administrative tool rather than an app for regular users.
+AdGuard Home's web interface is an administrative tool rather than an app for regular users.
 Keep its access policy set to the default `Admin only` on the installed apps page.
 AdGuard Home's administrator credentials provide an additional sign-in for the web interface.
 
