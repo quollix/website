@@ -35,6 +35,13 @@ Administrators can disable a user without deleting the account.
 A disabled user cannot sign in, and existing sessions for that user are removed.
 The user can be enabled again later.
 
+## Changing user roles
+
+Administrators can set other users' roles to User or Admin.
+They cannot change their own role.
+Admin accounts must always be enabled.
+To disable an admin account, first demote it to the User role.
+
 ## Why does user creation require an email address?
 
 Some apps that use Quollix to sign you in require an email address as part of the App SSO account information.
