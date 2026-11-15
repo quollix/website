@@ -25,7 +25,7 @@ Containers may need to be downloaded in the background, and the app may need to 
 Even after the app is marked as running, it can take anywhere from a few seconds to a few minutes before the app webpage becomes available.
 
 {{< alert title="Note" color="warning" >}}
-When installing an official app, you should always read the related articles at the bottom, as they contain setup guidelines, security instructions, and information about self-registration.
+When installing an official app, you should always read the related app articles at the bottom, as they contain setup guidelines, security instructions, and information about self-registration.
 {{< /alert >}}
 
 If you change the Quollix base domain, an app's client ID, or its client secret (OIDC), some apps may need additional attention before they work correctly again.

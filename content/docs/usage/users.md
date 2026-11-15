@@ -39,8 +39,6 @@ The user can be enabled again later.
 
 Administrators can set other users' roles to User or Admin.
 They cannot change their own role.
-Admin accounts must always be enabled.
-To disable an admin account, first demote it to the User role.
 
 ## Why does user creation require an email address?
 

@@ -2,47 +2,46 @@
 title: "Acknowledgements"
 ---
 
-Quollix is made possible by people and organizations committed to free and open source software.
+Quollix is made possible by people and organizations committed to free and open source software. We also acknowledge the developers of all [official apps]({{< relref "docs/introduction/apps.md" >}}) and the services that support them.
 
 ## Core platform
 
-| Name | Role |
-|------|------|
-| [Linux](https://www.kernel.org/) | operating system kernel |
-| [GNU](https://www.gnu.org/) | userland tools and operating system components |
-| [Debian](https://www.debian.org/index.html) | base distribution for servers |
-| [Ubuntu](https://ubuntu.com/) | server and desktop operating system |
-| [Go](https://go.dev/) | primary implementation language |
-| [Docker](https://docs.docker.com/engine/) | application packaging and runtime isolation |
-| [PostgreSQL](https://www.postgresql.org/) | primary database |
-| [Restic](https://restic.net/) | encrypted backups |
-| [Let's Encrypt](https://letsencrypt.org/) | automated certificate issuance |
-| [Pico CSS](https://picocss.com/) | frontend styling |
+| Name                                        | Role                                           |
+| ------------------------------------------- | ---------------------------------------------- |
+| [Linux](https://www.kernel.org/)            | operating system kernel                        |
+| [GNU](https://www.gnu.org/)                 | userland tools and operating system components |
+| [Debian](https://www.debian.org/index.html) | base distribution for servers                  |
+| [Ubuntu](https://ubuntu.com/)               | server and desktop operating system            |
+| [Go](https://go.dev/)                       | primary implementation language                |
+| [Docker](https://docs.docker.com/engine/)   | application packaging and runtime isolation    |
+| [PostgreSQL](https://www.postgresql.org/)   | primary database                               |
+| [Restic](https://restic.net/)               | encrypted backups                              |
+| [Let's Encrypt](https://letsencrypt.org/)   | automated certificate issuance                 |
+| [Pico CSS](https://picocss.com/)            | frontend styling                               |
 
 ## Licensing and standards
 
-| Name | Role |
-|------|------|
-| [Free Software Foundation](https://www.fsf.org/) | free software movement and GNU license stewardship |
-| [Open Source Initiative](https://opensource.org/) | open source definition and license approval |
+| Name                                                             | Role                                                                   |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [Free Software Foundation](https://www.fsf.org/)                 | free software movement and GNU license stewardship                     |
+| [Open Source Initiative](https://opensource.org/)                | open source definition and license approval                            |
+| [Apache Software Foundation](https://www.apache.org/foundation/) | open source software development and stewardship of the Apache License |
 
 ## Development tools
 
-| Name | Role |
-|------|------|
-| [Wire](https://github.com/google/wire) | dependency injection code generation |
-| [Mockery](https://github.com/vektra/mockery) | mock generation for tests |
-| [Testify](https://github.com/stretchr/testify) | assertions and test helpers |
-| [Rod](https://go-rod.github.io/) | browser automation for tests |
-| [Helix](https://helix-editor.com/) | editor used for day-to-day development |
-| [tmux](https://github.com/tmux/tmux) | terminal workflow and session management |
+| Name                                             | Role                                     |
+| ------------------------------------------------ | ---------------------------------------- |
+| [Wire](https://github.com/google/wire)           | dependency injection code generation     |
+| [Mockery](https://github.com/vektra/mockery)     | mock generation for tests                |
+| [Testify](https://github.com/stretchr/testify)   | assertions and test helpers              |
+| [chromedp](https://github.com/chromedp/chromedp) | browser automation for tests             |
+| [Helix](https://helix-editor.com/)               | editor used for day-to-day development   |
+| [tmux](https://github.com/tmux/tmux)             | terminal workflow and session management |
 
 ## Website and App Store
 
-| Name | Role |
-|------|------|
-| [Traefik](https://traefik.io/traefik/) | reverse proxy including rate limiting |
-| [nginx](https://nginx.org/en) | static web resource delivery |
+| Name                              | Role                                     |
+| --------------------------------- | ---------------------------------------- |
 | [Caddy](https://caddyserver.com/) | static site hosting and HTTPS automation |
-| [Hugo](https://gohugo.io/) | static site generation |
-| [Docsy](https://www.docsy.dev/) | documentation theme |
+| [Hugo](https://gohugo.io/)        | static site generation                   |
+| [Docsy](https://www.docsy.dev/)   | documentation theme                      |

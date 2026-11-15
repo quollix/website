@@ -25,8 +25,8 @@ services:
     restart: unless-stopped
 ```
 
-If you want to run Quollix behind a reverse proxy, read the [reverse proxy setup]({{< relref "docs/self-hosting/reverse-proxy.md" >}}) guide before starting the container.
-If you want to configure the initial administrator account, read the [initial admin account]({{< relref "docs/self-hosting/initial-admin-account.md" >}}) guide before starting the container.
+The following guides cover optional configuration and are usually unnecessary for a standard setup.
+Read them before starting the container if you want to [run Quollix behind a reverse proxy]({{< relref "docs/self-hosting/reverse-proxy.md" >}}) or [choose a custom initial administrator account]({{< relref "docs/self-hosting/initial-admin-account.md" >}}).
 
 4. **Start Quollix**: run the following command in the same directory as `docker-compose.yml`:
 
@@ -71,5 +71,11 @@ sudo docker compose up -d
 ```
 
 ## Next steps
+
+We recommend completing these three steps for a production server:
+
+- Configure a [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) so you can recover your apps if the server or its storage fails.
+- Configure [SMTP]({{< relref "docs/usage/email.md" >}}) and make sure your administrator account has a real email address so you can receive [email alerts]({{< relref "docs/usage/alerts.md" >}}) from Quollix.
+- Install the [Grafana app]({{< relref "docs/usage/installed-apps/grafana" >}}) to collect and store logs and host resource metrics.
 
 The [Self-Hosting]({{< relref "docs/self-hosting/_index.md" >}}) section provides additional guidance for running Quollix in a self-hosted environment.

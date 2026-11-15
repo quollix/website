@@ -4,10 +4,11 @@ title: "Email"
 
 {{< ui-location "System" "Email" >}}
 
-The email page lets you configure the SMTP server that Quollix uses to send email.
-Once configured, administrators can send invitation and password-reset links directly from the [users]({{< relref "users.md" >}}) page via email instead of distributing these links manually.
+## User management via email
 
-You can customize the invitation email template at the bottom of this page according to your user onboarding preferences.
+Configure an SMTP server to enable these email feature.
+Administrators can email invitation and password reset links directly from the [users]({{< relref "users.md" >}}) page instead of distributing the links manually.
+You can customize the invitation email template according to your user onboarding preferences.
 
 ## OIDC email exposure
 

@@ -27,9 +27,6 @@ Grafana supports single sign-on through Quollix via OIDC.
 Log and metric collection begins automatically when the Grafana app starts.
 The preconfigured **VictoriaLogs** and **VictoriaMetrics** data sources provide access to logs and metrics, respectively.
 
-Email alerts require configuring Grafana to use an SMTP server.
-See the [Grafana SMTP configuration documentation](https://grafana.com/docs/grafana/latest/setup-grafana/configure-grafana/#smtp).
-
 ## Backups
 
 The logs and metrics stored by the Grafana app can generate much new data.
@@ -40,11 +37,12 @@ If you restore that backup, logs and metrics collected after it was created will
 
 ## Dashboards
 
-At the moment, we are developing reusable Grafana dashboards for different levels of detail.
-They will be available for download soon.
-Our approach to observability is modular.
-You will be able to download only the dashboards you need.
-You can also create your own dashboards.
+Official Grafana dashboards are included with the app and available as soon as it starts.
+Use them to analyze app and host metrics and logs.
+
+You can create your own dashboards, or duplicate an official dashboard and edit your copy.
+Changes made directly to an official dashboard are overwritten with its original version when the Grafana app restarts.
+We recommend editing your own dashboards instead of changing the official ones.
 
 ## Finding metrics
 
@@ -55,9 +53,6 @@ Open **Explore** in Grafana and select **VictoriaMetrics**.
 | `host_*`            | Host CPU, memory, and filesystem metrics.                         |
 | `container_*`       | App container CPU, memory, network traffic, and disk I/O metrics. |
 | `volume_used_bytes` | Disk space used by app volumes, in bytes.                         |
-
-Use labels such as `maintainer`, `app`, and `service` to filter container metrics.
-Volume metrics use `maintainer`, `app`, and `volume` labels.
 
 ## Finding logs
 
@@ -76,8 +71,6 @@ App logs include these fields:
 | `parsed`                       | Whether Quollix successfully parsed and structured the entry.     |
 | `log_timestamp`                | Timestamp extracted from the service's log entry, when available. |
 | `attributes`                   | Additional structured metadata extracted from the entry.          |
-
-See [Known log warnings]({{< relref "docs/usage/installed-apps/grafana/known-log-warnings.md" >}}) for warnings that can be tolerated under specific conditions and guidance on when to investigate.
 
 ### Log structuring
 
