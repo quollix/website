@@ -6,109 +6,39 @@ title: "Wiki.js"
 
 ## Resources
 
-| Resource | Description |
-|----------|-------------|
-| Website | [js.wiki](https://js.wiki) |
-| Source code | [github.com/requarks/wiki](https://github.com/requarks/wiki) |
-| License | [AGPL-3.0](https://github.com/requarks/wiki/blob/main/LICENSE) |
-| ARM64 support | Supported |
-| OIDC client | Native |
+| Resource       | Description                                                     |
+| -------------- | --------------------------------------------------------------- |
+| Website        | [js.wiki](https://js.wiki)                                      |
+| Source code    | [github.com/requarks/wiki](https://github.com/requarks/wiki)    |
+| License        | [AGPL-3.0](https://github.com/requarks/wiki/blob/main/LICENSE)  |
+| ARM64 support  | Supported                                                       |
+| OIDC client    | Native                                                          |
 | Business model | Fully open source project with funding and sponsorship options. |
 
-## Setup
+## Local admin login
 
-* On first launch, create an admin account.
-* For the site URL, enter the current base domain: `https://wikijs.<base-domain>`.
-* Install
+- On first launch, sign in with the local admin credentials: `admin@example.com` / `12345678`.
+- Change the password after signing in.
+- Create a homepage, for example, `Using the Markdown Editor`, then **Create Page**.
+- Select the **Administration** icon in the top-right corner to open the Administration Area.
 
-## Database setup
+## Administration Area configuration
 
-Administration > Modules > Search Engine
+In the Administration Area, configure the following:
 
-* Select 'Database PostgreSQL'
-* Rebuild index
-* Apply
+- General → set Site Hostname to `wikijs.<base-domain>` → Apply
+- Security → enable Trust X-Forwarded-* Proxy Headers → Apply.
+- Authentication → Add Strategy → OIDC / OpenID Connect
+  - Name: Quollix
+  - Enable the strategy.
+  - Enable registration and assign new users to the `Users` group.
+  - Client ID / Client Secret: In Quollix, open **Apps → SSO** and copy the Wiki.js client ID and client secret.
+  - Issuer: `https://quollix.<base-domain>`
+  - Select **Apply**.
+- Login → Login Providers → enable Quollix.
 
-Now full text search is enabled.
+Users should now be able to sign in to Wiki.js with Quollix OIDC.
 
-## Single sign-on
+## Permissions
 
-When Wiki.js creates a user through OIDC, it must assign that user to a group with the required permissions.
-Therefore, the first step is to create a group and define its permissions.
-
-### Groups
-
-This is an example group setup, in which any authenticated user may write, manage and delete pages.
-Feel free to deviate.
-
-Administration > Users > Groups:
-
-* New Groups > enter "Editors" > Create
-* Click Editors group:
-  * Permissions > Enable `write:pages`, `manage:pages`, `delete:pages`
-  * Page rules > Click the green `read:pages` label so that a menu opens > enable these fields:
-    * Create + Edit Pages (write:pages)
-    * Rename + Move Pages (manage:pages)
-    * Delete Pages (delete:pages)
-  * Update group
-
-### Authentication
-
-Administration > Modules > Authentication > Add Strategy > Generic OpenID Connect / OAuth2
-
-In Quollix, go to `Apps → SSO` and copy the Wiki.js client ID and client secret.
-Paste them into the matching Wiki.js fields.
-Fill in these endpoint URLs, replacing `<base-domain>` with your Quollix base domain:
-
-* Authorization:
-
-```plain
-https://quollix.<base-domain>/api/authorize
-```
-
-* Token:
-
-```plain
-https://quollix.<base-domain>/api/token
-```
-
-* User Info:
-
-```plain
-https://quollix.<base-domain>/api/userinfo
-```
-
-* Issuer:
-
-```plain
-https://quollix.<base-domain>
-```
-
-Also apply these:
-
-* Display Name Claim: "name"
-* Enable "Allow self-registration"
-* Assign to group: "Editors" (the group created previously, see above)
-
-Click 'Apply' in the top-right corner.
-Click "Exit", then "Create home page", and create an initial page that users will see on their first visit.
-
-### First login of new users
-
-When users first open Wiki.js, they may see the initial page before signing in.
-To edit pages, they must click the account icon in the top-right corner and sign in.
-Users should now see the option 'Generic OpenID Connect / OAuth2' on the sign-in page.
-After selecting it, they should be signed in, see the initial page, and have editing rights.
-
-## Troubleshooting
-
-If the Wiki.js page shows this error:
-
-```
-Oops, something went wrong...
-Cannot read properties of undefined (reading 'id')
-```
-
-You can usually resolve this by clearing the Wiki.js cookies for the site in your browser.
-In Chrome-based browsers such as Brave or Chrome, open the developer tools with F12, go to Application > Cookies, right-click the Wiki.js cookie entry, and click "Clear".
-Then go to Quollix, sign in if needed, and click "Open" in the Wiki.js row.
+New users can only read articles by default. To grant additional permissions, go to Administration → Groups → Users → Rules → Select Permissions. For example, enable Write Pages, then select Apply and then Save.

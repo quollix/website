@@ -34,9 +34,6 @@ Read them before starting the container if you want to [run Quollix behind a rev
 sudo docker compose up -d
 ```
 
-For production deployments, we recommend updating Quollix once a day so you quickly receive the latest fixes and features.
-The [automatic updates]({{< relref "docs/self-hosting/automatic-updates.md" >}}) guide shows how to handle this with a cronjob.
-
 5. **Open the web interface**: visit `https://quollix.<base-domain>`. Quollix initially uses a self-signed certificate, so your browser will show a certificate warning. Continue only if you trust the network path to the server. A trusted certificate is configured later in this guide.
 1. **Find the initial password**: Quollix logs a random initial password on first startup:
 
@@ -72,10 +69,11 @@ sudo docker compose up -d
 
 ## Next steps
 
-We recommend completing these three steps for a production server:
+We recommend completing these steps for a production server:
 
+- Set up daily updates of Quollix to receive the latest fixes and features and help keep Quollix compatible with current app definitions. Follow the [automatic updates]({{< relref "docs/self-hosting/automatic-updates.md" >}}) guide to configure a cronjob.
 - Configure a [backup server]({{< relref "docs/usage/settings/backup-server.md" >}}) so you can recover your apps if the server or its storage fails.
 - Configure [SMTP]({{< relref "docs/usage/email.md" >}}) and make sure your administrator account has a real email address so you can receive [email alerts]({{< relref "docs/usage/alerts.md" >}}) from Quollix.
 - Install the [Grafana app]({{< relref "docs/usage/installed-apps/grafana" >}}) to collect and store logs and host resource metrics.
 
-The [Self-Hosting]({{< relref "docs/self-hosting/_index.md" >}}) section provides additional guidance for running Quollix in a self-hosted environment.
+Optionally, the [Self-Hosting]({{< relref "docs/self-hosting/_index.md" >}}) section provides additional guidance for running Quollix in a self-hosted environment.
